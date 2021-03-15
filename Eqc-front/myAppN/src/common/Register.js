@@ -115,7 +115,7 @@ export default class Register extends Component {
 		}
 	}
 	componentDidMount() {
-		fetch('http://192.168.43.245:3000/user')
+		fetch('http://192.168.10.5:3000/user')
 			.then(res => res.json())
 			.then(res => {
 				this.setState({ data: res });
@@ -138,7 +138,7 @@ export default class Register extends Component {
 		const registerValue = { "username": this.state.username, "usertel": this.state.usertel, "userpwd": this.state.pwd }
 
 		if (this.state.username != "" && this.state.usertel != "" && this.state.userpwd != "") {
-			fetch('http://192.168.43.245:3000/user1', {
+			fetch('http://192.168.10.5:3000/user1', {
 				method: "POST",
 				headers: {
 					"Content-type": "application/json;charset=utf-8",
