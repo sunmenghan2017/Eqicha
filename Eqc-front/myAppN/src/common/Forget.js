@@ -17,7 +17,7 @@ export default class Forget extends Component {
         }
     }
     componentDidMount() {
-        fetch('http://192.168.43.245:3000/user')
+        fetch('http://192.168.10.5:3000/user')
             .then(res => res.json())
             .then(res => {
                 this.setState({ data: res });
@@ -45,11 +45,10 @@ ok = () => {
         var utel = this.state.usertel;
             for (var i = 0; i < this.state.data.length; i++) {
                 if (loginname === this.state.data[i].username || utel === this.state.data[i].usertel) {
-                    // this.setState({isloading:this.state.data[i].isloading })
+              
                     registerValue = { "userid": this.state.data[i].userid, "userpwd": this.state.pwd }
                     this.setState({ userid: this.state.data[i].userid })
-                    // fetch('http://192.168.0.106:3000/denglu', {
-                    fetch('http://192.168.43.245:3000/user3', {
+                    fetch('http://192.168.10.5:3000/user3', {
                         method: "POST",
                         headers: {
                             "Content-type": "application/json;charset=utf-8",
