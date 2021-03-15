@@ -102,7 +102,7 @@ export default class Mine extends Component {
             <View  style={{flex: 1,backgroundColor: '#fff'}}>
                 <View style={{flexDirection: 'row',height:40,paddingTop:10,width:'100%'}}>
                     <Text style={{fontSize:18,paddingLeft:'45%'}}>我的</Text>
-                    <Icon name="setting" style={{paddingLeft:130,color:'black'}} onPress={Actions.shezhi}/>
+                    <Icon name="setting" style={{paddingLeft:130,color:'black'}} onPress={Actions.xiugai}/>
                 </View>
                 <View style={{height:120,flexDirection: 'row'}}>
                     <Button 
@@ -120,7 +120,8 @@ export default class Mine extends Component {
 
                             }
                     </Button>
-                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:20}}>{this.state.data.username}</Text>
+                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:20}}>{this.state.data.username}name</Text>
+                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:20}}>{this.state.data.username}company</Text>
                 </View>
                 
                 <View style={styles.view2}>

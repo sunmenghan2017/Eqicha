@@ -63,7 +63,7 @@ export default class Xiugai extends Component {
                             console.log(data);
                         });
 
-                    Actions.login();
+                    Actions.pop();
                 }
             }
         }
@@ -77,7 +77,7 @@ export default class Xiugai extends Component {
         return (
             <View style={{ backgroundColor: '#eee' }}>
                 <View style={{ flexDirection: 'row', height: '10%', width: '90%', marginTop: '5%', marginBottom: '15%' }}>
-                    <TouchableOpacity onPress={() => Actions.login()} style={{ flexDirection: 'row', left: '5%' }} >
+                    <TouchableOpacity onPress={Actions.pop} style={{ flexDirection: 'row', left: '5%' }} >
                         <Icon1
                             name="angle-left"
                             style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }}
@@ -86,7 +86,7 @@ export default class Xiugai extends Component {
                     </TouchableOpacity>
                 </View>
                 <View
-                    style={{ alignItems: 'center', justifyContent: 'center', height: '40%' }}>
+                    style={{ alignItems: 'center',  height: '60%' }}>
                     <View
                         style={{
                             width: '80%',
@@ -121,26 +121,22 @@ export default class Xiugai extends Component {
                         this.state.reseting
                             ? <View
                                 style={{
-                                    width: '80%', marginTop: 20,
+                                    width: '90%', marginTop: 20,height:'50%',
                                     marginRight: 10,
                                     borderBottomColor: '#ccc',
                                     borderBottomWidth: 1,
-                                    flexDirection: 'row',
-                                    justifyContent: 'space-between',
                                     alignItems: 'center',
                                     // paddingLeft: 20,
                                 }}>
                                 <TextInput
-                                    style={{ width: '60%', backgroundColor: '#fff' }}
+                                    style={{ width: '90%', backgroundColor: '#fff',marginTop:'3%' }}
                                     onChangeText={this.zhiweihandle}
                                     placeholder="请输入新的职位"
-                                    secureTextEntry={true}
                                 />
                                 <TextInput
-                                    style={{ width: '60%', backgroundColor: '#fff' }}
+                                    style={{ width: '90%', backgroundColor: '#fff',marginTop:'3%',marginBottom:'5%' }}
                                     onChangeText={this.companyhandle}
                                     placeholder="请输入新公司"
-                                    secureTextEntry={true}
                                 />
                                 
                                 <TouchableOpacity
@@ -150,11 +146,11 @@ export default class Xiugai extends Component {
                                         backgroundColor: '#ccc',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        borderRadius: 10
+                                        borderRadius: 10,
                                     }}
                                     onPress={this.ok}
                                 >
-                                    <Text style={{ color: '#fff' }}>确定</Text>
+                                    <Text style={{ color: '#fff',alignItems: 'center',justifyContent:'center',alignContent:'center' }}>确定</Text>
                                 </TouchableOpacity>
                             </View>
                             : null

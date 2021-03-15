@@ -30,6 +30,7 @@ import Lianxi from './src/mine/Lianxi';
 import Shoucang from './src/mine/Shoucang';
 import Qiye from './src/mine/Qiye';
 import Biji from './src/mine/Biji';
+import Xiugai from './src/mine/Xiugai';
 
 import Date  from './src/home/Date';
 import Tousu from './src/mine/Tousu';
@@ -186,7 +187,6 @@ const App = () => {
 									<Scene key='qiye' hideNavBar={true} component={Qiye}/>
 									<Scene key='biji' hideNavBar={true} component={Biji}/>
 									<Scene key='lianxi' hideNavBar={true} component={Lianxi}/>
-									<Scene key='shezhi' hideNavBar={true} component={Shezhi}/>
 									
 								</Scene>
 								
@@ -199,7 +199,9 @@ const App = () => {
 				<Scene initial={!isLogin} key="login" component={Login} />
 				<Scene key='register' hideNavBar component={Register} />
 				<Scene key='forget' hideNavBar component={Forget} />
+				<Scene key='xiugai' hideNavBar component={Xiugai} />
 				
+				<Scene key='shezhi' hideNavBar component={Shezhi}/>
 				<Scene key='job' hideNavBar component={Job} />
 				<Scene key='customer' hideNavBar component={Customer} />
 				<Scene key='fuqi' hideNavBar component={Fujinqiye} />
