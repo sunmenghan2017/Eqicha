@@ -31,21 +31,20 @@ export default class Mine extends Component {
     }
     componentDidMount(){
         this.getData();  
-        fetch("http://192.168.43.245:3000/user")
+        fetch("http://192.168.10.5:3000/user")
         .then(res=>res.json())
         .then(res=>{
             for(var i =0;i<res.length;i++){
                 if(res[i].isloading==1){
                     this.setState({
                         userID:res[i].userid,
+                        imageUrl:res[i].userauatar,
                         data:res[i],
                     })
                 }
             }
-            console.log("userid:"+this.state.userID); 
-            // this.setState({data:res})
-            console.log('this.state.data:'+this.state.data);
-            // console.log("1].dynContentdata:"+this.state.data);
+            console.log("userid:"+this.state.userID);
+            // console.log('this.state.data:'+this.state.data);
         })
         // fetch("http://192.168.43.245:3000/user")
         // .then(res=>res.json())
@@ -120,18 +119,15 @@ export default class Mine extends Component {
 
                             }
                     </Button>
-                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:20}}>{this.state.data.username}name</Text>
-                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:20}}>{this.state.data.username}company</Text>
+                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:20}}>{this.state.data.username}</Text>
+                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:20}}>{this.state.data.companyname}</Text>
                 </View>
                 
                 <View style={styles.view2}>
                     <Text style={{paddingLeft:20}} onPress={Actions.shoucang}>我的收藏</Text>
                 </View>
                 <View style={styles.view2}>
-                    <Text style={{paddingLeft:20}} onPress={Actions.qiye}>我的企业</Text>
-                </View>
-                <View style={styles.view2}>
-                    <Text style={{paddingLeft:20}} onPress={Actions.biji}>我的笔记</Text>
+                    <Text style={{paddingLeft:20}} onPress={Actions.fabu}>我的招聘</Text>
                 </View>
                 <View style={styles.view2}>
                     <Text style={{paddingLeft:20}} onPress={Actions.tousu}>我的消息</Text>

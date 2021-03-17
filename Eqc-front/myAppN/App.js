@@ -35,6 +35,7 @@ import Xiugai from './src/mine/Xiugai';
 import Date  from './src/home/Date';
 import Tousu from './src/mine/Tousu';
 import Shezhi from './src/mine/Shezhi';
+import Fabu from './src/mine/Fabu';
 // import City  from './src/home/City';
 
 
@@ -125,7 +126,7 @@ const App = () => {
 								hideNavBar
 								activeTintColor="#fc9"
 								inactiveTintColor="gray"
-								tabBarStyle={{backgroundColor:'#fff'}}
+								tabBarStyle={{backgroundColor:'#333'}}
 							>
 								{/* 首页 */}
 								<Scene key='homePage'
@@ -185,7 +186,7 @@ const App = () => {
 									<Scene key='tousu' hideNavBar={true} component={Tousu}/>
 									<Scene key='shoucang' hideNavBar={true} component={Shoucang}/>
 									<Scene key='qiye' hideNavBar={true} component={Qiye}/>
-									<Scene key='biji' hideNavBar={true} component={Biji}/>
+									<Scene key='fabu' hideNavBar={true} component={Fabu}/>
 									<Scene key='lianxi' hideNavBar={true} component={Lianxi}/>
 									
 								</Scene>

@@ -4,6 +4,30 @@ import { Icon } from '@ant-design/react-native'
 import { Actions } from 'react-native-router-flux'
 
 export default class Shoucang extends Component {
+    constructor(){
+        super();
+        this.state = {
+            imageUrl:true,
+            data:[],
+            userID:'',
+        }
+    }
+    componentDidMount(){
+        fetch("http://192.168.10.5:3000/user")
+        .then(res=>res.json())
+        .then(res=>{
+            for(var i =0;i<res.length;i++){
+                if(res[i].isloading==1){
+                    this.setState({
+                        userID:res[i].userid,
+                        data:res[i],
+                    }) 
+                }
+            }
+            console.log("userid:"+this.state.userID);
+            // console.log('this.state.data:'+this.state.data);
+        })
+    }
     render() {
         return (
             <View>

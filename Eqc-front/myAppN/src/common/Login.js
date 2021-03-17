@@ -62,7 +62,7 @@ export default class Login extends Component {
           
           registerValue = { "userid": this.state.data[i].userid,"isloading":1  }
           this.setState({ userid: this.state.userid})
-            fetch('http://192.168.43.245:3000/user2', {
+            fetch('http://192.168.10.5:3000/user4', {
             method: "POST",
             headers: {
               "Content-type": "application/json;charset=utf-8",
