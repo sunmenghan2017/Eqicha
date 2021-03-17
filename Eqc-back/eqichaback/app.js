@@ -47,7 +47,13 @@ app.use('/users', usersRouter);
 
 
 app.use('/home', homeRouter);
-app.use('/projectsys',projectsysRouter)
+app.use('/projectG',projectgRouter);
+app.use('/companyG', companygRouter);
+app.use('/personG', persongRouter);
+app.use('/newsG', newsgRouter);
+app.use('/userG', usergRouter);
+app.use('/managerG', managergRouter);
+
 
 // user表接口
 app.get('/user',jsonParser,(req,res)=>{
@@ -75,8 +81,7 @@ app.get('/user',jsonParser,(req,res)=>{
       tipsId:"",
       isloading:0
     }
-    //     if (result == []) {
-    con.query('insert into user(userid,username,usertel,userpwd,userauatar,companyname,isloading,userzhiwei,tipsid) values(?,?,?,?,?,?)',
+    con.query('insert into user(userid,username,usertel,userpwd,userauatar,companyname,isloading,userzhiwei,tipsid) values(?,?,?,?,?,?,?,?,?)',
       [insertData.userId, insertData.userName, insertData.userTel, insertData.userPassword, insertData.userAvatar,insertData.companyName,insertData.isloading,insertData.userZhiwei,insertData.tipsId], function (err, result) {
       if (err) {
         console.log(err);
@@ -125,7 +130,7 @@ app.get('/user',jsonParser,(req,res)=>{
       companyName:data.companyname,
       userId:data.userid
     }
-    con.query('update user set userzhiwei=? companyname=? where userid=?',
+    con.query('update user set userzhiwei=? ,companyname=? where userid=?',
     [upData.userZhiwei,upData.companyName,upData.userId],function(err,result){
       if(err){
             console.log(err);
@@ -151,13 +156,101 @@ app.get('/user',jsonParser,(req,res)=>{
 
 
 
+// 公司表接口
+app.get('/company',jsonParser,(req,res)=>{
+  // console.log(req.body);
+  con.query('select * from company',function(err,result){
+      if(err){
+          console.log('[SELECT ERROR] - ', err.message);
+          return;
+      }
+      res.json(result); 
+  }); 
+}) 
 
+// 人物表接口
+app.get('/person',jsonParser,(req,res)=>{
+  // console.log(req.body);
+  con.query('select * from person',function(err,result){
+      if(err){
+          console.log('[SELECT ERROR] - ', err.message);
+          return;
+      }
+      res.json(result); 
+  }); 
+}) 
 
+// 项目表接口
+app.get('/project',jsonParser,(req,res)=>{
+  // console.log(req.body);
+  con.query('select * from project',function(err,result){
+      if(err){
+          console.log('[SELECT ERROR] - ', err.message);
+          return;
+      }
+      res.json(result); 
+  }); 
+}) 
 
+// 新闻表接口
+app.get('/news',jsonParser,(req,res)=>{
+  // console.log(req.body);
+  con.query('select * from news',function(err,result){
+      if(err){
+          console.log('[SELECT ERROR] - ', err.message);
+          return;
+      }
+      res.json(result); 
+  }); 
+}) 
 
+// tips表接口
+app.get('/tips',jsonParser,(req,res)=>{
+  // console.log(req.body);
+  con.query('select * from tips',function(err,result){
+      if(err){
+          console.log('[SELECT ERROR] - ', err.message);
+          return;
+      }
+      res.json(result); 
+  }); 
+}) 
 
+// 新增企业表接口
+app.get('/xinzeng',jsonParser,(req,res)=>{
+  // console.log(req.body);
+  con.query('select * from xinzeng',function(err,result){
+      if(err){
+          console.log('[SELECT ERROR] - ', err.message);
+          return;
+      }
+      res.json(result); 
+  }); 
+}) 
 
+// 榜单表接口
+app.get('/bangdan',jsonParser,(req,res)=>{
+  // console.log(req.body);
+  con.query('select * from bangdan',function(err,result){
+      if(err){
+          console.log('[SELECT ERROR] - ', err.message);
+          return;
+      }
+      res.json(result); 
+  }); 
+}) 
 
+// 收藏表接口
+app.get('/collect',jsonParser,(req,res)=>{
+  // console.log(req.body);
+  con.query('select * from collect',function(err,result){
+      if(err){
+          console.log('[SELECT ERROR] - ', err.message);
+          return;
+      }
+      res.json(result); 
+  }); 
+}) 
 
 
 
