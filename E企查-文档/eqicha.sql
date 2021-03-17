@@ -218,12 +218,13 @@ CREATE TABLE `zhaopin` (
   `yaoqiu` varchar(100) NOT NULL,
   `companyname` varchar(50) NOT NULL,
   `userid` varchar(20) DEFAULT NULL,
+  `salary` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`zhaopinid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Data for the table `zhaopin` */
 
-insert  into `zhaopin`(`zhaopinid`,`zhiwei`,`yaoqiu`,`companyname`,`userid`) values ('z1','英语讲师','英语好责任心强本科','猿辅导',''),('z2','前端工程师','前端好前端好','百度',NULL),('z3','https://liwenroul.gi','100','199',NULL);
+insert  into `zhaopin`(`zhaopinid`,`zhiwei`,`yaoqiu`,`companyname`,`userid`,`salary`) values ('z1','英语讲师','英语好责任心强本科 联系电话：11111','猿辅导','','4000-5000'),('z2','前端工程师','前端好前端好','百度',NULL,'5000-6000');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

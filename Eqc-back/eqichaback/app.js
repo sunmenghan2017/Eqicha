@@ -16,7 +16,7 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
 var homeRouter = require('./routes/index');
-var projectsysRouter = require('./routes/index');
+var projectgRouter = require('./routes/index');
 
 
 app.all('*', function(req, res, next) {
@@ -48,11 +48,11 @@ app.use('/users', usersRouter);
 
 app.use('/home', homeRouter);
 app.use('/projectG',projectgRouter);
-app.use('/companyG', companygRouter);
-app.use('/personG', persongRouter);
-app.use('/newsG', newsgRouter);
-app.use('/userG', usergRouter);
-app.use('/managerG', managergRouter);
+// app.use('/companyG', companygRouter);
+// app.use('/personG', persongRouter);
+// app.use('/newsG', newsgRouter);
+// app.use('/userG', usergRouter);
+// app.use('/managerG', managergRouter);
 
 
 // user表接口
@@ -132,6 +132,22 @@ app.get('/user',jsonParser,(req,res)=>{
     }
     con.query('update user set userzhiwei=? ,companyname=? where userid=?',
     [upData.userZhiwei,upData.companyName,upData.userId],function(err,result){
+      if(err){
+            console.log(err);
+        }
+          console.log(result);
+          res.json(result); 
+    })
+  })
+
+  app.post('/user4',(req,res)=>{
+    let data=req.body;
+    console.log(data);
+    let upData = {
+      isloading:data.isloading,
+      userid:data.userid
+    }
+    con.query('update user set isloading=? where userid=?',[upData.isloading,upData.userid],function(err,result){
       if(err){
             console.log(err);
         }

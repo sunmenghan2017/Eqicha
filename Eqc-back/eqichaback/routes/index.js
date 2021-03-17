@@ -47,10 +47,10 @@ router.get('/home', function(req, res, next) {
 });
 
 // 项目系统
-router.get('/projectsys', function(req, res, next) {
-  console.log('projectsys')
+router.get('/projectg', function(req, res, next) {
+  console.log('projectg')
   res.type('html');
-  res.render('projectsys', { title:'E企查后台管理系统' });
+  res.render('projectg', { title:'E企查后台管理系统' });
 });
 
 
