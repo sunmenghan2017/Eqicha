@@ -61,7 +61,8 @@ export default class Boss extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.102:3000/sale')
+        // fetch('http://192.168.10.5:3000/person')
+        fetch('http://192.168.0.104:3000/person')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -131,43 +132,34 @@ export default class Boss extends Component {
                     <Text style={{ color: '#fc6', fontSize: 20, paddingLeft: '5%' }}>热门人物</Text>
 
                 </View>
+                
                 <View style={{
                     width: '100%',
-                    height: 300 * s,
+                    height: 280 * s,
                     alignItems: 'center',
                     marginTop: 20 * s,
                     padding: 4,
                     backgroundColor: '#eee'
                 }}>
-                    <View style={{ width: '90%', height: '30%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor:'#fff',marginBottom:'2%'}}>
+                {
+                            // this.state.tits&&
+                            this.state.tits.map((item, key) => (
+                    <View style={{ width: '90%', height: 100 * s, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor:'#fff',marginBottom:'2%'}}>
                         <TouchableOpacity style={{ width: '30%', }} onPress={() => Actions.detailboss()}>
-                            <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kktg.jpg' }} />
+                            <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={ require('../../assets/icon/1.jpg')} />
                         </TouchableOpacity>
                         <TouchableOpacity style={{ width: '70%', }} onPress={() => Actions.detailboss()}>
-                            <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>Boss</Text>
+                            <Text style={{ marginTop: 15 * s, height: 45 * s, fontSize: 25 }}>{item.personname}</Text>
 
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>
 
-                                <Text style={{ marginTop: 5 * s, width: '30%' }}>简介</Text>
-                                <Text style={{ color: 'red', width: '30%' }}>公司</Text>
+                                <Text style={{ marginTop: 5 * s, width: '60%' }}>{item.personintro.lenght<=10?item.personintro:item.personintro.slice(0,10)+'···'}</Text>
+                                <Text style={{ width: '35%' }}>{item.companyname.lenght<=6?item.companyname:item.companyname.slice(0,6)}</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ width: '90%', height: '30%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor:'#fff'}}>
-                        <TouchableOpacity style={{ width: '30%', }} onPress={() => Actions.detailboss()}>
-                            <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kktg.jpg' }} />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{ width: '70%', }} onPress={() => Actions.detailboss()}>
-                            <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>Boss</Text>
-
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
-
-                                <Text style={{ marginTop: 5 * s, width: '30%' }}>简介</Text>
-                                <Text style={{ color: 'red', width: '30%' }}>公司</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-
+                ))
+            }
                 </View>
                 <ScrollView style={{
                         backgroundColor: '#eee'}}>
@@ -189,15 +181,7 @@ export default class Boss extends Component {
                                 <Text style={{ color: 'red', width: '30%' }}>公司</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>时间</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ width: '90%', height: '25%' }}>
-                            <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>title</Text>
-
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
-
-                                <Text style={{ marginTop: 5 * s, width: '30%' }}>来源</Text>
-                                <Text style={{ color: 'red', width: '30%' }}>阅读量</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>时间</Text>
-                            </View>
-                        </TouchableOpacity>
+                        
                     </View>
                 </ScrollView>
 

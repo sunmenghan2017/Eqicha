@@ -59,7 +59,7 @@ export default class Home extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.102:3000/sale')
+        fetch('http://192.168.0.104:3000/news')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -112,7 +112,7 @@ export default class Home extends Component {
             }}>
 
                 <ScrollView
-                    style={{ height: 350 * s, width: 640 * s }}
+                    style={{ height: 250 * s, width: 640 * s }}
                 >
                     <View style={{ height: 350 * s, width: 640 * s, backgroundColor: '#fc9' }}>
                         <View style={{ height: 240 * s, width: 640 * s, }}>
@@ -139,7 +139,7 @@ export default class Home extends Component {
                             </View>
                         </View>
                     </View>
-                    <View style={{width:'100%',height:'20%',flexDirection:'row',justifyContent:'flex-start',alignContent:'center'}}>
+                    <View style={{width:'100%',height:'40%',flexDirection:'row',justifyContent:'flex-start',alignContent:'center'}}>
                         <View style={{
                                     width:'33%',
                                     height: 200 * s,
@@ -218,6 +218,7 @@ export default class Home extends Component {
                     </View> 
                 </ScrollView>
                 <ScrollView>
+               
                     <View style={{  justifyContent: 'center', alignItems: 'center', }}>
                             <View style={{
                                     width: '100%',
@@ -231,35 +232,31 @@ export default class Home extends Component {
                                     <Text style={{ color:'#fc6',fontSize:20,paddingLeft:'5%'}}>商业资讯</Text>
                                     
                                 </View>
-
+                                {
+                            // this.state.tits&&
+                            this.state.tits.map((item, key) => (
                                 <View style={{
                                     width: '100%',
-                                    height: 300 * s,
+                                    height: 100 * s,
                                     alignItems: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
                                     backgroundColor: '#eee'
                                 }}>
-                                    <TouchableOpacity style={{ width: '90%', height: '25%' }} onPress={() => Actions.zixun()}>
-                                        <Text style={{ marginTop: 15 * s, height: '50%',fontSize:25 }}>title</Text>
+                                    <TouchableOpacity style={{ width: '90%', height: 100*s }} onPress={() => Actions.zixun()}>
+                                        <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:20 }}>{item.newstitle}</Text>
                                 
-                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
+                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>
 
-                                            <Text style={{ marginTop: 5 * s ,width:'30%'}}>来源</Text>
-                                            <Text style={{ color: 'red',width:'30%' }}>阅读量</Text><Text style={{ marginTop: 5 * s ,width:'30%'}}>时间</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity style={{ width: '90%', height: '25%' }}>
-                                        <Text style={{ marginTop: 15 * s, height: '50%',fontSize:25 }}>title</Text>
-                                
-                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
-
-                                            <Text style={{ marginTop: 5 * s ,width:'30%'}}>来源</Text>
-                                            <Text style={{ color: 'red',width:'30%' }}>阅读量</Text><Text style={{ marginTop: 5 * s ,width:'30%'}}>时间</Text>
+                                            <Text style={{ marginTop: 5 * s ,width:'60%'}}>{item.companyname}</Text>
+                                            <Text style={{ marginTop: 5 * s ,width:'30%'}}>{item.newstime}</Text>
                                         </View>
                                     </TouchableOpacity>
                                 </View>
+                                ))
+                            }
                             </View>
+                             
                     {/* {
                         this.state.tit.map((item, key) => (
                             <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', flexWrap: 'wrap', }}>

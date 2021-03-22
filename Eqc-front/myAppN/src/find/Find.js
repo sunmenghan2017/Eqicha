@@ -61,7 +61,7 @@ export default class Find extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.102:3000/sale')
+        fetch('http://192.168.0.104:3000/tips')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -74,7 +74,7 @@ export default class Find extends Component {
                 console.log(res)
                 this.setState({ tits: res });
             })
-        fetch('http://192.168.0.102:3000/merchandise')
+        fetch('http://192.168.0.104:3000/merchandise')
             .then(res => res.json())
             .then(res => {
                 this.setState({ tit: res });
@@ -105,7 +105,7 @@ export default class Find extends Component {
                                     alignItems: 'center',
                                     justifyContent: 'center'
                                 }}>
-                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.job()}>
+                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.xinzeng()}>
                                         <View style={styles.img}>
                                             <Icon
                                                 name="eye"
@@ -123,7 +123,7 @@ export default class Find extends Component {
                                     alignItems: 'center',
                                     justifyContent: 'center'
                                 }}>
-                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.job()}>
+                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.bangdan()}>
                                         <View style={styles.img}>
                                             <Icon
                                                 name="eye"
@@ -141,7 +141,7 @@ export default class Find extends Component {
                                     alignItems: 'center',
                                     justifyContent: 'center'
                                 }}>
-                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.customer()}>
+                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.project()}>
                                         <View style={styles.img}>
                                         <Icon
                                                 name="user"
@@ -159,7 +159,7 @@ export default class Find extends Component {
                                     alignItems: 'center',
                                     justifyContent: 'center'
                                 }}>
-                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.fuqi()}>
+                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.touzi()}>
                                         <View style={styles.img}>
                                         <Icon
                                                 name="windows"
@@ -188,34 +188,28 @@ export default class Find extends Component {
                                     <Text style={{ color:'#fc6',fontSize:20,paddingLeft:'5%'}}>金融小Tips</Text>
                                     
                                 </View>
-
+                                {
+                            // this.state.tits&&
+                            this.state.tits.map((item, key) => (
                                 <View style={{
                                     width: '100%',
-                                    height: 300 * s,
+                                    height: 100 * s,
                                     alignItems: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
                                     backgroundColor: '#eee'
                                 }}>
-                                    <TouchableOpacity style={{ width: '90%', height: '25%' }} onPress={() => Actions.zixun()}>
-                                        <Text style={{ marginTop: 15 * s, height: '50%',fontSize:25 }}>title</Text>
+                                    <TouchableOpacity style={{ width: '90%', height: 90 * s }} >
+                                        <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:25 }} onPress={() => Actions.zixun()}>{item.tipstitle}</Text>
                                 
-                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
-
-                                            <Text style={{ marginTop: 5 * s ,width:'30%'}}>来源</Text>
-                                            <Text style={{ color: 'red',width:'30%' }}>阅读量</Text><Text style={{ marginTop: 5 * s ,width:'30%'}}>时间</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity style={{ width: '90%', height: '25%' }}>
-                                        <Text style={{ marginTop: 15 * s, height: '50%',fontSize:25 }}>title</Text>
-                                
-                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
-
-                                            <Text style={{ marginTop: 5 * s ,width:'30%'}}>来源</Text>
-                                            <Text style={{ color: 'red',width:'30%' }}>阅读量</Text><Text style={{ marginTop: 5 * s ,width:'30%'}}>时间</Text>
+                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 30 * s }}>
+                                            <Text style={{width:'60%' }}>{item.tipscontent.lenght<=15?item.tipscontent:item.tipscontent.slice(0,15)+'···'}</Text>
+                                            <Icon name="star" style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }} onPress={() => Actions.pop()}/>
                                         </View>
                                     </TouchableOpacity>
                                 </View>
+                                ))
+                            }
                             </View>
                     
                 </ScrollView>

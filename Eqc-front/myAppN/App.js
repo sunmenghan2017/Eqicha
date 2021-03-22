@@ -36,6 +36,10 @@ import Date  from './src/home/Date';
 import Tousu from './src/mine/Tousu';
 import Shezhi from './src/mine/Shezhi';
 import Fabu from './src/mine/Fabu';
+import Xinzeng from './src/find/Xinzeng';
+import Bangdan from './src/find/Bangdan';
+import Project from './src/find/Project';
+import Touzi from './src/find/Touzi';
 // import City  from './src/home/City';
 
 
@@ -206,6 +210,11 @@ const App = () => {
 				<Scene key='job' hideNavBar component={Job} />
 				<Scene key='customer' hideNavBar component={Customer} />
 				<Scene key='fuqi' hideNavBar component={Fujinqiye} />
+				<Scene key='xinzeng' hideNavBar component={Xinzeng} />
+				<Scene key='bangdan' hideNavBar component={Bangdan} />
+				<Scene key='project' hideNavBar component={Project} />
+				<Scene key='touzi' hideNavBar component={Touzi} />
+
 				<Scene key='listcust' hideNavBar component={Listcust} />
 				<Scene key='zixun' hideNavBar component={Zixun} />
 				<Scene key='detailboss' hideNavBar component={Detailboss} />

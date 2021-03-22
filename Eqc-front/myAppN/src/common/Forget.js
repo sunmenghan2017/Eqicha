@@ -17,7 +17,8 @@ export default class Forget extends Component {
         }
     }
     componentDidMount() {
-        fetch('http://192.168.10.5:3000/user')
+        // fetch('http://192.168.10.5:3000/user')
+        fetch("http://192.168.0.104:3000/user")
             .then(res => res.json())
             .then(res => {
                 this.setState({ data: res });
@@ -48,7 +49,8 @@ ok = () => {
               
                     registerValue = { "userid": this.state.data[i].userid, "userpwd": this.state.pwd }
                     this.setState({ userid: this.state.data[i].userid })
-                    fetch('http://192.168.10.5:3000/user3', {
+                    // fetch('http://192.168.10.5:3000/user3', {
+                    fetch('http://192.168.0.104:3000/user3', {
                         method: "POST",
                         headers: {
                             "Content-type": "application/json;charset=utf-8",
