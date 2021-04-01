@@ -146,10 +146,10 @@ export default class Customer extends Component {
                         }}>
                             <View style={{width: '90%', height: '30%',flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center',}}>
                             <TouchableOpacity style={{ width: '30%',  }} onPress={() => Actions.listcust()}>
-                                <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kktg.jpg' }}/>
+                                <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kkvl.jpg' }}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={{ width: '70%', }}onPress={() => Actions.listcust()}>
-                                <Text style={{ marginTop: 10 * s, height: '50%', fontSize: 25 }}>行业类别</Text>
+                                <Text style={{ marginTop: 10 * s, height: '50%', fontSize: 25 }}>信息行业</Text>
                                 <Text style={{ marginTop: 5 * s, width: '30%' }}>查找相关企业</Text>
                             </TouchableOpacity>
                             </View>
@@ -159,16 +159,16 @@ export default class Customer extends Component {
                                 <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kktg.jpg' }}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={{ width: '70%', }}>
-                                <Text style={{ marginTop: 10 * s, height: '50%', fontSize: 25 }}>行业类别</Text>
+                                <Text style={{ marginTop: 10 * s, height: '50%', fontSize: 25 }}>影视行业</Text>
                                 <Text style={{ marginTop: 5 * s, width: '30%' }}>查找相关企业</Text>
                             </TouchableOpacity>
                             </View>
                             <View style={{width: '90%', height: '30%',flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center',}}>
                             <TouchableOpacity style={{ width: '30%',  }}>
-                                <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kktg.jpg' }}/>
+                                <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kkvl.jpg' }}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={{ width: '70%', }}>
-                                <Text style={{ marginTop: 10 * s, height: '50%', fontSize: 25 }}>行业类别</Text>
+                                <Text style={{ marginTop: 10 * s, height: '50%', fontSize: 25 }}>教育行业</Text>
                                 <Text style={{ marginTop: 5 * s, width: '30%' }}>查找相关企业</Text>
                             </TouchableOpacity>
                             </View>

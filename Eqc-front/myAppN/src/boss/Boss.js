@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     TextInput, TouchableOpacity, StatusBar,
     View, Text, Image,
-    FlatList, Dimensions, ScrollView, StyleSheet
+    FlatList, Dimensions, ScrollView, StyleSheet, Alert
 } from 'react-native';
 import Icon1 from 'react-native-vector-icons/FontAwesome';
 
@@ -50,14 +50,20 @@ export default class Boss extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // name:'heart-o',
-            // color:'',
-            wish: false,
+            showValue:'',
+            color:false,
+            // wish: false,
             tits: [],
             page: 1,
-            tit: [], data: '',
+            tit: [], data: [],
             // user:this.props.userid
         }
+    }
+    onChangeText(inputData){
+        this.setState({showValue:inputData});
+    }
+    showData(){
+        Alert(this.state.showValue);
     }
     componentDidMount() {
         console.log(this.props.userid)
@@ -73,13 +79,40 @@ export default class Boss extends Component {
                 //     }
                 // }
                 console.log(res)
-                this.setState({ tits: res });
+                this.setState({ tits: res ,data:res.personname});
             })
         fetch('http://192.168.0.102:3000/merchandise')
             .then(res => res.json())
             .then(res => {
                 this.setState({ tit: res });
             }, console.log(this.state.tit))
+    }
+    onChangeTextKeyword(text){
+        var  reg = new RegExp(text,"i");
+        if(!text){
+            this.setState({
+                color:false,
+                dataLis:this.state.data,
+                replaceText:''
+            });
+            return;
+        }
+        else if(text){
+            let newData=[];
+            for (var i = 0;i<this.state.data.length;i++){
+                let ds =this.state.data[i];
+                if(ds.title&&title.indexOf(text)!=-1){
+                    newData.push(ds);
+                }
+            }
+            this.setState({
+                color:true,
+                dataLis:newData,
+                replaceText:text
+            });
+            return;
+        }
+
     }
 
 
@@ -102,7 +135,18 @@ export default class Boss extends Component {
 
 
                     <View style={{ height: 60 * s, width: 500 * s, flexDirection: 'row', marginLeft: '11%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
-                        <TouchableOpacity style={{ width: '15%', height: '80%' }}>
+                    
+                        <TextInput
+                            placeholder="请输入Boss名"
+                            // onChangeText={(e)=>this.onChangeTextKeyword(e)}
+                            value={this.state.showValue}
+                            onChangeText={this.onChangeTextKeyword.bind(this)}
+                            style={{
+                                width: '85%',
+                                height: '100%'
+                            }}
+                        />
+                        <TouchableOpacity style={{ width: '15%', height: '80%' }} onPress={Actions.detailboss()}>
                             <Icon1
                                 name="search"
                                 style={{
@@ -110,13 +154,7 @@ export default class Boss extends Component {
                                 }}
                             />
                         </TouchableOpacity>
-                        <TextInput
-                            placeholder="请输入搜索名称"
-                            style={{
-                                width: '85%',
-                                height: '100%'
-                            }}
-                        />
+                        
                     </View>
 
                 </View>
@@ -172,7 +210,7 @@ export default class Boss extends Component {
                         marginTop: 20 * s,
                         padding: 4,
                     }}>
-                        <TouchableOpacity style={{ width: '90%', height: '25%' }} onPress={() => Actions.detailboss()}>
+                        {/* <TouchableOpacity style={{ width: '90%', height: '25%' }} onPress={() => Actions.detailboss()}>
                             <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>Boss</Text>
 
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
@@ -180,7 +218,7 @@ export default class Boss extends Component {
                                 <Text style={{ marginTop: 5 * s, width: '30%' }}>简介</Text>
                                 <Text style={{ color: 'red', width: '30%' }}>公司</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>时间</Text>
                             </View>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                         
                     </View>
                 </ScrollView>

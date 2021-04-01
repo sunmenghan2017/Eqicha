@@ -137,27 +137,32 @@ export default class Fujinqiye extends Component {
                         }}>
                             <View style={{width: '90%', height: '30%', backgroundColor:'#fff',flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
                             <TouchableOpacity style={{ width: '30%',  }}>
-                            <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kktg.jpg' }}/>
+                            <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kkvl.jpg' }}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={{ width: '70%', }}>
-                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>公司名</Text>
+                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>1024的店</Text>
 
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
 
-                                    <Text style={{ marginTop: 5 * s, width: '30%' }}>位置</Text>
-                                    <Text style={{ color: 'red', width: '30%' }}>经营者</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>类别</Text>
+                                    <Text style={{ marginTop: 5 * s, width: '50%' }}>石家庄市xx街xx号</Text>
+                                    <Text style={{ color: 'red', width: '20%' }}>李四</Text><Text style={{ marginTop: 5 * s, width: '20%' }}>设备</Text>
                                 </View>
                             </TouchableOpacity>
                             </View>
-                            <TouchableOpacity style={{ width: '90%', height: '25%' }}>
-                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>title</Text>
+                            <View style={{width: '90%', height: '30%', backgroundColor:'#fff',flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
+                            <TouchableOpacity style={{ width: '30%',  }}>
+                            <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kkvl.jpg' }}/>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{ width: '70%', }}>
+                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>10的店</Text>
 
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
 
-                                    <Text style={{ marginTop: 5 * s, width: '30%' }}>来源</Text>
-                                    <Text style={{ color: 'red', width: '30%' }}>阅读量</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>时间</Text>
+                                    <Text style={{ marginTop: 5 * s, width: '50%' }}>石家庄市xx街xx号</Text>
+                                    <Text style={{ color: 'red', width: '20%' }}>王五</Text><Text style={{ marginTop: 5 * s, width: '20%' }}>文体</Text>
                                 </View>
                             </TouchableOpacity>
+                            </View>
                         </View>
                     </ScrollView>
 

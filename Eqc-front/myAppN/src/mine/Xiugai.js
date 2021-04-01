@@ -18,7 +18,7 @@ export default class Xiugai extends Component {
         }
     }
     componentDidMount() {
-        fetch('http://192.168.10.5:3000/user')
+        fetch('http://192.168.0.105:3000/user')
             .then(res => res.json())
             .then(res => {
                 this.setState({ data: res });
@@ -52,7 +52,7 @@ export default class Xiugai extends Component {
 
                     registerValue = { "userid": this.state.data[i].userid, "userzhiwei": this.state.zhiwei, "companyname": this.state.company }
                     this.setState({ userid: this.state.data[i].userid })
-                    fetch('http://192.168.10.5:3000/user2', {
+                    fetch('http://192.168.0.105:3000/user2', {
                         method: "POST",
                         headers: {
                             "Content-type": "application/json;charset=utf-8",

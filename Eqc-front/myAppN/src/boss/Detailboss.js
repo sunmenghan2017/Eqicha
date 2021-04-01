@@ -61,7 +61,7 @@ export default class Detailboss extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.102:3000/sale')
+        fetch('http://192.168.0.104:3000/person')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -104,13 +104,14 @@ export default class Detailboss extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text>名</Text>
+                    <Text>李彦宏</Text>
 
                 </View>
                 <ScrollView style={{backgroundColor:'#fc9'}}>
 
 
-                    <View style={{width:640*s,justifyContent:'center',alignItems:'center'}}><Text>内容</Text>
+                    <View style={{width:540*s,justifyContent:'center',alignItems:'center',alignContent:'center',marginLeft:'10%'}}>
+                        <Text>李彦宏（Robin Li），男，汉族，无党派人士，1968年11月出生，山西阳泉人。百度创始人、董事长兼首席执行官（CEO）。</Text>
                     </View>
                 </ScrollView>
 

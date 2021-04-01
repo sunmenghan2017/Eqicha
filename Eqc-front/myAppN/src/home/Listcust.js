@@ -81,22 +81,22 @@ export default class Listcust extends Component {
                             backgroundColor: '#eee'
                         }}>
                             
-                            <TouchableOpacity style={{ width: '90%', height: '25%' }}>
-                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>公司名</Text>
-
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
-
-                                    <Text style={{ marginTop: 5 * s, width: '30%' }}>经营人</Text>
-                                    <Text style={{ color: 'red', width: '30%' }}>简介</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>时间</Text>
+                            <TouchableOpacity style={{ width: '90%', height: '35%' }}>
+                                <View style={{ flexDirection: 'row', justifyContent: 'space-between',alignContent:'center', alignItems: 'center', width: '100%', height: '40%' }}>
+                                    <View style={{ width: '30%' , height: '50%',}}>
+                                    <Text style={{ marginTop: 5 * s, fontSize: 25 }}>百度</Text>
+                                    <Text style={{ marginTop: 5 * s,}}>李彦宏</Text>
+                                    </View>
+                                    <Text style={{ color: 'red', width: '70%' , marginTop: '13%', }}>百度以“用科技让复杂的世界更简单”为使命，以“成为最懂用户，并能帮助人们成长的全球顶级高科技公司”为愿景。</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={{ width: '90%', height: '25%' }}>
-                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>title</Text>
-
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
-
-                                    <Text style={{ marginTop: 5 * s, width: '30%' }}>来源</Text>
-                                    <Text style={{ color: 'red', width: '30%' }}>阅读量</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>时间</Text>
+                            <TouchableOpacity style={{ width: '90%', height: '35%' }}>
+                                <View style={{ flexDirection: 'row', justifyContent: 'space-between',alignContent:'center', alignItems: 'center', width: '100%', height: '40%' }}>
+                                    <View style={{ width: '30%' , height: '50%',}}>
+                                    <Text style={{ marginTop: 5 * s, fontSize: 25 }}>360</Text>
+                                    <Text style={{ marginTop: 5 * s,}}>李四</Text>
+                                    </View>
+                                    <Text style={{ color: 'red', width: '70%' , marginTop: '13%', }}>360以“用科技让复杂的世界更简单”为使命，以“成为最懂用户，并能帮助人们成长的全球顶级高科技公司”为愿景。</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>

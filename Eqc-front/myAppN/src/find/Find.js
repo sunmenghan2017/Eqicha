@@ -61,7 +61,7 @@ export default class Find extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.104:3000/tips')
+        fetch('http://192.168.0.105:3000/tips')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -80,7 +80,22 @@ export default class Find extends Component {
                 this.setState({ tit: res });
             }, console.log(this.state.tit))
     }
-
+    shoucang = () => {
+        if (!this.state.wish) {
+            this.refs.changeColor.color = 'red',
+                this.setState({
+                    // name:'heart',
+                    wish: true
+                })
+        }
+        else {
+            this.refs.changeColor.color = '#000',
+                this.setState({
+                    // name:'heart-o',
+                    wish: false
+                })
+        }
+    }
 
     render() {
         //         console.log('home')

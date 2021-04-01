@@ -59,7 +59,7 @@ export default class Home extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.104:3000/news')
+        fetch('http://192.168.0.105:3000/news')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -85,22 +85,22 @@ export default class Home extends Component {
     //             this.setState({tits: res});
     //         })
     // }
-    shoucang = () => {
-        if (!this.state.wish) {
-            this.refs.changeColor.color = 'red',
-                this.setState({
-                    // name:'heart',
-                    wish: true
-                })
-        }
-        else {
-            this.refs.changeColor.color = '#000',
-                this.setState({
-                    // name:'heart-o',
-                    wish: false
-                })
-        }
-    }
+    // shoucang = () => {
+    //     if (!this.state.wish) {
+    //         this.refs.changeColor.color = 'red',
+    //             this.setState({
+    //                 // name:'heart',
+    //                 wish: true
+    //             })
+    //     }
+    //     else {
+    //         this.refs.changeColor.color = '#000',
+    //             this.setState({
+    //                 // name:'heart-o',
+    //                 wish: false
+    //             })
+    //     }
+    // }
     render() {
         //         console.log('home')
         return (

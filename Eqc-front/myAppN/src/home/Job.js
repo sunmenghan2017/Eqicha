@@ -61,7 +61,7 @@ export default class Job extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.102:3000/sale')
+        fetch('http://192.168.0.105:3000/zhaopin')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -133,22 +133,22 @@ export default class Job extends Component {
                             padding: 4,
                             backgroundColor: '#eee'
                         }}>
-                            <TouchableOpacity style={{ width: '90%', height: '25%' }}>
-                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>职位</Text>
+                            <TouchableOpacity style={{ width: '90%', height: '35%' }}>
+                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>运维</Text>
 
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
 
-                                    <Text style={{ marginTop: 5 * s, width: '30%' }}>公司</Text>
-                                    <Text style={{ color: 'red', width: '30%' }}>薪资</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>时间</Text>
+                                    <Text style={{ marginTop: 5 * s, width: '30%' }}>360</Text>
+                                    <Text style={{ color: 'red', width: '30%' }}>3000-5000</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>负责人：李四</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={{ width: '90%', height: '25%' }}>
-                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>title</Text>
+                            <TouchableOpacity style={{ width: '90%', height: '35%' }}>
+                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>行政</Text>
 
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
 
-                                    <Text style={{ marginTop: 5 * s, width: '30%' }}>来源</Text>
-                                    <Text style={{ color: 'red', width: '30%' }}>阅读量</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>时间</Text>
+                                    <Text style={{ marginTop: 5 * s, width: '30%' }}>和简欧集团</Text>
+                                    <Text style={{ color: 'red', width: '30%' }}>3000-4500</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>负责人：王五</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>

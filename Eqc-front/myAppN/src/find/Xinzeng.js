@@ -62,7 +62,7 @@ export default class Xinzeng extends Component {
     componentDidMount() {
         console.log(this.props.userid)
         // fetch('http://192.168.10.5:3000/person')
-        fetch('http://192.168.0.104:3000/xinzeng')
+        fetch('http://192.168.0.105:3000/xinzeng')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){

@@ -40,7 +40,7 @@ export default class Login extends Component {
     this.setState({ isloading: false });
     this.getData();
     // fetch('http://192.168.10.5:3000/user')
-    fetch('http://192.168.0.104:3000/user')
+    fetch('http://192.168.0.105:3000/user')
             .then(res=>res.json())
             .then(res=>{
                 this.setState({data: res});
@@ -64,7 +64,7 @@ export default class Login extends Component {
           registerValue = { "userid": this.state.data[i].userid,"isloading":1  }
           this.setState({ userid: this.state.userid})
             // fetch('http://192.168.10.5:3000/user4', {
-            fetch('http://192.168.0.104:3000/user4', {
+            fetch('http://192.168.0.105:3000/user4', {
             method: "POST",
             headers: {
               "Content-type": "application/json;charset=utf-8",

@@ -14,7 +14,7 @@ export default class Shoucang extends Component {
         }
     }
     componentDidMount(){
-        fetch("http://192.168.0.104:3000/collect")
+        fetch("http://192.168.0.105:3000/collect")
         .then(res=>res.json())
         .then(res=>{
             // for(var i =0;i<res.length;i++){
