@@ -16,15 +16,15 @@ export default class SwiperPage extends Component {
         return (
             <Swiper style={styles.wrapper} showsButtons={false}>
                 <View style={styles.slide1}>
-                    <Image style={styles.img} source={require('../../assets/v2_q5khwj.jpg')} />
+                    <Image style={styles.img} source={require('../../assets/logo.jpg')} />
                     <Text style={styles.start1}>E企查</Text>
                 </View>
                 <View style={styles.slide1}>
-                    <Image style={styles.img} source={require('../../assets/v2_q5kws3.jpg')} />
+                    <Image style={styles.img} source={require('../../assets/chagongsi.jpg')} />
                     <Text style={styles.start1}>查公司</Text>
                 </View>
                 <View style={styles.slide1}>
-                    <Image style={styles.img} source={require('../../assets/v2_q5kwpw.jpg')} />
+                    <Image style={styles.img} source={require('../../assets/bosstu.jpg')} />
                     {/* <Button onPress={this.start} style={styles.start}>开始体验</Button> */}
                     
                     <Text style={styles.start1}>查Boss</Text>
