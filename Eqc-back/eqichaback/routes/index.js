@@ -105,7 +105,6 @@ router.post('/addcompany',function(req,res,next){
 router.get('/editC', function(req, res, next) {
   res.type('html');
   var companyid=req.query.companyid;
-  
   con.query("select * from company where companyid=?",[companyid],function(err,result){
     if(err){
       console.log(err);

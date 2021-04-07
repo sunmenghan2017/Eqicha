@@ -301,24 +301,48 @@ app.get('/collect',jsonParser,(req,res)=>{
 
 
 // 发布职位
-// app.post('/addzhiwei',function(req,res,next){
-//   var userid=req.body.userid;
-//   var zhiwei= req.body.zhiwei;
-//   var yaoqiu=req.body.yaoqiu;
-//   var companyname=req.body.companyname;
-//   var salary=req.body.salary;
-//   con.query("insert into zhaopin(zhaopinid,userid,zhiwei,yaoqiu,companyname,salary) values(?,?,?,?,?,?)",
-//   [parseInt((Math.random()*1000)),userid,zhiwei,yaoqiu,companyname,salary],function(err,result){
-//     if(err){
-//       console.log(err);
-//     }
-//     else{
-//       console.log(result);
-//       res.redirect("/mine");
-//     }
-//   });
-// });
+app.post('/addzhiwei',function(req,res,next){
+  var userid=req.body.userid;
+  var zhiwei= req.body.zhiwei;
+  var yaoqiu=req.body.yaoqiu;
+  var companyname=req.body.companyname;
+  var salary=req.body.salary;
+  var zhaopintel=req.body.zhaopintel;
+  con.query("insert into zhaopin(zhaopinid,userid,zhiwei,yaoqiu,companyname,salary,zhaopintel) values(?,?,?,?,?,?)",
+  [parseInt(('z'+Math.random()*1000)),userid,zhiwei,yaoqiu,companyname,salary,zhaopintel],function(err,result){
+    if(err){
+      console.log(err);
+    }
+    else{
+      console.log(result);
+      res.json(result);
+      // res.redirect("/mine");
+    }
+  });
+});
 
+// 收藏tips
+app.post('/collecttips',(req,res)=>{
+  let data=req.body;
+  console.log(data);
+  let insertData = {
+    collectid:"co"+parseInt(Math.random()*1000),
+    tipsid:data.tipsid,
+    userid:data.userid,
+    tipstitle:data.tipstitle,
+    tipscontent:data.tipscontent
+  }
+  con.query('insert into collect(collectid,tipsid,userid,tipstitle,tipscontent) values(?,?,?)',
+  [insertData.collectid,insertData.tipsid,insertData.userid,insertData.tipstitle,insertData.tipscontent],function(err,result){
+    if(err){
+          console.log(err);
+      }
+        console.log(result);
+        res.json(result); 
+  })
+})
+
+// 退出登录
 
 
 

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #login_form{
+        width:100%;
+        height:100%;
+        background-color:#fff;
+        margin:0 auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .title{
+        width:100%;
+        height:90px;
+        float: left;
+        color:#ffffff;
+        margin-bottom: 3%;
+        background-color:#0e73b6fd;
+        border-bottom:1px solid #ffffff;
+        font-size:24pt;
+        font-family:"楷体";
+        line-height:90px;				
+    }	
+    .title img{
+        margin-top:18px;
+        margin-right: 3%;
+        margin-left: 5%;
+        width: 55px;
+        float: left;
+    }
+.left{
+    height: 70%;
+    width: 10%;
+    border: 2px solid rgb(185, 183, 183);
+    float: left;
+    margin-left: 6%;
+}
+.left div:hover {
+    background-color:#0e73b6fd;
+    cursor:pointer;
+}
+.left h2{
+    /* line-height: 100%; */
+    /* padding-top: 2%; */
+    font-family: "楷体";
+}
+.a{
+    height: 15%;
+    width: 100%;
+    background-color: rgb(185, 183, 183);
+    /* margin-top: 8px; */
+    float: left;
+    color: #fff;
+    text-align:center;
+    /* justify-content: center; */
+}
+.main{
+    height: 70%;
+    width: 80%;
+    border: 1px solid rgb(185, 183, 183);
+    float: left;
+    margin-left: 10px;
+}
+.top{
+    height: 100px;
+    width: 920px;
+    border-bottom: 1px solid rgb(185, 183, 183);
+    float: left;
+}
+.top input{
+    margin-left: 100px;
+    margin-top: 30px;
+    width:35%;
+    height:40px;
+    border-radius: 10px 0 0 10px;
+    /* border-color:rgb(167, 167, 167) ; */
+    border:2px solid rgb(167, 167, 167);
+    background-color:transparent;
+    outline-color: rgb(167, 167, 167)s;
+}
+
+
+
+.zhuce{
+    height: 450px;
+    width: 800px;
+    border:1px solid rgb(185, 183, 183);
+    float: left;
+    margin-left: 60px;
+        }
+        .divv{
+            height: 50px;
+            width: 500px;
+            margin-top: 14px;
+            margin-left: 150px;
+            float: left;
+        }
+        .zhuce h3{
+            float: left;
+        }
+        .zhuce input{
+            float: left;
+            width: 300px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        .zhuce button{
+            width:200px;
+            height:40px;
+            float: right;
+            background-color:#1daea9;
+            border:0;
+            border-radius: 8px;
+            color:white;
+            font-size:20px;
+            font-weight: bolder;
+            margin-right: 30px;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="login_form">
+        <div class="title">
+            <img src='../images/E.png'/>
+            E企查后台管理系统
+            <p  onclick="backhome()" style="font-size: 20px;color:white;float:right;cursor:pointer;margin-right: 20%;"> 《 回首页 </p>
+					
+        </div>
+        <div class="left">
+            <div class="a" style="background: #0e73b6fd;cursor:pointer;">
+                <h2 onclick="companySys()">企业信息</h1>
+            </div>
+            <div class="a" style="margin-top:3%">
+                <h2 onclick="companyList()">企业榜单</h1>
+            </div>
+            <div class="a" style="margin-top:3%">
+                <h2 onclick="zhaopin()">招聘信息</h1>
+            </div>
+            <div class="a" style="margin-top:3%">
+                <h2 onclick="project()">项目信息</h1>
+            </div>
+        </div>
+        <form class="zhuce" action="/editCompany?companyid=<%=editCList[0].companyid%>" method="POST">
+            <div class="divv">
+                <h3>企业ID:</h3>
+                <input type="text" name="cid" value=<%=editCList[0].companyid%>>
+            </div>
+            <div class="divv">
+                <h3>企业名:</h3>
+                <input type="text" name="cname" value=<%=editCList[0].companyname%>>
+            </div>
+            <div class="divv">
+                <h3>地点:</h3>
+                <input type="text" name="cpos" value=<%=editCList[0].companypos%>>
+            </div>
+            <div class="divv">
+                <h3>简介:</h3>
+                <input type="text" name="cintro" value=<%=editCList[0].companyintro%>>
+            </div>
+            <!-- <div class="divv">
+                <h3>人物:</h3>
+                <input type="text" name="cperson" value=<%=editCList[0].companyperson%>>
+            </div>
+            <div class="divv">
+                <h3>招聘信息:</h3>
+                <input type="text" name="czhaopin" value=<%=editCList[0].companyzhaopin%>>
+            </div> -->
+            <!-- <div class="divv">
+                <h3>密码:</h3>
+                <input type="text" value=<%=editCList[0].mpwd%> name="mpwd">
+            </div> -->
+            <!-- <div class="divv">
+                <h3>确认密码:</h3>
+                <input type="text" placeholder="请再次输入密码" name="pwd">
+            </div> -->
+            <div><button>确认</button></div>
+            
+        </form>
+       
+    </div>
+</body>
+<script>
+    function companySys() {
+        window.location = "http://localhost:3000/companyg";
+    }
+    function companyList() {
+        window.location = "http://localhost:3000/bangdang";
+    }
+    function zhaopin() {
+        window.location = "http://localhost:3000/zhaoping";
+    }
+    function project() {
+        window.location = "http://localhost:3000/projectg";
+    }
+    function backhome(){
+        window.location = "http://localhost:3000/home";
+    }
+</script>
+</html>

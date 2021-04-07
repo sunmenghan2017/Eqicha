@@ -38,14 +38,16 @@ DROP TABLE IF EXISTS `collect`;
 
 CREATE TABLE `collect` (
   `collectid` varchar(20) NOT NULL,
-  `tipstitle` varchar(20) NOT NULL,
+  `tipsid` varchar(20) NOT NULL,
   `userid` varchar(20) NOT NULL,
+  `tipstitle` varchar(200) DEFAULT NULL,
+  `tipscontent` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`collectid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Data for the table `collect` */
 
-insert  into `collect`(`collectid`,`tipstitle`,`userid`) values ('ci774723','m123456','u123456'),('ci657372','m123456','u654321');
+insert  into `collect`(`collectid`,`tipsid`,`userid`,`tipstitle`,`tipscontent`) values ('co1','t1','u123456','国际收支差额','一 国国际收支差额既受汇率变化的影响，又'),('ci657372','t2','u654321','利率',NULL);
 
 /*Table structure for table `company` */
 
@@ -69,7 +71,7 @@ CREATE TABLE `company` (
 
 /*Data for the table `company` */
 
-insert  into `company`(`companyid`,`companyname`,`personname`,`companypos`,`zhiwei`,`projectname`,`companytel`,`companyintro`,`companylogo`,`newsid`,`companytime`,`city`) values ('c1','百度','李彦宏','北京市朝阳区胜利西街20号','创始人','百度','111111','百度以“用科技让复杂的世界更简单”为使命，以“成为最懂用户，并能帮助人们成长的全球顶级高科技公司”为愿景。',NULL,'n1','00:20:00.000000','北京'),('c2','北京字节跳动科技有限公司','张一鸣','北京市海淀区知春路甲48号2号楼10A室','创始人','抖音','222222','京字节跳动科技有限公司，成立于2012年3月，是最早将人工智能应用于移动互联网场景的科技企业之一，是中国北京的一家信息科技公司，地址位于北京市海淀区知春路甲48号 [1]  。公司以建设“全球创作与交',NULL,'n2',NULL,NULL),('c4','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('c5','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+insert  into `company`(`companyid`,`companyname`,`personname`,`companypos`,`zhiwei`,`projectname`,`companytel`,`companyintro`,`companylogo`,`newsid`,`companytime`,`city`) values ('c2','北京字节跳动科技有限公司','张一鸣','北京市海淀区知春路甲48号2号楼10A室','创始人','抖音','222222','京字节跳动科技有限公司，成立于2012年3月，是最早将人工智能应用于移动互联网场景的科技企业之一，是中国北京的一家信息科技公司，地址位于北京市海淀区知春路甲48号 [1]  。公司以建设“全球创作与交',NULL,'n2',NULL,NULL),('','622',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `denglu` */
 
@@ -163,8 +165,8 @@ DROP TABLE IF EXISTS `tips`;
 
 CREATE TABLE `tips` (
   `tipsid` varchar(20) NOT NULL,
-  `tipstitle` varchar(20) NOT NULL,
-  `tipscontent` varchar(20) NOT NULL,
+  `tipstitle` varchar(200) NOT NULL,
+  `tipscontent` varchar(200) NOT NULL,
   PRIMARY KEY (`tipsid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -219,12 +221,13 @@ CREATE TABLE `zhaopin` (
   `companyname` varchar(50) NOT NULL,
   `userid` varchar(20) DEFAULT NULL,
   `salary` varchar(11) DEFAULT NULL,
+  `zhaopintel` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`zhaopinid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Data for the table `zhaopin` */
 
-insert  into `zhaopin`(`zhaopinid`,`zhiwei`,`yaoqiu`,`companyname`,`userid`,`salary`) values ('z1','英语讲师','英语好责任心强本科 联系电话：11111','猿辅导','','4000-5000'),('z2','前端工程师','前端好前端好','百度',NULL,'5000-6000');
+insert  into `zhaopin`(`zhaopinid`,`zhiwei`,`yaoqiu`,`companyname`,`userid`,`salary`,`zhaopintel`) values ('z1','英语讲师','英语好责任心强本科 联系电话：11111','猿辅导','','4000-5000',NULL),('z2','前端工程师','前端好前端好','百度',NULL,'5000-6000',NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

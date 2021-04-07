@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #login_form{
+        width:100%;
+        height:100%;
+        background-color:#fff;
+        margin:0 auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .title{
+        width:100%;
+        height:90px;
+        float: left;
+        color:#ffffff;
+        margin-bottom: 3%;
+        background-color:#0e73b6fd;
+        border-bottom:1px solid #ffffff;
+        font-size:24pt;
+        font-family:"楷体";
+        line-height:90px;				
+    }	
+    .title img{
+        margin-top:18px;
+        margin-right: 3%;
+        margin-left: 5%;
+        width: 55px;
+        float: left;
+    }
+.left{
+    height: 70%;
+    width: 12%;
+    border: 2px solid rgb(185, 183, 183);
+    float: left;
+    margin-left: 10%;
+}
+.left div:hover {
+    background-color:#0e73b6fd;
+    cursor:pointer;
+}
+.left h1{
+    /* line-height: 100%; */
+    /* padding-top: 2%; */
+    font-family: "楷体";
+}
+.a{
+    height: 16%;
+    width: 100%;
+    background-color: rgb(185, 183, 183);
+    /* margin-top: 8px; */
+    float: left;
+    color: #fff;
+    text-align:center;
+    /* justify-content: center; */
+}
+.main{
+    height: 70%;
+    width: 60%;
+    border: 1px solid rgb(185, 183, 183);
+    float: left;
+    margin-left: 10px;
+}
+.top{
+    height: 100px;
+    width: 920px;
+    border-bottom: 1px solid rgb(185, 183, 183);
+    float: left;
+}
+.top input{
+    margin-left: 100px;
+    margin-top: 30px;
+    width:35%;
+    height:40px;
+    border-radius: 10px 0 0 10px;
+    /* border-color:rgb(167, 167, 167) ; */
+    border:2px solid rgb(167, 167, 167);
+    background-color:transparent;
+    outline-color: rgb(167, 167, 167)s;
+}
+.search_Bt{
+    background-color:#0e73b6fd;
+    width:6%;
+    height:46px;
+    border:0;
+    border-radius: 0 10px 10px 0;
+    color:white;
+    font-size:15px;
+    margin-top:30px;
+    position:absolute;
+    cursor: pointer;
+}
+/* .top h1{
+    color:#0e73b6fd;
+    float: left;
+    padding-left:20px;
+} */
+
+.botton{
+    text-align: center;
+}
+.botton button{
+    background-color: #0e73b6fd;
+}
+.add{
+    height: 40px;
+    width: 10%;
+    font-size: 15px;
+    text-align: center;
+    float: right;
+    color: white;
+    border:0;
+    margin-right: 20%;
+    /* margin-left:20px; */
+    margin-top: 35px;
+    border-radius:10px;
+    background-color: #0e73b6fd;
+    cursor: pointer;
+}
+.bottom{
+    bottom: 70px;
+    left: 300px;
+    position: absolute;
+}
+.btn1{
+    margin-left: 600px;
+}
+.btn2{
+    margin-left: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div id="login_form">
+        <div class="title">
+            <img src='../images/E.png'/>
+            <%= title %>
+            <p  onclick="backhome()" style="font-size: 20px;color:white;float:right;cursor:pointer;margin-right: 20%;"> 《 回首页 </p>
+					
+        </div>
+        <div class="left">
+            <div class="a" style="background: #0e73b6fd;cursor:pointer;">
+                <h1 onclick="companySys()">企业信息</h1>
+            </div>
+            <div class="a" style="margin-top:3%">
+                <h1 onclick="companyList()">企业榜单</h1>
+            </div>
+            <div class="a" style="margin-top:3%">
+                <h1 onclick="zhaopin()">招聘信息</h1>
+            </div>
+            <div class="a" style="margin-top:3%">
+                <h1 onclick="project()">项目信息</h1>
+            </div>
+        </div>
+        <div class="main">
+            <div class="top">
+                <!-- <h1>项目库</h1> -->
+                <button class="add" onclick="showZhuce()">添加人员</button>
+                <form class="myform" >
+                    <input type='text' value='' placeholder="请输入项目名"
+                    class="search_Dongtai" id="search_Dongtai" autocomplete="off" name="search_Dongtai">
+                    <button type='submit' class="search_Bt" id="search_Bt" > 查找</button>
+                    <!-- <button>替换</button> -->
+                </form>
+            </div>
+            <div class="botton">
+                <table cellspacing=5 cellpadding=10 width=900>
+                    <tr>
+                      <th>ID</th>
+                      <th>用户名</th>
+                      <th>真实姓名</th>
+                      <th>性别</th>
+                      <th>手机号</th>
+                      <th>邮箱</th>
+                      <th>操作</th>
+                    </tr>
+                   
+                  </table>
+            </div>
+        </div>
+       
+    </div>
+</body>
+<script>
+    function companySys() {
+        window.location = "http://localhost:3000/companyg";
+    }
+    function companyList() {
+        window.location = "http://localhost:3000/bangdang";
+    }
+    function zhaopin() {
+        window.location = "http://localhost:3000/zhaoping";
+    }
+    function project() {
+        window.location = "http://localhost:3000/projectg";
+    }
+    function backhome(){
+        window.location = "http://localhost:3000/home";
+    }
+</script>
+</html>
