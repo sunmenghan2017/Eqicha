@@ -46,10 +46,10 @@
         }
         .project{
             width:18%;
-            height:250px;
+            height:200px;
             background-color: #0e73b6fd;
             margin-left: 10%;
-            margin-top:100px;
+            margin-top:80px;
             text-align: center;
             /* justify-content: center; */
             float: left;
@@ -63,7 +63,7 @@
             color:white;
             font-size: 40px;
             font-family: "楷体";
-            line-height: 250px;
+            line-height: 200px;
         }
     </style>
 </head>
@@ -74,8 +74,8 @@
                 <%= title %>					
         </div>
         <div class="down">
-            <div class="project" onclick="projectSys()">
-                <p>项目系统</p>
+            <div class="project" onclick="companySys()">
+                <p>企业系统</p>
             </div>
             <div class="project" onclick="userSys()">
                 <p>用户系统</p>
@@ -84,17 +84,20 @@
                 <p>人物系统</p>
             </div>
             <div class="project" onclick="newsSys()">
-                <p>新闻系统</p>
+                <p>资讯系统</p>
             </div>
             <div class="project" onclick="managerSys()">
                 <p>管理员系统</p>
             </div>
+
         </div>
+        
     </div>	
 </body>	
 <script>
-    function projectSys(){
-        window.location = "http://localhost:3000/projectsys";
+    function companySys(){
+        window.location = "http://localhost:3000/companyg";
     }
+
 </script>
 </html>

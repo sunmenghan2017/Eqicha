@@ -16,7 +16,18 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
 var homeRouter = require('./routes/index');
+var companygRouter = require('./routes/index');
+var editcRouter = require('./routes/index');
+var addcRouter = require('./routes/index');
+var bangdangRouter = require('./routes/index');
+var zhaopingRouter = require('./routes/index');
 var projectgRouter = require('./routes/index');
+var usergRouter = require('./routes/index');
+var collectgRouter = require('./routes/index');
+var persongRouter = require('./routes/index');
+var newsgRouter = require('./routes/index');
+var tipsgRouter = require('./routes/index');
+var managergRouter = require('./routes/index');
 
 
 app.all('*', function(req, res, next) {
@@ -41,18 +52,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
+// 后台路由
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-
 app.use('/home', homeRouter);
-app.use('/projectG',projectgRouter);
-// app.use('/companyG', companygRouter);
-// app.use('/personG', persongRouter);
-// app.use('/newsG', newsgRouter);
-// app.use('/userG', usergRouter);
-// app.use('/managerG', managergRouter);
+app.use('/companyG',companygRouter);
+app.use('/editC',editcRouter);
+app.use('/addC',addcRouter);
+app.use('/bangdanG', bangdangRouter);
+app.use('/zhaopinG', zhaopingRouter);
+app.use('/projectG', projectgRouter);
+app.use('/userG', usergRouter);
+app.use('/collectG', collectgRouter);
+app.use('/personG', persongRouter);
+app.use('/newsG', newsgRouter);
+app.use('/tipsG', tipsgRouter);
+app.use('/managerG', managergRouter);
 
 
 // user表接口
@@ -174,7 +189,6 @@ app.get('/user',jsonParser,(req,res)=>{
 
 // 公司表接口
 app.get('/company',jsonParser,(req,res)=>{
-  // console.log(req.body);
   con.query('select * from company',function(err,result){
       if(err){
           console.log('[SELECT ERROR] - ', err.message);
@@ -183,6 +197,23 @@ app.get('/company',jsonParser,(req,res)=>{
       res.json(result); 
   }); 
 }) 
+
+//查找公司
+// app.post('/this_company',function(req,res,next){
+//   var search_result = JSON.stringify(req.body.search_Company).slice(1,-1);
+//   console.log(search_result);
+//     var selectSQL = "select * from company where companyname=?";
+//     console.log(selectSQL);
+//     con.query(selectSQL,search_result,function(err,result){
+//       console.log(result);
+//       if(err){
+//         console.log(err);
+//       }
+//       else{
+//         res.json(result);
+//       }
+//     })
+//   })
 
 // 人物表接口
 app.get('/person',jsonParser,(req,res)=>{
@@ -267,6 +298,26 @@ app.get('/collect',jsonParser,(req,res)=>{
       res.json(result); 
   }); 
 }) 
+
+
+// 发布职位
+// app.post('/addzhiwei',function(req,res,next){
+//   var userid=req.body.userid;
+//   var zhiwei= req.body.zhiwei;
+//   var yaoqiu=req.body.yaoqiu;
+//   var companyname=req.body.companyname;
+//   var salary=req.body.salary;
+//   con.query("insert into zhaopin(zhaopinid,userid,zhiwei,yaoqiu,companyname,salary) values(?,?,?,?,?,?)",
+//   [parseInt((Math.random()*1000)),userid,zhiwei,yaoqiu,companyname,salary],function(err,result){
+//     if(err){
+//       console.log(err);
+//     }
+//     else{
+//       console.log(result);
+//       res.redirect("/mine");
+//     }
+//   });
+// });
 
 
 

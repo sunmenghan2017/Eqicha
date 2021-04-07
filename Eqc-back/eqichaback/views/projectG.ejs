@@ -69,7 +69,7 @@
 }
 .top{
     height: 100px;
-    width: 1000px;
+    width: 920px;
     border-bottom: 1px solid rgb(185, 183, 183);
     float: left;
 }
@@ -141,14 +141,22 @@
     <div id="login_form">
         <div class="title">
             <img src='../images/E.png'/>
-            <%= title %>					
+            <%= title %>
+            <p  onclick="backhome()" style="font-size: 20px;color:white;float:right;cursor:pointer;margin-right: 20%;"> 《 回首页 </p>
+					
         </div>
         <div class="left">
             <div class="a" style="background: #0e73b6fd;cursor:pointer;">
-                <h1 onclick="projectSys()">项目库</h1>
+                <h1 onclick="companySys()">企业信息</h1>
             </div>
             <div class="a" style="margin-top:3%">
-                <h1 onclick="projectList()">项目榜单</h1>
+                <h1 onclick="companyList()">企业榜单</h1>
+            </div>
+            <div class="a" style="margin-top:3%">
+                <h1 onclick="zhaopin()">招聘信息</h1>
+            </div>
+            <div class="a" style="margin-top:3%">
+                <h1 onclick="project()">项目信息</h1>
             </div>
         </div>
         <div class="main">
@@ -177,15 +185,24 @@
                   </table>
             </div>
         </div>
+       
     </div>
 </body>
 <script>
-    function projectSys() {
-        window.location = "http://localhost:3000/projectsys";
+    function companySys() {
+        window.location = "http://localhost:3000/companyg";
     }
-    function projectList() {
-        window.location = "http://localhost:3000/projectlist";
+    function companyList() {
+        window.location = "http://localhost:3000/bangdang";
     }
-
+    function zhaopin() {
+        window.location = "http://localhost:3000/zhaoping";
+    }
+    function project() {
+        window.location = "http://localhost:3000/projectg";
+    }
+    function backhome(){
+        window.location = "http://localhost:3000/home";
+    }
 </script>
 </html>
