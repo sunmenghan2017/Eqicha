@@ -68,7 +68,7 @@ export default class Boss extends Component {
     componentDidMount() {
         console.log(this.props.userid)
         // fetch('http://192.168.10.5:3000/person')
-        fetch('http://192.168.0.104:3000/person')
+        fetch('http://172.21.94.180:3000/person')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){

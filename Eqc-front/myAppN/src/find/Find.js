@@ -61,7 +61,7 @@ export default class Find extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.105:3000/tips')
+        fetch('http://172.21.94.180:3000/tips')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -141,7 +141,7 @@ export default class Find extends Component {
                                     <TouchableOpacity style={styles.btn} onPress={() => Actions.bangdan()}>
                                         <View style={styles.img}>
                                             <Icon
-                                                name="eye"
+                                                name="search"
                                                 style={{
                                                     color: '#fc9',fontSize:70
                                                 }}

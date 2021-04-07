@@ -59,7 +59,8 @@ export default class Home extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.105:3000/news')
+        // fetch('http://192.168.0.105:3000/news')
+        fetch('http://172.21.94.180:3000/news')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
