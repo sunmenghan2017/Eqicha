@@ -298,6 +298,16 @@ app.get('/collect',jsonParser,(req,res)=>{
       res.json(result); 
   }); 
 }) 
+// 招聘表接口
+app.get('/zhaopin',jsonParser,(req,res)=>{
+  con.query('select * from zhaopin',function(err,result){
+      if(err){
+          console.log('[SELECT ERROR] - ', err.message);
+          return;
+      }
+      res.json(result); 
+  }); 
+})
 
 
 // 发布职位
@@ -342,7 +352,22 @@ app.post('/collecttips',(req,res)=>{
   })
 })
 
-// 退出登录
+// 搜索老板
+app.post('/this_person',function(req,res,next){
+  var search_result = req.body.personname;
+  console.log(search_result);
+    var selectSQL = "select * from person where personname=?";
+    console.log(selectSQL);
+    con.query(selectSQL,search_result,function(err,result){
+      console.log(result);
+      if(err){
+        console.log(err);
+      }
+      else{
+        res.json(result); 
+      }
+    })
+  })
 
 
 

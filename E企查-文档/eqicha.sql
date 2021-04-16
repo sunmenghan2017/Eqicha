@@ -64,14 +64,14 @@ CREATE TABLE `company` (
   `companyintro` varchar(100) DEFAULT NULL,
   `companylogo` tinyblob,
   `newsid` varchar(50) DEFAULT NULL,
-  `companytime` time(6) DEFAULT NULL,
+  `companytime` varchar(6) DEFAULT NULL,
   `city` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`companyid`,`companyname`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf32;
 
 /*Data for the table `company` */
 
-insert  into `company`(`companyid`,`companyname`,`personname`,`companypos`,`zhiwei`,`projectname`,`companytel`,`companyintro`,`companylogo`,`newsid`,`companytime`,`city`) values ('c2','北京字节跳动科技有限公司','张一鸣','北京市海淀区知春路甲48号2号楼10A室','创始人','抖音','222222','京字节跳动科技有限公司，成立于2012年3月，是最早将人工智能应用于移动互联网场景的科技企业之一，是中国北京的一家信息科技公司，地址位于北京市海淀区知春路甲48号 [1]  。公司以建设“全球创作与交',NULL,'n2',NULL,NULL),('','622',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+insert  into `company`(`companyid`,`companyname`,`personname`,`companypos`,`zhiwei`,`projectname`,`companytel`,`companyintro`,`companylogo`,`newsid`,`companytime`,`city`) values ('c2','北京字节跳动科技有限公司','张一鸣','北京市海淀区知春路甲48号2号楼10A室','创始人','抖音','222222','京字节跳动科技有限公司，成立于2012年3月',NULL,'n2','2012年','北京'),('c931','衡水至臻','李明','衡水桃城区','主任',NULL,'111111','衡二的民办中学号',NULL,'n3','2010年','衡水');
 
 /*Table structure for table `denglu` */
 

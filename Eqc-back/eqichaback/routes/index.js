@@ -70,13 +70,14 @@ router.get('/addC', function(req, res, next) {
   res.render('addC');
 });
 router.post('/addcompany',function(req,res,next){
-  var cname=req.body.companyname;
-  var cpos= req.body.companypos;
-  var cintro=req.body.companyintro;
+  var cname=req.body.cname;
+  var cpos= req.body.cpos;
+  var cintro=req.body.cintro;
+  console.log(req.body.cintro);
   // var cperson=req.body.companyperson;
   // var czhaopin=req.body.companyzhaopin;
-  con.query("insert into company(companyname,companypos,companyintro) values(?,?,?)",
-  [parseInt((Math.random()*1000)),cname,cpos,cintro],
+  con.query("insert into company(companyid,companyname,companypos,companyintro) values(?,?,?,?)",
+  ['c'+parseInt((Math.random()*1000)),cname,cpos,cintro],
   function(err,result){
     if(err){
       console.log(err);
@@ -117,14 +118,15 @@ router.get('/editC', function(req, res, next) {
   })
 });
 router.post('/editCompany',function(req,res,next){
-  var cid=req.body.companyid;
-  var cname=req.body.companyname;
-  var cpos= req.body.companypos;
-  var cintro=req.body.companyintro;
+  var cid=req.body.cid;
+  var cname=req.body.cname;
+  var cpos= req.body.cpos;
+  var cintro=req.body.cintro;
   // var cperson=req.body.companyperson;
   // var czhaopin=req.body.companyzhaopin;
-  con.query("update company set companyid=?,companyname=?,companypos=?,companyintro=?",
-  [cid,cname,cpos,cintro],function(err,result){
+  console.log(req.body.cid);
+  con.query("update company set companyname=?,companypos=?,companyintro=? where companyid=?",
+  [cname,cpos,cintro,cid],function(err,result){
     if(err){
       console.log(err);
     }
@@ -135,21 +137,22 @@ router.post('/editCompany',function(req,res,next){
 })
 
 // 查询企业
-// router.post('/this_companyg',function(req,res,next){
-//   var search_result = JSON.stringify(req.body.search_Company).slice(1,-1);
-//   console.log(search_result);
-//     var selectSQL = "select * from company where companyname=?";
-//     console.log(selectSQL);
-//     con.query(selectSQL,search_result,function(err,result){
-//       console.log(result);
-//       if(err){
-//         console.log(err);
-//       }
-//       else{
-//         res.render('companyg',{companyg:result});
-//       }
-//     })
-//   })
+router.post('/this_companyg',function(req,res,next){
+  var search_result = JSON.stringify(req.body.search_Company).slice(1,-1);
+  console.log(search_result);
+    var selectSQL = "select * from company where companyname=?";
+    console.log(selectSQL);
+    con.query(selectSQL,search_result,function(err,result){
+      console.log(result);
+      if(err){
+        console.log(err);
+      }
+      else{
+        res.type('html');
+        res.render('companyg',{company:result});
+      }
+    })
+  })
 
 router.get('/bangdang', function(req, res, next) {
   console.log('bangdang')

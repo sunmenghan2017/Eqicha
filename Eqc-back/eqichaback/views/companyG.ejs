@@ -62,7 +62,7 @@
 }
 .main{
     height: 70%;
-    width: 80%;
+    width: 1200px;
     border: 1px solid rgb(185, 183, 183);
     float: left;
     margin-left: 10px;
@@ -104,12 +104,13 @@
 
 .botton{
     /* text-align: center; */
-    width: 100%;
-    background-color: yellow;
+    width: 1200px;
+    /* background-color: yellow; */
     
 }
 .botton table{
     background-color: #0e73b6fd;
+    width: 1200px;
 }
 .botton td th tr{
     width:10%
@@ -147,7 +148,7 @@
     <div id="login_form">
         <div class="title">
             <img src='../images/E.png'/>
-            <%= title %>
+            E企查后台管理系统
             <p  onclick="backhome()" style="font-size: 20px;color:white;float:right;cursor:pointer;margin-right: 20%;"> 《 回首页 </p>
 					
         </div>
@@ -169,16 +170,16 @@
             <div class="top">
                 <!-- <h1>项目库</h1> -->
                 <button class="add" onclick="addcompany()">添加企业</button>
-                <form class="myform" >
+                <form class="myform" action="/this_companyg" method="POST">
                     <input type='text' value='' placeholder="请输入项目名"
-                    class="search_Dongtai" id="search_Dongtai" autocomplete="off" name="search_Dongtai">
+                    class="search_Dongtai" id="search_Dongtai" autocomplete="off" name="search_Company">
                     <button type='submit' class="search_Bt" id="search_Bt" > 查找</button>
                     <!-- <button>替换</button> -->
                 </form>
             </div>
             <div class="botton">
-                <table>
-                    <tr style="font-size: 10px;font-family: 宋体">
+                <table cellspacing=5 cellpadding=10 width=100%>
+                    <tr style="font-size: 16px;font-family: 宋体">
                       <th>企业ID</th>
                       <th>企业名</th>
                       <th>负责人</th>
@@ -193,8 +194,7 @@
                       <th>城市</th>
                     </tr>
                     <%for(var i=0;i < company.length;i++){%>
-                        <tr style="font-family: '宋体', Courier, monospace;
-                        font-size: 6px;">
+                        <tr style="font-size: 10px;">
                             <td>
                                 <%= company[i]["companyid"]%>
                             </td>
