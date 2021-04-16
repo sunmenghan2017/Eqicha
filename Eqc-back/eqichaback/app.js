@@ -318,8 +318,9 @@ app.post('/addzhiwei',function(req,res,next){
   var companyname=req.body.companyname;
   var salary=req.body.salary;
   var zhaopintel=req.body.zhaopintel;
-  con.query("insert into zhaopin(zhaopinid,userid,zhiwei,yaoqiu,companyname,salary,zhaopintel) values(?,?,?,?,?,?)",
-  [parseInt(('z'+Math.random()*1000)),userid,zhiwei,yaoqiu,companyname,salary,zhaopintel],function(err,result){
+  var zhaopinpos=req.body.zhaopinpos;
+  con.query("insert into zhaopin(zhaopinid,userid,zhiwei,yaoqiu,companyname,salary,zhaopintel,zhaopinpos) values(?,?,?,?,?,?,?,?)",
+  [parseInt(('z'+Math.random()*1000)),userid,zhiwei,yaoqiu,companyname,salary,zhaopintel,zhaopinpos],function(err,result){
     if(err){
       console.log(err);
     }
@@ -342,7 +343,7 @@ app.post('/collecttips',(req,res)=>{
     tipstitle:data.tipstitle,
     tipscontent:data.tipscontent
   }
-  con.query('insert into collect(collectid,tipsid,userid,tipstitle,tipscontent) values(?,?,?)',
+  con.query('insert into collect(collectid,tipsid,userid,tipstitle,tipscontent) values(?,?,?,?,?)',
   [insertData.collectid,insertData.tipsid,insertData.userid,insertData.tipstitle,insertData.tipscontent],function(err,result){
     if(err){
           console.log(err);

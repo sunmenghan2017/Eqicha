@@ -193,7 +193,7 @@ CREATE TABLE `user` (
 
 /*Data for the table `user` */
 
-insert  into `user`(`userid`,`username`,`usertel`,`userpwd`,`userauatar`,`companyname`,`isloading`,`userzhiwei`,`tipsid`) values ('u123456','å°é»„','123456','123456','ÿØÿà\0JFIF\0\0H\0H\0\0ÿÛ\0C\0\r	\n\n\r\n\r \' .)10.)-,3:J>36F7,-@WAFLNRSR2>ZaZP`JQROÿÛ\0C&&O5-5OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOÿÀ\0 î\"\0ÿÄ\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿÄ\0C\0	\0!1AQa\"q‘25R’#%T','280',1,NULL,NULL),('u654321','å°å­™','654321','654321','ÿØÿà\0JFIF\0,,\0\0ÿÛ\0C\0		\n\r\Z\Z $.\' \",#(7),01444\'9=82<.342ÿÛ\0C			\r\r2!!22222222222222222222222222222222222222222222222222ÿÀ\0îô\"\0ÿÄ\0\0\0\0\0\0\0\0\0\0\0\0\0ÿÄ\0C\0\0\0!1A\"Qaq2‘¡#B±Á','0',0,NULL,NULL);
+insert  into `user`(`userid`,`username`,`usertel`,`userpwd`,`userauatar`,`companyname`,`isloading`,`userzhiwei`,`tipsid`) values ('u123456','å°é»„','123456','123456','ÿØÿà\0JFIF\0\0H\0H\0\0ÿÛ\0C\0\r	\n\n\r\n\r \' .)10.)-,3:J>36F7,-@WAFLNRSR2>ZaZP`JQROÿÛ\0C&&O5-5OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOÿÀ\0 î\"\0ÿÄ\0\0\0\0\0\0\0\0\0\0\0\0\0\0ÿÄ\0C\0	\0!1AQa\"q‘25R’#%T','280',0,NULL,NULL),('u654321','å°å­™','654321','654321','ÿØÿà\0JFIF\0,,\0\0ÿÛ\0C\0		\n\r\Z\Z $.\' \",#(7),01444\'9=82<.342ÿÛ\0C			\r\r2!!22222222222222222222222222222222222222222222222222ÿÀ\0îô\"\0ÿÄ\0\0\0\0\0\0\0\0\0\0\0\0\0ÿÄ\0C\0\0\0!1A\"Qaq2‘¡#B±Á','0',0,NULL,NULL);
 
 /*Table structure for table `xinzeng` */
 
@@ -222,12 +222,13 @@ CREATE TABLE `zhaopin` (
   `userid` varchar(20) DEFAULT NULL,
   `salary` varchar(11) DEFAULT NULL,
   `zhaopintel` varchar(10) DEFAULT NULL,
+  `zhaopinpos` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`zhaopinid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Data for the table `zhaopin` */
 
-insert  into `zhaopin`(`zhaopinid`,`zhiwei`,`yaoqiu`,`companyname`,`userid`,`salary`,`zhaopintel`) values ('z1','è‹±è¯­è®²å¸ˆ','è‹±è¯­å¥½è´£ä»»å¿ƒå¼ºæœ¬ç§‘ è”ç³»ç”µè¯ï¼š11111','çŒ¿è¾…å¯¼','','4000-5000',NULL),('z2','å‰ç«¯å·¥ç¨‹å¸ˆ','å‰ç«¯å¥½å‰ç«¯å¥½','ç™¾åº¦',NULL,'5000-6000',NULL);
+insert  into `zhaopin`(`zhaopinid`,`zhiwei`,`yaoqiu`,`companyname`,`userid`,`salary`,`zhaopintel`,`zhaopinpos`) values ('z1','è‹±è¯­è®²å¸ˆ','è‹±è¯­å¥½è´£ä»»å¿ƒå¼ºæœ¬ç§‘ è”ç³»ç”µè¯ï¼š11111','çŒ¿è¾…å¯¼','','4000-5000','11111','åŒ—äº¬'),('z2','å‰ç«¯å·¥ç¨‹å¸ˆ','å‰ç«¯å¥½å‰ç«¯å¥½','ç™¾åº¦',NULL,'5000-6000','22222','ä¸Šæµ·');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
