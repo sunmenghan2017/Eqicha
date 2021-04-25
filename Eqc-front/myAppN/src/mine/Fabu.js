@@ -11,80 +11,94 @@ export default class Fabu extends Component {
 		super();
 		this.state = {
             userid: '',
-            usertel: '',
+            zhaopintel: '',
 			zhiwei: '',
 			yaoqiu: '',
-            company: '',
-            xinzi: '',
+            companyname: '',
+            salary: '',
 			tips: '',
 			data: []
 		}
 	}
-	// componentDidMount() {
-    //     //查找招聘信息
-	// 	fetch('http://192.168.10.5:3000/user')
-	// 		.then(res => res.json())
-	// 		.then(res => {
-	// 			for(var i =0;i<res.length;i++){
-    //                 if(res[i].isloading==1){
-    //                     this.setState({
-    //                         userID:res[i].userid,
-    //                         data:res[i],
-    //                     })
-    //                 }
-    //             }
-    //             console.log("userid:"+this.state.userID); 
-	// 		})
-	// }
+	componentDidMount() {
+        //查找招聘信息
+		fetch('http://192.168.43.36:3000/user')
+			.then(res => res.json())
+			.then(res => {
+				for(var i =0;i<res.length;i++){
+                    if(res[i].isloading==1){
+                        this.setState({
+                            userid:res[i].userid,
+                            data:res[i],
+                        })
+                    }
+                }
+                console.log("userid:"+this.state.userid); 
+			})
+		// fetch('http://192.168.43.36:3000/user')
+		// 	.then(res => res.json())
+		// 	.then(res => {
+		// 		for(var i =0;i<res.length;i++){
+        //             if(res[i].isloading==1){
+        //                 this.setState({
+        //                     userid:res[i].userid,
+        //                     data:res[i],
+        //                 })
+        //             }
+        //         }
+        //         console.log("userid:"+this.state.userID); 
+		// 	})
+
+	}
 	zhiweihandle = (text) => {
 		this.setState({ zhiwei: text })
 	}
-	companyhandle = (text) => {
-		this.setState({ company: text })
+	companynamehandle = (text) => {
+		this.setState({ companyname: text })
 	}
 	yaoqiuhandle = (text) => {
 		this.setState({ yaoqiu: text })
 	}
-	xinzihandle = (text) => {
-		this.setState({ xinzi: text })
+	salaryhandle = (text) => {
+		this.setState({ salary: text })
 	}
-    telhandle = (text) => {
-		this.setState({ usertel: text })
+    zhaopintelhandle = (text) => {
+		this.setState({ zhaopintel: text })
 	}
-	// fabu = () => {
-	// 	const registerValue = { "userid": this.state.userid, "usertel": this.state.usertel, "zhiwei": this.state.zhiwei,"xinzi": this.state.xinzi,"company": this.state.company,"yaoqiu": this.state.yaoqiu, }
+	fabu = () => {
+		const registerValue = { "userid": this.state.userid, "zhapointel": this.state.zhaopintel, "zhiwei": this.state.zhiwei,"salary": this.state.salary,"companyname": this.state.companyname,"yaoqiu": this.state.yaoqiu, }
 
-	// 	if (this.state.username != "" && this.state.usertel != "" && this.state.zhiwei != "") {
-	// 		fetch('http://192.168.10.5:3000/user1', {
-	// 			method: "POST",
-	// 			headers: {
-	// 				"Content-type": "application/json;charset=utf-8",
-	// 			},
-	// 			body: JSON.stringify(registerValue),
-	// 		})
-	// 			.then(res => res.text())
-	// 			.then(data => {
-	// 				console.log(data);
-	// 				this.setState({ isregister:true})	
+		if (this.state.zhaopintel != "" && this.state.zhiwei != "") {
+			fetch('http://192.168.43.36:3000/addzhiwei', {
+				method: "POST",
+				headers: {
+					"Content-type": "application/json;charset=utf-8",
+				},
+				body: JSON.stringify(registerValue),
+			})
+				.then(res => res.text())
+				.then(data => {
+					console.log(data);
+					this.setState({ isregister:true})	
 					
-	// 				Actions.pop();					
+					Actions.job();					
 				
-	// 			});
-	// 	}
+				});
+		}
 
-	// }
+	}
 	
 
 	render() {
 		return (
 			<View>
 				<View style={{ flexDirection: 'row', height: '10%', width: '90%', marginTop: '5%', marginBottom: '15%' }}>
-					<TouchableOpacity onPress={() => Actions.mine()} style={{ flexDirection: 'row', left: '5%' }} >
+					<TouchableOpacity style={{ flexDirection: 'row', left: '5%' }} >
 						<Icon1
 							name="angle-left"
-							style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }}
+							style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }}  onPress={Actions.pop}
 						/>
-						<Text style={{ fontSize: 16, color: "blue" }}>返回</Text>
+						<Text style={{ fontSize: 16, color: "blue" }}  onPress={Actions.pop}>返回</Text>
 					</TouchableOpacity>
 				</View>
 				<View
@@ -105,7 +119,7 @@ export default class Fabu extends Component {
 							onChangeText={this.zhiweihandle}
 						/>
                         <TextInput placeholder="薪资"
-							onChangeText={this.xinzihandle}
+							onChangeText={this.salaryhandle}
 						/>
 					</View>
 					<View
@@ -120,7 +134,7 @@ export default class Fabu extends Component {
 						}}>
 						<Icon1 name="keyboard-o" color="red" />
 						<TextInput
-							onChangeText={this.companyhandle}
+							onChangeText={this.companynamehandle}
 							placeholder="公司"
 						/>
 					</View>
@@ -153,7 +167,7 @@ export default class Fabu extends Component {
 
 						<Icon1 name="user" color="red" />
 						<TextInput placeholder="负责人手机号"
-							onChangeText={this.telhandle}
+							onChangeText={this.zhaopintelhandle}
 						/>
 					</View>
 					

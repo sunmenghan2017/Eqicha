@@ -50,37 +50,55 @@ export default class Zixun extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // name:'heart-o',
-            // color:'',
             wish: false,
             tits: [],
             page: 1,
             tit: [], data: '',
-            // user:this.props.userid
+            user:this.props.userid
         }
     }
     componentDidMount() {
-        console.log(this.props.userid)
-        fetch('http://192.168.0.102:3000/sale')
-            .then(res => res.json())
-            .then(res => {
-                // for(var i=0;i<res.length;i++){
-                //     if(this.props.saleid==res[i].saleid){
-                //         this.setState({
-                //             data:res[i],
-                //         })
-                //     }
-                // }
-                console.log(res)
-                this.setState({ tits: res });
-            })
-        fetch('http://192.168.0.102:3000/merchandise')
-            .then(res => res.json())
-            .then(res => {
-                this.setState({ tit: res });
-            }, console.log(this.state.tit))
+        console.log(this.props.tipsid)
+        fetch('http://192.168.43.36:3000/tips')
+        .then(res=>res.json())
+        .then(res=>{
+            for(var i=0;i<res.length;i++){
+                if(this.props.tipsid==res[i].tipsid){
+                    this.setState({
+                        data:res[i],
+                    })
+                }
+            }
+        })
     }
-
+    shoucang=()=>{
+        console.log(this.props.userid)
+        if(!this.state.wish){
+            registerValue ={'userid':this.state.user,'tipsid':this.props.tipsid}
+            this.setState({
+                name:'star',
+                color:'#ea3b3b',
+                wish:true
+            })
+            fetch('http://192.168.43.36:3000/collecttips', {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify(registerValue),
+          }).then(res => res.text())
+            .then(data => {
+              console.log(data);
+            });
+        }
+        else{
+            this.setState({
+                name:'star',
+                color:'gary',
+                wish:false
+            })
+        }
+    }
 
     render() {
         //         console.log('home')
@@ -104,13 +122,14 @@ export default class Zixun extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text>文章名</Text>
+                    <Text>{this.state.data.tipstitle}</Text>
+                    <Icon name="star" style={{float:'right',color:'gray'}} onPress={this.shoucang}/>
 
                 </View>
                 <ScrollView style={{backgroundColor:'#fc9'}}>
 
 
-                    <View style={{width:640*s,justifyContent:'center',alignItems:'center'}}><Text>内容</Text>
+                    <View style={{width:640*s,justifyContent:'center',alignItems:'center'}}><Text>{this.state.data.tipscontent}</Text>
                     </View>
                 </ScrollView>
 

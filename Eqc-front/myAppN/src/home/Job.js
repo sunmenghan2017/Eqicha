@@ -55,13 +55,13 @@ export default class Job extends Component {
             wish: false,
             tits: [],
             page: 1,
-            tit: [], data: '',
+            tits: [], data: '',
             // user:this.props.userid
         }
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.105:3000/zhaopin')
+        fetch('http://192.168.43.36:3000/zhiwei')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -74,11 +74,6 @@ export default class Job extends Component {
                 console.log(res)
                 this.setState({ tits: res });
             })
-        fetch('http://192.168.0.102:3000/merchandise')
-            .then(res => res.json())
-            .then(res => {
-                this.setState({ tit: res });
-            }, console.log(this.state.tit))
     }
 
 
@@ -99,7 +94,10 @@ export default class Job extends Component {
                             <TouchableOpacity style={{ width: '15%', height: '80%' }}>
                             <Icon name='left' color='#fc9' style={{paddingLeft:10}} onPress={Actions.pop}/>
                             </TouchableOpacity>
-                            <Text style={{width: '85%',height: '80%',color:'#fc9',fontSize:20}}>找工作</Text>
+                            <Text style={{width: '65%',height: '80%',color:'#fc9',fontSize:20,}}>找工作</Text>
+                            <TouchableOpacity style={{ width: '18%', height: '80%' }} onPress={Actions.fabu}>
+                            <Text style={{width: '100%',height: '80%',color:'#fff',fontSize:20,backgroundColor:'#fc9',marginLeft:'-15%'}}>招聘发布</Text>
+                            </TouchableOpacity>
                         </View>
 
                     
@@ -125,15 +123,32 @@ export default class Job extends Component {
                     <ScrollView>
                         
 
-                        <View style={{
-                            width: '100%',
-                            height: 300 * s,
-                            alignItems: 'center',
-                            marginTop: 20 * s,
-                            padding: 4,
-                            backgroundColor: '#eee'
-                        }}>
-                            <TouchableOpacity style={{ width: '90%', height: '35%' }}>
+                        
+                        {
+                            // this.state.tits&&
+                            this.state.tits.map((item, key) => (
+                                <View style={{
+                                    width: '100%',
+                                    height: 150 * s,
+                                    alignItems: 'center',
+                                    marginTop: 20 * s,
+                                    padding: 4,
+                                    backgroundColor: '#eee'
+                                }}>
+                                    <TouchableOpacity style={{ width: '90%', height: '90%' }}>
+                                        <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>{item.zhiwei}</Text>
+
+                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
+
+                                            <Text style={{ marginTop: 5 * s, width: '30%' }}>{item.companyname}</Text>
+                                            <Text style={{ color: 'red', width: '30%' }}>{item.salary}</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>负责人：李四</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                    
+                                </View>
+                                ))
+                            }    
+                            {/* <TouchableOpacity style={{ width: '90%', height: '35%' }}>
                                 <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>运维</Text>
 
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
@@ -150,8 +165,7 @@ export default class Job extends Component {
                                     <Text style={{ marginTop: 5 * s, width: '30%' }}>和简欧集团</Text>
                                     <Text style={{ color: 'red', width: '30%' }}>3000-4500</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>负责人：王五</Text>
                                 </View>
-                            </TouchableOpacity>
-                        </View>
+                            </TouchableOpacity> */}
                     </ScrollView>
 
                 

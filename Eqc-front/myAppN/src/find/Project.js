@@ -62,7 +62,7 @@ export default class Project extends Component {
     componentDidMount() {
         console.log(this.props.userid)
         // fetch('http://192.168.10.5:3000/person')
-        fetch('http://192.168.0.105:3000/project')
+        fetch('http://192.168.43.36:3000/project')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){

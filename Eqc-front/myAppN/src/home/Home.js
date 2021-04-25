@@ -60,7 +60,7 @@ export default class Home extends Component {
     componentDidMount() {
         console.log(this.props.userid)
         // fetch('http://192.168.0.105:3000/news')
-        fetch('http://172.21.94.180:3000/news')
+        fetch('http://192.168.43.36:3000/news')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -73,7 +73,7 @@ export default class Home extends Component {
                 console.log(res)
                 this.setState({ tits: res });
             })
-        fetch('http://192.168.0.102:3000/merchandise')
+        fetch('http://192.168.43.36:3000/company')
             .then(res => res.json())
             .then(res => {
                 this.setState({ tit: res });

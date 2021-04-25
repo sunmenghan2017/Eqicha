@@ -32,7 +32,7 @@ export default class Mine extends Component {
     componentDidMount(){
         this.getData();  
         // fetch("http://192.168.10.5:3000/user")
-        fetch("http://172.21.94.180:3000/user")
+        fetch("http://192.168.43.36:3000/user")
         .then(res=>res.json())
         .then(res=>{
             for(var i =0;i<res.length;i++){

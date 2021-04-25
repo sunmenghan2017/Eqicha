@@ -47,65 +47,109 @@ const styles = StyleSheet.create({
 })
 
 export default class Find extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             // name:'heart-o',
             // color:'',
             wish: false,
             tits: [],
             page: 1,
-            tit: [], data: '',
-            // user:this.props.userid
+            tit: [], 
+            tipsId: [],
+            data: [],
+            userid: '',
+            list: [],
         }
     }
     componentDidMount() {
-        console.log(this.props.userid)
-        fetch('http://172.21.94.180:3000/tips')
+        // console.log(this.props.userid)
+        fetch("http://192.168.43.36:3000/user")
             .then(res => res.json())
             .then(res => {
-                // for(var i=0;i<res.length;i++){
-                //     if(this.props.saleid==res[i].saleid){
-                //         this.setState({
-                //             data:res[i],
-                //         })
-                //     }
-                // }
-                console.log(res)
-                this.setState({ tits: res });
+                for (var i = 0; i < res.length; i++) {
+                    if (res[i].isloading == 1) {
+                        this.setState({
+                            userid: res[i].userid,
+                        })
+                    }
+                }
+                // console.log("userid:"+this.state.userid);
             })
-        fetch('http://192.168.0.104:3000/merchandise')
+        fetch("http://192.168.43.36:3000/collect")
             .then(res => res.json())
             .then(res => {
-                this.setState({ tit: res });
-            }, console.log(this.state.tit))
-    }
-    shoucang = () => {
-        if (!this.state.wish) {
-            this.refs.changeColor.color = 'red',
-                this.setState({
-                    // name:'heart',
-                    wish: true
-                })
-        }
-        else {
-            this.refs.changeColor.color = '#000',
-                this.setState({
-                    // name:'heart-o',
-                    wish: false
-                })
-        }
-    }
+                for (var i = 0; i < res.length; i++) {
+                    if (res[i].userid == this.state.userid) {
+                        console.log("收藏"+res[i])
+                        this.setState({
+                            data: res,
 
+                            tipsId: [...this.state.tipsId, res[i].tipsid]
+                        })
+                        console.log("a"+res[i].userid);
+                    }
+
+                }
+                // console.log('this.state.tipsId:'+this.state.tipsId);
+            })
+        fetch("http://192.168.43.36:3000/tips")
+            .then(res => res.json())
+            .then(res => {
+                this.setState({ tits: res });
+            }, console.log(this.state.tits))
+            // .then(res => res.json())
+            // .then(res => {
+            //     console.log('this.state.tipsId' + this.state.tipsId);
+            //     for (var i = 0; i < res.length; i++) {
+            //         // console.log(res[i]);
+            //         for (var j = 0; j < this.state.tipsId.length; j++) {
+            //             // console.log('this.state.tipsId[j]' + this.state.tipsId[j])
+            //             // console.log('res[i].tipsid' + res[i].tipsId)
+            //             if (res[i].tipsid == this.state.tipsId[j]) {
+            //                 this.setState({
+            //                     tit: [...this.state.tit, res[i]],
+
+            //                 })
+            //             }
+            //         }
+            //         // this.setState({data:res})
+            //         // console.log(this.state.data);
+            //     }
+            //     console.log("我的"+this.state.tit);
+            //     for (var i = 0; i < this.state.tit.length; i++) {
+            //         this.setState({
+            //             list: [...this.state.list, i]
+            //         })
+            //     }
+            //     console.log("我的="+this.state.list)
+            // })
+            // // console.log("你进来了");
+    }   
+    // shoucang = () => {
+    //                 if (!this.state.wish) {
+    //                     this.refs.changeColor.color = 'red',
+    //                         this.setState({
+    //                             wish: true
+    //                         })
+    //                 }
+    //                 else {
+    //                     this.refs.changeColor.color = 'gray',
+    //                         this.setState({
+    //                             wish: false
+    //                         })
+    //                 }
+    //             }
+    
     render() {
-        //         console.log('home')
-        return (
-            <View style={{
-                flex: 1,
-                flexDirection: 'column',
-                justifyContent: 'center',
-                backgroundColor: '#fff'
-            }}>
+                //         console.log('home')
+                return(
+            <View style = {{
+                        flex: 1,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        backgroundColor: '#fff'
+            }} >
 
                 
                     <View style={{ height: 300 * s, width: 640 * s, backgroundColor: '#eee' }}>
@@ -204,6 +248,19 @@ export default class Find extends Component {
                                     
                                 </View>
                                 {
+                    this.state.list.map((i) =>(
+                        <View>
+                            
+                            <TouchableOpacity onPress={()=>Actions.zixun({'tipsid':this.state.tipsId[i],'userid':this.state.userid})}>
+                                
+                                
+                                <Text>{this.state.tit[i].tipstitle}</Text>
+                           </TouchableOpacity>
+                        </View>
+                        
+                    ))
+                }
+                                {
                             // this.state.tits&&
                             this.state.tits.map((item, key) => (
                                 <View style={{
@@ -214,12 +271,12 @@ export default class Find extends Component {
                                     padding: 4,
                                     backgroundColor: '#eee'
                                 }}>
-                                    <TouchableOpacity style={{ width: '90%', height: 90 * s }} >
-                                        <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:25 }} onPress={() => Actions.zixun()}>{item.tipstitle}</Text>
+                                    <TouchableOpacity style={{ width: '90%', height: 90 * s }} onPress={Actions.zixun}>
+                                        <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:25 }} >{item.tipstitle}</Text>
                                 
                                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 30 * s }}>
                                             <Text style={{width:'60%' }}>{item.tipscontent.lenght<=15?item.tipscontent:item.tipscontent.slice(0,15)+'···'}</Text>
-                                            <Icon name="star" style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }} onPress={() => Actions.pop()}/>
+                                            <Icon name="star" style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }} />
                                         </View>
                                     </TouchableOpacity>
                                 </View>
@@ -230,7 +287,7 @@ export default class Find extends Component {
                 </ScrollView>
 
                 
-            </View>
+            </View >
 
 
 

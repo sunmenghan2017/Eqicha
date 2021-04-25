@@ -14,7 +14,7 @@ export default class Shoucang extends Component {
         }
     }
     componentDidMount(){
-        fetch("http://192.168.0.105:3000/collect")
+        fetch("http://192.168.43.36:3000/collect")
         .then(res=>res.json())
         .then(res=>{
             // for(var i =0;i<res.length;i++){
@@ -43,7 +43,7 @@ export default class Shoucang extends Component {
                 {
                         // this.state.tits&&
                         this.state.data.map((item, key) => (
-                    <View style={{width:'90%',alignItems:'center'}}><Text>{item.tipstitle}</Text></View>
+                    <View style={{width:'90%',alignItems:'center',marginTop:'20px'}}><Text>{item.tipstitle}</Text></View>
                         ))
     }
                 </ScrollView>

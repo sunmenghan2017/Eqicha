@@ -40,7 +40,7 @@ export default class Login extends Component {
     this.setState({ isloading: false });
     this.getData();
     // fetch('http://192.168.10.5:3000/user')
-    fetch('http://172.21.94.180:3000/user')
+    fetch('http://192.168.43.36:3000/user')
             .then(res=>res.json())
             .then(res=>{
                 this.setState({data: res});
@@ -64,7 +64,7 @@ export default class Login extends Component {
           registerValue = { "userid": this.state.data[i].userid,"isloading":1  }
           this.setState({ userid: this.state.userid})
             // fetch('http://192.168.10.5:3000/user4', {
-            fetch('http://172.21.94.180:3000/user4', {
+            fetch('http://192.168.43.36:3000/user4', {
             method: "POST",
             headers: {
               "Content-type": "application/json;charset=utf-8",
@@ -75,7 +75,7 @@ export default class Login extends Component {
               console.log(data);
             });
           
-          alert("success!");
+          // alert("success!");
           AsyncStorage.setItem('user', JSON.stringify(this.state.data))
             .then(() => {
               Actions.homePage({'userid':this.state.data.userid});

@@ -190,7 +190,6 @@ const App = () => {
 									<Scene key='tousu' hideNavBar={true} component={Tousu}/>
 									<Scene key='shoucang' hideNavBar={true} component={Shoucang}/>
 									<Scene key='qiye' hideNavBar={true} component={Qiye}/>
-									<Scene key='fabu' hideNavBar={true} component={Fabu}/>
 									<Scene key='lianxi' hideNavBar={true} component={Lianxi}/>
 									
 								</Scene>
@@ -205,6 +204,7 @@ const App = () => {
 				<Scene key='register' hideNavBar component={Register} />
 				<Scene key='forget' hideNavBar component={Forget} />
 				<Scene key='xiugai' hideNavBar component={Xiugai} />
+				<Scene key='fabu' hideNavBar={true} component={Fabu}/>
 				
 				<Scene key='shezhi' hideNavBar component={Shezhi}/>
 				<Scene key='job' hideNavBar component={Job} />

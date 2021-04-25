@@ -116,7 +116,7 @@ export default class Register extends Component {
 	}
 	componentDidMount() {
 		// fetch('http://192.168.10.5:3000/user')
-		fetch('http://172.21.94.180:3000/user')
+		fetch('http://192.168.43.36:3000/user')
 			.then(res => res.json())
 			.then(res => {
 				this.setState({ data: res });
@@ -140,7 +140,7 @@ export default class Register extends Component {
 
 		if (this.state.username != "" && this.state.usertel != "" && this.state.userpwd != "") {
 			// fetch('http://192.168.10.5:3000/user1', {
-			fetch('http://172.21.94.180:3000/user1', {
+			fetch('http://192.168.43.36:3000/user1', {
 				method: "POST",
 				headers: {
 					"Content-type": "application/json;charset=utf-8",
@@ -151,7 +151,7 @@ export default class Register extends Component {
 				.then(data => {
 					console.log(data);
 					this.setState({ isregister:true})
-					alert('register OK');
+					// alert('register OK');
 						
 					AsyncStorage.setItem('user', JSON.stringify(this.state.data))
 						.then(() => {

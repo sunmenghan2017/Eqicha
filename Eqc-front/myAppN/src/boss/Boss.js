@@ -68,7 +68,7 @@ export default class Boss extends Component {
     componentDidMount() {
         console.log(this.props.userid)
         // fetch('http://192.168.10.5:3000/person')
-        fetch('http://172.21.94.180:3000/person')
+        fetch('http://192.168.43.36:3000/person')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -81,11 +81,11 @@ export default class Boss extends Component {
                 console.log(res)
                 this.setState({ tits: res ,data:res.personname});
             })
-        fetch('http://192.168.0.102:3000/merchandise')
-            .then(res => res.json())
-            .then(res => {
-                this.setState({ tit: res });
-            }, console.log(this.state.tit))
+        // fetch('http://192.168.0.102:3000/merchandise')
+        //     .then(res => res.json())
+        //     .then(res => {
+        //         this.setState({ tit: res });
+        //     }, console.log(this.state.tit))
     }
     onChangeTextKeyword(text){
         var  reg = new RegExp(text,"i");
