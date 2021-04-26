@@ -36,22 +36,22 @@
     }
 .left{
     height: 70%;
-    width: 12%;
+    width: 10%;
     border: 2px solid rgb(185, 183, 183);
     float: left;
-    margin-left: 10%;
+    margin-left: 6%;
 }
 .left div:hover {
     background-color:#0e73b6fd;
     cursor:pointer;
 }
-.left h1{
+.left h2{
     /* line-height: 100%; */
     /* padding-top: 2%; */
     font-family: "楷体";
 }
 .a{
-    height: 16%;
+    height: 15%;
     width: 100%;
     background-color: rgb(185, 183, 183);
     /* margin-top: 8px; */
@@ -62,7 +62,7 @@
 }
 .main{
     height: 70%;
-    width: 60%;
+    width: 1200px;
     border: 1px solid rgb(185, 183, 183);
     float: left;
     margin-left: 10px;
@@ -103,10 +103,18 @@
 } */
 
 .botton{
-    text-align: center;
+    /* text-align: center; */
+    width: 1200px;
+    /* background-color: yellow; */
+    
 }
-.botton button{
+.botton table{
     background-color: #0e73b6fd;
+    width: 1200px;
+}
+.botton td,th,tr{
+    width:10%;
+    text-align: center;
 }
 .add{
     height: 40px;
@@ -141,46 +149,76 @@
     <div id="login_form">
         <div class="title">
             <img src='../images/E.png'/>
-            <%= title %>
+            E企查后台管理系统
             <p  onclick="backhome()" style="font-size: 20px;color:white;float:right;cursor:pointer;margin-right: 20%;"> 《 回首页 </p>
 					
         </div>
         <div class="left">
-            <div class="a" style="background: #0e73b6fd;cursor:pointer;">
-                <h1 onclick="companySys()">企业信息</h1>
+            <div class="a">
+                <h2 onclick="companySys()">企业信息</h1>
             </div>
             <div class="a" style="margin-top:3%">
-                <h1 onclick="companyList()">企业榜单</h1>
+                <h2 onclick="companyList()">企业榜单</h1>
             </div>
-            <div class="a" style="margin-top:3%">
-                <h1 onclick="zhaopin()">招聘信息</h1>
+            <div class="a" style="margin-top:3%;">
+                <h2 onclick="zhaopin()">招聘信息</h1>
             </div>
-            <div class="a" style="margin-top:3%">
-                <h1 onclick="project()">项目信息</h1>
+            <div class="a" style="margin-top:3%;background: #0e73b6fd;cursor:pointer">
+                <h2 onclick="project()">项目信息</h1>
             </div>
         </div>
         <div class="main">
             <div class="top">
                 <!-- <h1>项目库</h1> -->
-                <button class="add" onclick="showZhuce()">添加人员</button>
-                <form class="myform" >
+                <button class="add" onclick="addproject()">添加项目</button>
+                <form class="myform" action="/this_projectg" method="POST">
                     <input type='text' value='' placeholder="请输入项目名"
-                    class="search_Dongtai" id="search_Dongtai" autocomplete="off" name="search_Dongtai">
+                    class="search_Dongtai" id="search_Dongtai" autocomplete="on" name="search_Project">
                     <button type='submit' class="search_Bt" id="search_Bt" > 查找</button>
                     <!-- <button>替换</button> -->
                 </form>
             </div>
             <div class="botton">
-                <table cellspacing=5 cellpadding=10 width=900>
-                    <tr>
-                      <th>ID</th>
-                      <th>用户名</th>
-                      <th>真实姓名</th>
-                      <th>性别</th>
-                      <th>手机号</th>
-                      <th>邮箱</th>
-                      <th>操作</th>
+                <table cellspacing=5 cellpadding=10 width=100%>
+                    <tr style="font-size: 16px;font-family: 宋体">
+                      <th>项目ID</th>
+                      <th>项目名</th>
+                      <th>负责人</th>
+                      <th>项目介绍</th>
+                      <th>公司名</th>
                     </tr>
+                    <%for(var i=0;i < project.length;i++){%>
+                        <tr style="font-size: 10px;">
+                            <td>
+                                <%= project[i]["projectid"]%>
+                            </td>
+                            <td>
+                                <%= project[i]["projectname"]%>
+                            </td>
+                            <td>
+                                <%= project[i]["personname"]%>
+                            </td>
+                            <td>
+                                <%= project[i]["projectintro"]%>
+                            </td>
+                            <td>
+                                <%= project[i]["companyname"]%>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="/editPro?projectid=<%=project[i]["projectid"]%>">
+                                        <img src="../images/edit.png" alt="" style="width: 20px;">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="/delproject?projectid=<%= project[i]["projectid"]%>">
+                                        <img src="../images/delete.png" alt="" style="width: 20px;">
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    <%}%>
+
                    
                   </table>
             </div>
@@ -203,6 +241,9 @@
     }
     function backhome(){
         window.location = "http://localhost:3000/home";
+    }
+    function addproject(){
+        window.location = "http://localhost:3000/addPro";
     }
 </script>
 </html>

@@ -15,14 +15,23 @@ var app = express();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
+// 首页
 var homeRouter = require('./routes/index');
+// 公司管理
 var companygRouter = require('./routes/index');
 var editcRouter = require('./routes/index');
 var addcRouter = require('./routes/index');
+
 var bangdangRouter = require('./routes/index');
+var editbRouter = require('./routes/index');
+var addbRouter = require('./routes/index');
+
 var zhaopingRouter = require('./routes/index');
 var projectgRouter = require('./routes/index');
 var usergRouter = require('./routes/index');
+var edituRouter = require('./routes/index');
+var adduRouter = require('./routes/index');
+
 var collectgRouter = require('./routes/index');
 var persongRouter = require('./routes/index');
 var newsgRouter = require('./routes/index');
@@ -63,6 +72,8 @@ app.use('/bangdanG', bangdangRouter);
 app.use('/zhaopinG', zhaopingRouter);
 app.use('/projectG', projectgRouter);
 app.use('/userG', usergRouter);
+app.use('/editU',edituRouter);
+app.use('/addU',adduRouter);
 app.use('/collectG', collectgRouter);
 app.use('/personG', persongRouter);
 app.use('/newsG', newsgRouter);

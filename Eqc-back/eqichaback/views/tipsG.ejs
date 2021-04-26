@@ -62,7 +62,7 @@
 }
 .main{
     height: 70%;
-    width: 60%;
+    width: 1200px;
     border: 1px solid rgb(185, 183, 183);
     float: left;
     margin-left: 10px;
@@ -103,10 +103,22 @@
 } */
 
 .botton{
+    /* text-align: center; */
+    width: 1200px;
+    /* background-color: yellow; */
+    
+}
+.botton table{
+    background-color: #0e73b6fd;
+    width: 1200px;
+    font-size: 10px;
+}
+.botton td,th,tr{
+    width:10%;
     text-align: center;
 }
-/* .botton button{
-    background-color: #0e73b6fd;
+/* .botton td{
+    text-align: center;
 } */
 .add{
     height: 40px;
@@ -141,31 +153,25 @@
     <div id="login_form">
         <div class="title">
             <img src='../images/E.png'/>
-            <%= title %>
+            E企查后台管理系统
             <p  onclick="backhome()" style="font-size: 20px;color:white;float:right;cursor:pointer;margin-right: 20%;"> 《 回首页 </p>
 					
         </div>
         <div class="left">
-            <div class="a" style="background: #0e73b6fd;cursor:pointer;">
-                <h2 onclick="companySys()">企业信息</h1>
+            <div class="a" >
+                <h2 onclick="newsSys()">新闻信息</h1>
             </div>
-            <div class="a" style="margin-top:3%">
-                <h2 onclick="companyList()">企业榜单</h1>
-            </div>
-            <div class="a" style="margin-top:3%">
-                <h2 onclick="zhaopin()">招聘信息</h1>
-            </div>
-            <div class="a" style="margin-top:3%">
-                <h2 onclick="project()">项目信息</h1>
+            <div class="a" style="margin-top:3%;background: #0e73b6fd;cursor:pointer;">
+                <h2 onclick="tipsList()">Tips信息</h1>
             </div>
         </div>
         <div class="main">
             <div class="top">
                 <!-- <h1>项目库</h1> -->
-                <button class="add" onclick="addcompany()">添加企业</button>
-                <form class="myform" >
-                    <input type='text' value='' placeholder="请输入项目名"
-                    class="search_Dongtai" id="search_Dongtai" autocomplete="off" name="search_Dongtai">
+                <button class="add" onclick="addtips()">添加Tips</button>
+                <form class="myform"  action="/this_tipsg" method="POST">
+                    <input type='text' value='' placeholder="请输入Tips标题"
+                    class="search_Dongtai" id="search_Dongtai" autocomplete="off" name="search_Tips">
                     <button type='submit' class="search_Bt" id="search_Bt" > 查找</button>
                     <!-- <button>替换</button> -->
                 </form>
@@ -173,60 +179,36 @@
             <div class="botton">
                 <table cellspacing=5 cellpadding=10 width=900>
                     <tr>
-                      <th>企业ID</th>
-                      <th>企业名</th>
-                      <th>负责人</th>
-                      <th>企业地址</th>
-                      <th>职位</th>
-                      <th>项目</th>
-                      <th>联系方式</th>
-                      <th>企业介绍</th>
-                      <th>企业logo</th>
-                      <th>新闻id</th>
-                      <th>成立时间</th>
-                      <th>所在城市</th>
+                      <th>TipsID</th>
+                      <th>Tips标题</th>
+                      <th>Tips内容</th>
+                      
+                      
                     </tr>
-                    <%for(var i=0;i < company.length;i++){%>
+                    <%for(var i=0;i < tips.length;i++){%>
                         <tr>
                             <td>
-                                <%= company[i]["companyid"]%>
+                                <%= tips[i]["tipsid"]%>
                             </td>
                             <td>
-                                <%= company[i]["companyname"]%>
+                                <%= tips[i]["tipstitle"]%>
                             </td>
                             <td>
-                                <%= company[i]["personname"]%>
+                                <%= tips[i]["tipscontent"]%>
                             </td>
+                        
+                            
                             <td>
-                                <%= company[i]["companypos"]%>
-                            </td>
-                            <td>
-                                <%= company[i]["zhiwei"]%>
-                            </td>
-                            <td>
-                                <%= company[i]["projectname"]%>
-                            </td>
-                            <td>
-                                <%= company[i]["companytel"]%>
-                            </td>
-                            <td>
-                                <%= company[i]["companyintro"]%>
-                            </td>
-                            <td>
-                                <%= company[i]["companylogo"]%>
-                            </td>
-                            <td>
-                                <%= company[i]["newsid"]%>
-                            </td>
-                            <td>
-                                <%= company[i]["companytime"]%>
-                            </td>
-                            <td>
-                                <%= company[i]["city"]%>
-                            </td>
-                            <td>
-                                <button><a href="/editcompany?companyid=<%=company[i]["companyid"]%>"><img src="../images/edit.png" alt=""></a></button>
-                                <button><a href="/delcompany?companyid=<%= company[i]["companyid"]%>"><img src="../images/delete.png" alt=""></a></button>
+                                <div>
+                                    <a href="/editT?tipsid=<%=tips[i]["tipsid"]%>">
+                                        <img src="../images/edit.png" alt="" style="width: 20px;">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="/deltips?tipsid=<%= tips[i]["tipsid"]%>">
+                                        <img src="../images/delete.png" alt="" style="width: 20px;">
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                     <%}%>
@@ -239,20 +221,17 @@
     </div>
 </body>
 <script>
-    function companySys() {
-        window.location = "http://localhost:3000/companyg";
+    function newsSys() {
+        window.location = "http://localhost:3000/newsg";
     }
-    function companyList() {
-        window.location = "http://localhost:3000/bangdang";
-    }
-    function zhaopin() {
-        window.location = "http://localhost:3000/zhaoping";
-    }
-    function project() {
-        window.location = "http://localhost:3000/projectg";
+    function tipsList() {
+        window.location = "http://localhost:3000/tipsg";
     }
     function backhome(){
         window.location = "http://localhost:3000/home";
+    }
+    function addtips(){
+        window.location = "http://localhost:3000/addT";
     }
 </script>
 </html>

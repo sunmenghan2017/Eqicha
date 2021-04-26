@@ -90,26 +90,26 @@
 
 
 .zhuce{
-    height: 450px;
+    height: 600px;
     width: 800px;
     border:1px solid rgb(185, 183, 183);
     float: left;
     margin-left: 60px;
         }
         .divv{
-            height: 50px;
+            height: 40px;
             width: 500px;
             margin-top: 14px;
             margin-left: 150px;
             float: left;
         }
-        .zhuce h3{
+        .zhuce h4{
             float: left;
         }
         .zhuce input{
             float: left;
             width: 300px;
-            height: 30px;
+            height: 26px;
             margin-top: 10px;
             margin-left: 20px;
         }
@@ -125,7 +125,8 @@
             font-weight: bolder;
             /* margin-right: 30px; */
             margin-right: 350px;
-            margin-top: 80px;
+            margin-top: 50px;
+            cursor:pointer;
         }
 
     </style>
@@ -155,16 +156,40 @@
         <form class="zhuce" action="/addcompany" method="POST">
             
             <div class="divv">
-                <h3>企业:</h3>
+                <h4>企业:</h4>
                 <input type="text" name="cname" >
             </div>
             <div class="divv">
-                <h3>地点:  </h3>
+                <h4>地址:  </h4>
                 <input type="text" name="cpos" >
             </div>
             <div class="divv">
-                <h3>简介:  </h3>
+                <h4>成立时间:  </h4>
+                <input type="text" name="ctime" >
+            </div>
+            <div class="divv">
+                <h4>城市:  </h4>
+                <input type="text" name="ccity" >
+            </div>
+            <div class="divv">
+                <h4>简介:  </h4>
                 <input type="text" name="cintro" >
+            </div>
+            <div class="divv">
+                <h4>负责人:  </h4>
+                <input type="text" name="cperson" >
+            </div>
+            <div class="divv">
+                <h4>职位:  </h4>
+                <input type="text" name="czhiwei" >
+            </div>
+            <div class="divv">
+                <h4>项目:  </h4>
+                <input type="text" name="cproject" >
+            </div>
+            <div class="divv">
+                <h4>联系方式:  </h4>
+                <input type="text" name="ctel" >
             </div>
             <div><button>确认</button></div>
             

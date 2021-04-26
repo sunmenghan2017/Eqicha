@@ -137,76 +137,53 @@
 					
         </div>
         <div class="left">
-            <div class="a" style="background: #0e73b6fd;cursor:pointer;">
+            <div class="a">
                 <h2 onclick="companySys()">企业信息</h1>
             </div>
             <div class="a" style="margin-top:3%">
                 <h2 onclick="companyList()">企业榜单</h1>
             </div>
-            <div class="a" style="margin-top:3%">
+            <div class="a" style="margin-top:3%;background: #0e73b6fd;cursor:pointer;">
                 <h2 onclick="zhaopin()">招聘信息</h1>
             </div>
             <div class="a" style="margin-top:3%">
                 <h2 onclick="project()">项目信息</h1>
             </div>
         </div>
-        <form class="zhuce" action="/editCompany?companyid=<%=editCList[0].companyid%>" method="POST">
+        <form class="zhuce" action="/editZhaopin?zhaopinid=<%=editZList[0].zhaopinid%>" method="POST">
             <div class="divv">
-                <h4>企业ID:</h4>
-                <input type="text" name="cid" value=<%=editCList[0].companyid%>>
+                <h4>招聘ID:</h4>
+                <input type="text" name="zid" value=<%=editZList[0].zhaopinid%>>
             </div>
             <div class="divv">
-                <h4>企业名:</h4>
-                <input type="text" name="cname" value=<%=editCList[0].companyname%>>
+                <h4>职位:</h4>
+                <input type="text" name="zhiwei" value=<%=editZList[0].zhiwei%>>
             </div>
             <div class="divv">
-                <h4>地址:</h4>
-                <input type="text" name="cpos" value=<%=editCList[0].companypos%>>
+                <h4>要求:</h4>
+                <input type="text" name="yaoqiu" value=<%=editZList[0].yaoqiu%>>
             </div>
             <div class="divv">
-                <h4>成立时间:  </h4>
-                <input type="text" name="ctime" value=<%=editCList[0].companytime%>>
+                <h4>企业:  </h4>
+                <input type="text" name="companyname" value=<%=editZList[0].companyname%>>
             </div>
             <div class="divv">
-                <h4>城市:  </h4>
-                <input type="text" name="ccity" value=<%=editCList[0].city%>>
+                <h4>用户ID:  </h4>
+                <input type="text" name="userid" value=<%=editZList[0].userid%>>
             </div>
             <div class="divv">
-                <h4>简介:</h4>
-                <input type="text" name="cintro" value=<%=editCList[0].companyintro%>>
-            </div>
-            <div class="divv">
-                <h4>负责人:  </h4>
-                <input type="text" name="cperson" value=<%=editCList[0].personname%>>
-            </div>
-            <div class="divv">
-                <h4>职位:  </h4>
-                <input type="text" name="czhiwei" value=<%=editCList[0].zhiwei%>>
-            </div>
-            <div class="divv">
-                <h4>项目:  </h4>
-                <input type="text" name="cproject" value=<%=editCList[0].projectname%>>
+                <h4>薪资:</h4>
+                <input type="text" name="salary" value=<%=editZList[0].salary%>>
             </div>
             <div class="divv">
                 <h4>联系方式:  </h4>
-                <input type="text" name="ctel" value=<%=editCList[0].companytel%>>
-            </div>
-            <!-- <div class="divv">
-                <h3>人物:</h3>
-                <input type="text" name="cperson" value=<%=editCList[0].companyperson%>>
+                <input type="text" name="zhaopintel" value=<%=editZList[0].zhaopintel%>>
             </div>
             <div class="divv">
-                <h3>招聘信息:</h3>
-                <input type="text" name="czhaopin" value=<%=editCList[0].companyzhaopin%>>
-            </div> -->
-            <!-- <div class="divv">
-                <h3>密码:</h3>
-                <input type="text" value=<%=editCList[0].mpwd%> name="mpwd">
-            </div> -->
-            <!-- <div class="divv">
-                <h3>确认密码:</h3>
-                <input type="text" placeholder="请再次输入密码" name="pwd">
-            </div> -->
+                <h4>城市:  </h4>
+                <input type="text" name="zhaopinpos" value=<%=editZList[0].zhaopinpos%>>
+            </div>
+            
             <div><button>确认</button></div>
             
         </form>

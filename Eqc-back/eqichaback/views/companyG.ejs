@@ -112,8 +112,9 @@
     background-color: #0e73b6fd;
     width: 1200px;
 }
-.botton td th tr{
-    width:10%
+.botton td,th,tr{
+    width:10%;
+    text-align: center;
 }
 .add{
     height: 40px;
@@ -172,7 +173,7 @@
                 <button class="add" onclick="addcompany()">添加企业</button>
                 <form class="myform" action="/this_companyg" method="POST">
                     <input type='text' value='' placeholder="请输入项目名"
-                    class="search_Dongtai" id="search_Dongtai" autocomplete="off" name="search_Company">
+                    class="search_Dongtai" id="search_Dongtai" autocomplete="on" name="search_Company">
                     <button type='submit' class="search_Bt" id="search_Bt" > 查找</button>
                     <!-- <button>替换</button> -->
                 </form>
