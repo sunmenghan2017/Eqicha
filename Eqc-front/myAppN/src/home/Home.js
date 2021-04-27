@@ -122,7 +122,7 @@ export default class Home extends Component {
                                 <Text style={{ color: '#fff', }}>一站式企业信息查询服务平台</Text>
                             </View>
                             <View style={{ height: 80 * s, width: 500 * s,flexDirection:'row', marginLeft:'11%',justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
-                                <TouchableOpacity style={{width:'15%',height:'80%'}}>
+                                <TouchableOpacity style={{width:'15%',height:'80%'}} onPress={Actions.detailcompany}>
                                     <Icon
                                     name="search"
                                     style={{
@@ -244,7 +244,7 @@ export default class Home extends Component {
                                     padding: 4,
                                     backgroundColor: '#eee'
                                 }}>
-                                    <TouchableOpacity style={{ width: '90%', height: 100*s }} onPress={() => Actions.zixun()}>
+                                    <TouchableOpacity style={{ width: '90%', height: 100*s }} onPress={Actions.detailnews}>
                                         <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:20 }}>{item.newstitle}</Text>
                                 
                                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>

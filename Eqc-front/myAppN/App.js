@@ -21,6 +21,9 @@ import ListDetail from './src/home/ListDetail';
 import Job from './src/home/Job';
 import Customer from './src/home/Customer';
 import Fujinqiye from './src/home/Fujinqiye';
+import Detailnews from './src/home/Detailnews';
+import Detailjob from './src/home/Detailjob';
+import Detailcompany from './src/home/Detailcompany';
 import Boss from './src/boss/Boss';
 import Find from './src/find/Find';
 import Listcust from './src/home/Listcust';
@@ -143,9 +146,9 @@ const App = () => {
 										/>
 									}
 								>
-									<Scene key='home' hideNavBar={true}
-										component={Home}
-									/>
+									<Scene key='home' hideNavBar={true} component={Home}/>
+									<Scene key='detailnews' hideNavBar={true} component={Detailnews}/>
+									<Scene key='detailcompany' hideNavBar={true} component={Detailcompany}/>
 								</Scene>
 								{/* 商品分类 */}
 								<Scene key='goodsPage'
@@ -159,6 +162,7 @@ const App = () => {
 									
 								>
 									<Scene key="boss" hideNavBar={true} component={Boss}/>
+									<Scene key='detailboss' hideNavBar component={Detailboss} />
 								</Scene>
 								<Scene key='likePage'
 									title='发现'
@@ -205,6 +209,7 @@ const App = () => {
 				<Scene key='forget' hideNavBar component={Forget} />
 				<Scene key='xiugai' hideNavBar component={Xiugai} />
 				<Scene key='fabu' hideNavBar={true} component={Fabu}/>
+				<Scene key='detailjob' hideNavBar={true} component={Detailjob}/>
 				
 				<Scene key='shezhi' hideNavBar component={Shezhi}/>
 				<Scene key='job' hideNavBar component={Job} />
@@ -217,7 +222,6 @@ const App = () => {
 
 				<Scene key='listcust' hideNavBar component={Listcust} />
 				<Scene key='zixun' hideNavBar component={Zixun} />
-				<Scene key='detailboss' hideNavBar component={Detailboss} />
 				{/* <Scene key="login" component={ShowMyName}/> */}
 				{/* <Scene key="login1" component={Login}/> */}
 				<Scene key='detail' hideNavBar component={Detail} />

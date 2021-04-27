@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     }
 })
 
-export default class Detailboss extends Component {
+export default class Detailjob extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -61,7 +61,7 @@ export default class Detailboss extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.104:3000/person')
+        fetch('http://192.168.0.104:3000/zhiwei')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){

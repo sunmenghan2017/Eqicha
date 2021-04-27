@@ -140,13 +140,13 @@ export default class Boss extends Component {
                             placeholder="请输入Boss名"
                             // onChangeText={(e)=>this.onChangeTextKeyword(e)}
                             value={this.state.showValue}
-                            onChangeText={this.onChangeTextKeyword.bind(this)}
+                            // onChangeText={this.onChangeTextKeyword.bind(this)}
                             style={{
                                 width: '85%',
                                 height: '100%'
                             }}
                         />
-                        <TouchableOpacity style={{ width: '15%', height: '80%' }} onPress={Actions.detailboss()}>
+                        <TouchableOpacity style={{ width: '15%', height: '80%' }} onPress={Actions.detailboss}>
                             <Icon1
                                 name="search"
                                 style={{
