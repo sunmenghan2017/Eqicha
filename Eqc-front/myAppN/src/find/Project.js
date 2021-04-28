@@ -56,7 +56,7 @@ export default class Project extends Component {
             tits: [],
             page: 1,
             tit: [], data: '',
-            // user:this.props.userid
+            userid:this.props.userid
         }
     }
     componentDidMount() {
@@ -102,15 +102,14 @@ export default class Project extends Component {
                     {
                         // this.state.tits&&
                         this.state.tits.map((item, key) => (
-                            <View style={{ width: '90%', height: 350 * s,  backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%' ,paddingLeft:'5%'}}>
+                            <View style={{ width: '90%', height: 150 * s,  backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%' ,paddingLeft:'5%'}}>
 
-                                <TouchableOpacity style={{ width: '90%', }} onPress={() => Actions.detailboss()}>
+                                <TouchableOpacity style={{ width: '90%', }} onPress={() => Actions.detailproject({'projectid':item.projectid,'userid':this.state.userid})}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 130 * s }}>
                                         <Text style={{ marginTop: 5 * s, width: '50%', height: 40 * s, fontSize: 25 }}>{item.projectname}</Text>
                                         <Text style={{ marginTop: 15 * s, width: '20%', }}>{item.personname}</Text>
                                         <Text style={{ marginTop: 15 * s, width: '30%', }}>{item.companyname}</Text>
                                     </View>
-                                    <Text style={{ marginTop: 5 * s, width: '100%', }}>{item.projectintro}</Text>
                                 </TouchableOpacity>
                             </View>
                         ))

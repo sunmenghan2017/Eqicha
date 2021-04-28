@@ -24,6 +24,7 @@ import Fujinqiye from './src/home/Fujinqiye';
 import Detailnews from './src/home/Detailnews';
 import Detailjob from './src/home/Detailjob';
 import Detailcompany from './src/home/Detailcompany';
+import Detailproject from './src/home/Detailproject';
 import Boss from './src/boss/Boss';
 import Find from './src/find/Find';
 import Listcust from './src/home/Listcust';
@@ -43,6 +44,8 @@ import Xinzeng from './src/find/Xinzeng';
 import Bangdan from './src/find/Bangdan';
 import Project from './src/find/Project';
 import Touzi from './src/find/Touzi';
+import Detailxinzeng from './src/home/Detailxinzeng';
+import Detailbangdan from './src/home/Detailbangdan';
 // import City  from './src/home/City';
 
 
@@ -210,6 +213,9 @@ const App = () => {
 				<Scene key='fabu' hideNavBar={true} component={Fabu}/>
 				<Scene key='detailjob' hideNavBar={true} component={Detailjob}/>
 				<Scene key='detailcompany' hideNavBar={true} component={Detailcompany}/>
+				<Scene key='detailproject' hideNavBar={true} component={Detailproject}/>
+				<Scene key='detailxinzeng' hideNavBar={true} component={Detailxinzeng}/>
+				<Scene key='detailbangdan' hideNavBar={true} component={Detailbangdan}/>
 								
 				<Scene key='mine' hideNavBar={true} component={Mine}/>
 				

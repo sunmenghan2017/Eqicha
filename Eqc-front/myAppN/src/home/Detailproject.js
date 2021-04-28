@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     }
 })
 
-export default class Detailjob extends Component {
+export default class Detailproject extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -61,11 +61,11 @@ export default class Detailjob extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.43.36:3000/zhiwei')
+        fetch('http://192.168.43.36:3000/project')
             .then(res => res.json())
             .then(res => {
                 for(var i=0;i<res.length;i++){
-                    if(this.props.zhaopinid==res[i].zhaopinid){
+                    if(this.props.projectid==res[i].projectid){
                         this.setState({
                             data:res[i],
                         })
@@ -97,18 +97,15 @@ export default class Detailjob extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30}}>{this.state.data.zhiwei}</Text>
+                    <Text style={{fontSize:30}}>{this.state.data.projectname}</Text>
 
                 </View>
                 <ScrollView style={{ backgroundColor: '#fc9' }}>
 
 
                     <View style={{ width: 540 * s, height:200, alignItems: 'center', alignContent: 'center', marginLeft: '10%' }}>
-                        <Text style={{  width: '100%' ,lineHeight:40}}>{this.state.data.companyname}</Text>
-                        <Text style={{ color: 'red', width: '100%' ,lineHeight:40}}>{this.state.data.salary}</Text>
-                        <Text style={{ marginTop: 5 * s, width: '100%' ,lineHeight:40}}>{this.state.data.yaoqiu}</Text>
-                        <Text style={{ color: 'red', width: '100%',lineHeight:40 }}>{this.state.data.zhaopinpos}</Text>
-                        <Text style={{ marginTop: 5 * s, width: '100%' ,lineHeight:40}}>{this.state.data.zhaopintel}</Text>
+                        <Text style={{  width: '100%' ,lineHeight:40}}>负责人：{this.state.data.personname}——{this.state.data.companyname}</Text>
+                        <Text style={{  width: '100%' ,lineHeight:40}}>{this.state.data.projectintro}</Text>
                     </View>
                 </ScrollView>
 

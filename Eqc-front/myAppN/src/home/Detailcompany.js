@@ -56,29 +56,22 @@ export default class Detailcompany extends Component {
             tits: [],
             page: 1,
             tit: [], data: '',
-            // user:this.props.userid
+            userid:this.props.userid
         }
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.104:3000/company')
+        fetch('http://192.168.43.36:3000/company')
             .then(res => res.json())
             .then(res => {
-                // for(var i=0;i<res.length;i++){
-                //     if(this.props.saleid==res[i].saleid){
-                //         this.setState({
-                //             data:res[i],
-                //         })
-                //     }
-                // }
-                console.log(res)
-                this.setState({ tits: res });
+                for(var i=0;i<res.length;i++){
+                    if(this.props.companyid==res[i].companyid){
+                        this.setState({
+                            data:res[i],
+                        })
+                    }
+                }
             })
-        // fetch('http://192.168.0.102:3000/merchandise')
-        //     .then(res => res.json())
-        //     .then(res => {
-        //         this.setState({ tit: res });
-        //     }, console.log(this.state.tit))
     }
 
 
@@ -103,16 +96,16 @@ export default class Detailcompany extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text>北京字节跳动科技有限公司</Text>
+                    <Text>{this.state.data.companyname}</Text>
 
                 </View>
                 <ScrollView style={{backgroundColor:'#fc9'}}>
 
 
                     <View style={{width:540*s,height:200,justifyContent:'center',alignItems:'flex-start',alignContent:'center',marginLeft:'10%',marginTop:'5%'}}>
-                        <Text style={{ lineHeight: 40, }}>北京字节跳动科技有限公司，成立于2012年3月。</Text>
-                        <Text style={{ lineHeight: 40, }}>创始人：张一鸣</Text>
-                        <Text style={{ lineHeight: 40, }}>地址：北京市海淀区知春路甲48号2号楼10A室</Text>
+                        <Text style={{ lineHeight: 40, }}>{this.state.data.companyintro}</Text>
+                        <Text style={{ lineHeight: 40, }}>创始人：{this.state.data.personname}</Text>
+                        <Text style={{ lineHeight: 40, }}>地址：{this.state.data.companypos}</Text>
                     </View>
                 </ScrollView>
 

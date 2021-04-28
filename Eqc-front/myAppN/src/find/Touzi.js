@@ -102,9 +102,9 @@ export default class Touzi extends Component {
                     {
                         // this.state.tits&&
                         this.state.tits.map((item, key) => (
-                            <View style={{ width: '90%', height: 300 * s, backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%',paddingLeft:'5%' }}>
+                            <View style={{ width: '90%', height: 200 * s, backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%',paddingLeft:'5%' }}>
 
-                                <TouchableOpacity style={{ width: '90%', }} onPress={() => Actions.detailcompany()}>
+                                <TouchableOpacity style={{ width: '100%', }} onPress={() => Actions.detailcompany({'companyid':item.companyid,'userid':this.state.userid})}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 130 * s }}>
                                         <Text style={{ marginTop: 5 * s, width: '50%', height: 40 * s, fontSize: 25 }}>{item.companyname}</Text>
                                         <Text style={{ marginTop: 15 * s, width: '20%', }}>{item.personname}</Text>

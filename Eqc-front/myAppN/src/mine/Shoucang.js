@@ -9,28 +9,77 @@ export default class Shoucang extends Component {
         super();
         this.state = {
             imageUrl:true,
-            data:[],
-            userID:'',
+            data:[],tit:[],
+            list:[],
+            userid:'',
+            tipsid:[],
         }
     }
     componentDidMount(){
+        fetch("http://192.168.43.36:3000/user")
+        .then(res=>res.json())
+        .then(res=>{
+            for(var i =0;i<res.length;i++){
+                if(res[i].isloading==1){
+                    this.setState({
+                        userid:res[i].userid,
+                    })
+                }
+            }
+            console.log("userid:"+this.state.userid);
+        })
         fetch("http://192.168.43.36:3000/collect")
         .then(res=>res.json())
         .then(res=>{
-            // for(var i =0;i<res.length;i++){
-            //     if(res[i].isloading==1){
-            //         this.setState({
-            //             userID:res[i].userid,
-            //             data:res[i],
-            //         }) 
-            //     }
-            // }
-            this.setState({
-                            data:res
-                        }) 
-            // console.log("userid:"+this.state.userID);
-            // console.log('this.state.data:'+this.state.data);
+            for(var i=0;i<res.length;i++){
+                if(res[i].userid==this.state.userid){
+                    console.log(res[i].tipsid)
+                    this.setState({
+                        data:res,
+                        
+                        tipsid:[...this.state.tipsid,res[i].tipsid]
+                    })
+                }
+                
+            }
+            console.log('this.state.tipsid:'+this.state.tipsid)
+            // this.setState({data:res})
+            console.log(this.state.data);
         })
+        fetch("http://192.168.43.36:3000/tips")
+        .then(res=>res.json())
+        .then(res=>{
+            for(var i=0;i<res.length;i++){
+                console.log(res[i])
+                for(var j =0;j<this.state.tipsid.length;j++){
+                    console.log('this.state.tipsid[j]'+this.state.tipsid[j])
+                    console.log('res[i].tipsid'+res[i].tipsid)
+                    if(res[i].tipsid==this.state.tipsid[j]){
+                        this.setState({
+                            tit: [...this.state.tit,res[i]],
+                            
+                        })
+                    }
+                }
+                
+                
+            
+            console.log("dfafd")
+            console.log(this.state.tit);
+            console.log('this.state.list'+this.state.list)
+            // this.setState({data:res})
+            console.log(this.state.data);
+        
+        
+        }
+        for(var i =0;i<this.state.tit.length;i++){
+            this.setState({
+                list:[...this.state.list,i]
+            })
+        }
+        console.log(this.state.list)
+    })
+        console.log("你进来了")
     }
     render() {
         return (
@@ -41,9 +90,8 @@ export default class Shoucang extends Component {
                 </View>
                 <ScrollView>
                 {
-                        // this.state.tits&&
-                        this.state.data.map((item, key) => (
-                    <View style={{width:'100%',paddingLeft:'10%',backgroundColor:'#fc9',marginBottom:'2%'}} ><Text style={{lineHeight:40}} onPress={()=>Actions.zixun()}>{item.tipstitle}</Text></View>
+                    this.state.list.map((i) =>(
+                    <View style={{width:'100%',paddingLeft:'10%',backgroundColor:'#fc9',marginBottom:'2%'}} ><Text style={{lineHeight:40}} onPress={()=>Actions.zixun({'tipsid':this.state.tipsid[i],'userid':this.state.userid})}>{this.state.tit[i].tipstitle}</Text></View>
                         ))
     }
                 </ScrollView>

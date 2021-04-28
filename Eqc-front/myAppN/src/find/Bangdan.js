@@ -102,15 +102,11 @@ export default class Bangdan extends Component {
                     {
                         // this.state.tits&&
                         this.state.tits.map((item, key) => (
-                            <View style={{ width: '90%', height: 200 * s,  backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%',paddingLeft:'5%' }}>
+                            <View style={{ width: '100%', height: 100 * s,  backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%',paddingLeft:'5%' }}>
 
-                                <TouchableOpacity style={{ width: '90%', }} onPress={() => Actions.detailboss()}>
-                                    <Text style={{ marginTop: 15 * s, height: 40 * s, fontSize: 25 }}>{item.bangdanname}</Text>
+                                <TouchableOpacity style={{ width: '90%', }} onPress={() => Actions.detailbangdan({'bangdanid':item.bangdanid,'userid':this.state.userid})}>
+                                    <Text style={{height: 40 * s, fontSize: 25 }}>{item.bangdanname}</Text>
 
-                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 130 * s }}>
-
-                                        <Text style={{ marginTop: 5 * s, width: '100%', }}>{item.bangdancontent}</Text>
-                                    </View>
                                 </TouchableOpacity>
                             </View>
                         ))

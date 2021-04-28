@@ -56,29 +56,23 @@ export default class Detailnews extends Component {
             tits: [],
             page: 1,
             tit: [], data: '',
-            // user:this.props.userid
+            userid:this.props.userid
         }
     }
     componentDidMount() {
-        console.log(this.props.userid)
-        fetch('http://192.168.0.104:3000/news')
-            .then(res => res.json())
-            .then(res => {
-                // for(var i=0;i<res.length;i++){
-                //     if(this.props.saleid==res[i].saleid){
-                //         this.setState({
-                //             data:res[i],
-                //         })
-                //     }
-                // }
-                console.log(res)
-                this.setState({ tits: res });
+            console.log(this.props.newsid)
+            fetch('http://192.168.43.36:3000/news')
+            .then(res=>res.json())
+            .then(res=>{
+                for(var i=0;i<res.length;i++){
+                    if(this.props.newsid==res[i].newsid){
+                        this.setState({
+                            data:res[i],
+                        })
+                    }
+                }
             })
-        // fetch('http://192.168.0.102:3000/merchandise')
-        //     .then(res => res.json())
-        //     .then(res => {
-        //         this.setState({ tit: res });
-        //     }, console.log(this.state.tit))
+        
     }
 
 
@@ -103,14 +97,14 @@ export default class Detailnews extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30}}>百度百度百度百度百度</Text>
+                    <Text style={{fontSize:30}}>{this.state.data.newstitle}</Text>
 
                 </View>
                 <View style={{ width: '100%', height: 900, backgroundColor: '#fc9', paddingTop: '10%', alignItems: 'center', }}>
 
 
                     <View style={{ width: '80%', justifyContent: 'center', alignItems: 'flex-start', alignContent: 'center', }}>
-                        <Text style={{ lineHeight: 40, }}>百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度。李彦宏（Robin Li），男，汉族，无党派人士，1968年11月出生，山西阳泉人。</Text>
+                        <Text style={{ lineHeight: 40, }}>{this.state.data.newscontent}</Text>
                         
                     </View>
                 </View>

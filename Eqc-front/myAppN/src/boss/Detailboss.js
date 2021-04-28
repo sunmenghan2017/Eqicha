@@ -56,29 +56,23 @@ export default class Detailboss extends Component {
             tits: [],
             page: 1,
             tit: [], data: '',
-            // user:this.props.userid
+            userid:this.props.userid
         }
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.0.104:3000/person')
+        fetch('http://192.168.43.36:3000/person')
             .then(res => res.json())
             .then(res => {
-                // for(var i=0;i<res.length;i++){
-                //     if(this.props.saleid==res[i].saleid){
-                //         this.setState({
-                //             data:res[i],
-                //         })
-                //     }
-                // }
-                console.log(res)
-                this.setState({ tits: res });
+                for(var i=0;i<res.length;i++){
+                    if(this.props.personid==res[i].personid){
+                        this.setState({
+                            data:res[i],
+                        })
+                    }
+                }
             })
-        // fetch('http://192.168.0.102:3000/merchandise')
-        //     .then(res => res.json())
-        //     .then(res => {
-        //         this.setState({ tit: res });
-        //     }, console.log(this.state.tit))
+        
     }
 
 
@@ -103,16 +97,16 @@ export default class Detailboss extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30}}>李彦宏</Text>
+                    <Text style={{fontSize:30}}>{this.state.data.personname}</Text>
 
                 </View>
                 <View style={{width:'100%',height:900,backgroundColor:'#fc9',paddingTop:'10%',alignItems:'center',}}>
 
 
                     <View style={{width:'80%',justifyContent:'center',alignItems:'flex-start',alignContent:'center',}}>
-                        <Text style={{lineHeight:40,}}>李彦宏（Robin Li），男，汉族，无党派人士，1968年11月出生，山西阳泉人。</Text>
-                        <Text style={{lineHeight:40,}}>职位：百度创始人、董事长兼首席执行官（CEO）。</Text>
-                        <Text style={{lineHeight:40,}}>就职公司：百度</Text>
+                        <Text style={{lineHeight:40,}}>{this.state.data.personintro}</Text>
+                        <Text style={{lineHeight:40,}}>职位：{this.state.data.zhiwei}</Text>
+                        <Text style={{lineHeight:40,}}>就职公司：{this.state.data.companyname}</Text>
                     </View>
                 </View>
 

@@ -126,20 +126,20 @@ export default class Find extends Component {
             // })
             // // console.log("你进来了");
     }   
-    // shoucang = () => {
-    //                 if (!this.state.wish) {
-    //                     this.refs.changeColor.color = 'red',
-    //                         this.setState({
-    //                             wish: true
-    //                         })
-    //                 }
-    //                 else {
-    //                     this.refs.changeColor.color = 'gray',
-    //                         this.setState({
-    //                             wish: false
-    //                         })
-    //                 }
-    //             }
+    shoucang = () => {
+                    if (!this.state.wish) {
+                        this.refs.changeColor.color = 'red',
+                            this.setState({
+                                wish: true
+                            })
+                    }
+                    else {
+                        this.refs.changeColor.color = 'gray',
+                            this.setState({
+                                wish: false
+                            })
+                    }
+                }
     
     render() {
                 //         console.log('home')
@@ -247,7 +247,7 @@ export default class Find extends Component {
                                     <Text style={{ color:'#fc6',fontSize:20,paddingLeft:'5%'}}>金融小Tips</Text>
                                     
                                 </View>
-                                {
+                                {/* {
                     this.state.list.map((i) =>(
                         <View>
                             
@@ -259,7 +259,7 @@ export default class Find extends Component {
                         </View>
                         
                     ))
-                }
+                } */}
                                 {
                             // this.state.tits&&
                             this.state.tits.map((item, key) => (
@@ -271,10 +271,9 @@ export default class Find extends Component {
                                     padding: 4,
                                     backgroundColor: '#fc9'
                                 }}>
-                                    <TouchableOpacity style={{ width: '90%', height: 90 * s }} onPress={Actions.zixun}>
-                                        <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:25 }} >{item.tipstitle}</Text>
-                                
-                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 30 * s }}>
+                                    <TouchableOpacity style={{ width: '90%', height: 90 * s }} onPress={()=>Actions.zixun({'tipsid':item.tipsid,'userid':this.state.userid})}>
+                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 90 * s }}>
+                                            <Text style={{ lineHeight:40, height: 50 * s,fontSize:25 }} >{item.tipstitle}</Text>
                                             <Text style={{width:'60%' }}>{item.tipscontent.lenght<=15?item.tipscontent:item.tipscontent.slice(0,15)+'···'}</Text>
                                             
                                         </View>

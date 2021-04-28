@@ -54,9 +54,9 @@ export default class Job extends Component {
             // color:'',
             wish: false,
             tits: [],
-            page: 1,
+            page: 1,search:'',
             tits: [], data: '',
-            // user:this.props.userid
+            userid:this.props.userid
         }
     }
     componentDidMount() {
@@ -75,7 +75,9 @@ export default class Job extends Component {
                 this.setState({ tits: res });
             })
     }
-
+    searchhandle = (text) => {
+        this.setState({ search: text })
+    }
 
     render() {
         //         console.log('home')
@@ -105,12 +107,13 @@ export default class Job extends Component {
                             
                             <TextInput
                                 placeholder="请输入搜索名称"
+                                onChangeText={this.searchhandle}
                                 style={{
                                     width: '85%',
                                     height: '100%'
                                 }}
                             />
-                            <TouchableOpacity style={{ width: '15%', height: '80%' }}>
+                            <TouchableOpacity style={{ width: '15%', height: '80%' }} onPress={Actions.detailjob}>
                                 <Icon1
                                     name="search"
                                     style={{
@@ -136,7 +139,7 @@ export default class Job extends Component {
                                     padding: 4,
                                     backgroundColor: '#fc9'
                                 }}>
-                                    <TouchableOpacity style={{ width: '90%', height: '90%' }} onPress={Actions.detailjob}>
+                                    <TouchableOpacity style={{ width: '90%', height: '90%' }} onPress={()=>Actions.detailjob({'zhaopinid':item.zhaopinid,'userid':this.state.userid})}>
                                         <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>{item.zhiwei}</Text>
 
                                         <View style={{ flexDirection: 'row', justifyContent:'space-evenly', alignItems: 'center', width: '100%', height: '40%' }}>

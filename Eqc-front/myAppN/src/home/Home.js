@@ -52,7 +52,7 @@ export default class Home extends Component {
             // color:'',
             wish: false,
             tits: [],
-            page: 1,
+            page: 1,search:'',
             tit: [], data: '',
             // user:this.props.userid
         }
@@ -124,6 +124,7 @@ export default class Home extends Component {
                             <View style={{ height: 80 * s, width: 500 * s,flexDirection:'row', marginLeft:'11%',justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
                                 <TextInput
                                     placeholder="请输入搜索名称"
+                                    onChangeText={this.searchhandle}
                                     style={{
                                         width: '85%',
                                         height: '100%'
@@ -244,7 +245,7 @@ export default class Home extends Component {
                                     padding: 4,
                                     backgroundColor: '#fff'
                                 }}>
-                                    <TouchableOpacity style={{ width: '90%', height: 100*s }} onPress={Actions.detailnews}>
+                                    <TouchableOpacity style={{ width: '90%', height: 100*s }} onPress={()=>Actions.detailnews({'newsid':item.newsid,'userid':this.state.userid})}>
                                         <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:20 }}>{item.newstitle}</Text>
                                 
                                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>

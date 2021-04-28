@@ -50,11 +50,13 @@ export default class Zixun extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            name:'star',
+            color:'',
             wish: false,
             tits: [],
             page: 1,
             tit: [], data: '',
-            user:this.props.userid
+            userid:this.props.userid
         }
     }
     componentDidMount() {
@@ -69,12 +71,15 @@ export default class Zixun extends Component {
                     })
                 }
             }
+            
+            console.log(this.state.data.tipscontent)
         })
     }
     shoucang=()=>{
-        console.log(this.props.userid)
+        console.log(this.state.userid,this.props.tipsid)
         if(!this.state.wish){
-            registerValue ={'userid':this.state.user,'tipsid':this.props.tipsid}
+            const registerValue ={'userid':this.state.userid,'tipsid':this.props.tipsid}
+
             this.setState({
                 name:'star',
                 color:'#ea3b3b',
@@ -123,14 +128,14 @@ export default class Zixun extends Component {
                         />
                     </TouchableOpacity>
                     {/* <Text>{this.state.data.tipstitle}</Text> */}
-                    <Text style={{width:'50%',fontSize:30}}>国际收支差额</Text>
-                    <Icon name="star" style={{width:'10%',float:'right',color:'gray'}} onPress={this.shoucang}/>
+                    <Text style={{width:'50%',fontSize:30}}>{this.state.data.tipstitle}</Text>
+                    <Icon name={this.state.name} style={{color:this.state.color,width:'10%',float:'right'}} onPress={this.shoucang}/>
 
                 </View>
                 <ScrollView style={{backgroundColor:'#fc9'}}>
 
 
-                    <View style={{width:'100%',height:200,marginTop:'5%',alignItems:'flex-start',paddingLeft:'5%',paddingRight:'5%'}}><Text style={{lineHeight:40}}>国际收支差额既受汇率的影响又国际收支差额既受汇率的影响又国际收支差额既受汇率的影响又国际收支差额既受汇率的影响又{this.state.data.tipscontent}</Text>
+                    <View style={{width:'100%',height:200,marginTop:'5%',alignItems:'flex-start',paddingLeft:'5%',paddingRight:'5%'}}><Text style={{lineHeight:40}}>{this.state.data.tipscontent}</Text>
                     </View>
                 </ScrollView>
 

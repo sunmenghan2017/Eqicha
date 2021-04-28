@@ -102,15 +102,11 @@ export default class Xinzeng extends Component {
                     {
                         // this.state.tits&&
                         this.state.tits.map((item, key) => (
-                            <View style={{ width: '90%', height: 200 * s, backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%' }}>
+                            <View style={{ width: '100%', height: 100 * s,paddingLeft:'5%', backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%' }}>
 
-                                <TouchableOpacity style={{ width: '90%', }} onPress={() => Actions.detailboss()}>
-                                    <Text style={{ marginTop: 15 * s, height: 40 * s, fontSize: 25 }}>{item.xinzengtitle}</Text>
+                                <TouchableOpacity style={{ width: '90%', }} onPress={() => Actions.detailxinzeng({'xinzengid':item.xinzengid,'userid':this.state.userid})}>
+                                    <Text style={{ height: 50 * s, fontSize: 25 }}>{item.xinzengtitle}</Text>
 
-                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 90 * s }}>
-
-                                        <Text style={{ marginTop: 5 * s, width: '90%', }}>{item.xinzengcontent.lenght<=0?'暂无新增':item.xinzengcontent}</Text>
-                                    </View>
                                 </TouchableOpacity>
                             </View>
                         ))

@@ -6,6 +6,8 @@ import {
 } from 'react-native';
 import Icon1 from 'react-native-vector-icons/FontAwesome';
 
+import Detailboss from './Detailboss';
+
 import { Icon } from '@ant-design/react-native';
 import Swiper from 'react-native-swiper';
 import { Actions } from 'react-native-router-flux';
@@ -53,18 +55,22 @@ export default class Boss extends Component {
             showValue:'',
             color:false,
             // wish: false,
+            bossname:'',
+            search:'',
+            personid:'',
             tits: [],
             page: 1,
             tit: [], data: [],
-            // user:this.props.userid
+            userid:this.props.userid
         }
     }
-    onChangeText(inputData){
-        this.setState({showValue:inputData});
-    }
-    showData(){
-        Alert(this.state.showValue);
-    }
+    // onChangeText(inputData){
+    //     this.setState({showValue:inputData});
+    // }
+    // showData(){
+    //     Alert(this.state.showValue);
+    // }
+    
     componentDidMount() {
         console.log(this.props.userid)
         // fetch('http://192.168.10.5:3000/person')
@@ -87,33 +93,75 @@ export default class Boss extends Component {
         //         this.setState({ tit: res });
         //     }, console.log(this.state.tit))
     }
-    onChangeTextKeyword(text){
-        var  reg = new RegExp(text,"i");
-        if(!text){
-            this.setState({
-                color:false,
-                dataLis:this.state.data,
-                replaceText:''
-            });
-            return;
-        }
-        else if(text){
-            let newData=[];
-            for (var i = 0;i<this.state.data.length;i++){
-                let ds =this.state.data[i];
-                if(ds.title&&title.indexOf(text)!=-1){
-                    newData.push(ds);
-                }
-            }
-            this.setState({
-                color:true,
-                dataLis:newData,
-                replaceText:text
-            });
-            return;
-        }
-
+    searchhandle = (text) => {
+        this.setState({ search: text })
     }
+    
+     
+    // searchCheck = () => {
+    //     var bossname = this.state.bossname;
+        
+    //     if (bossname !== null) {
+    //       for (var i = 0; i < this.state.data.length; i++) {
+    //         if (bossname === this.state.data[i].personname) {
+              
+    //           registerValue = { "personid": this.state.data[i].personid  }
+    //           this.setState({ personid: this.state.personid})
+    //             // fetch('http://192.168.10.5:3000/user4', {
+    //             fetch('http://192.168.43.36:3000/person1', {
+    //             method: "POST",
+    //             headers: {
+    //               "Content-type": "application/json;charset=utf-8",
+    //             },
+    //             body: JSON.stringify(registerValue),
+    //           }).then(res => res.text())
+    //             .then(data => {
+    //               console.log(data);
+    //             });
+                
+    //             Actions.detailboss();
+            
+              
+              
+    //         } 
+    //         if (bossname !== this.state.data[i].bossname) {
+    //           alert("暂未查询到，请重新搜索");
+    //         }
+    //       }
+    //     }
+    //     else {
+    //         Actions.boss();
+    //     }
+    //     console.log("registerValue.userid"+registerValue.userid)
+    //     console.log(this.state.data)
+    //   }
+    // onChangeTextKeyword(text){
+    //     var  reg = new RegExp(text,"i");
+    //     if(!text){
+    //         this.setState({
+    //             color:false,
+    //             dataLis:this.state.data,
+    //             replaceText:''
+    //         });
+    //         return;
+    //     }
+    //     else if(text){
+    //         let newData=[];
+    //         for (var i = 0;i<this.state.data.length;i++){
+    //             let ds =this.state.data[i];
+    //             if(ds.title&&title.indexOf(text)!=-1){
+    //                 newData.push(ds);
+    //             }
+    //         }
+    //         this.setState({
+    //             color:true,
+    //             dataLis:newData,
+    //             replaceText:text
+    //         });
+    //         return;
+    //     }
+
+    // }
 
 
     render() {
@@ -138,9 +186,7 @@ export default class Boss extends Component {
                     
                         <TextInput
                             placeholder="请输入Boss名"
-                            // onChangeText={(e)=>this.onChangeTextKeyword(e)}
-                            value={this.state.showValue}
-                            // onChangeText={this.onChangeTextKeyword.bind(this)}
+                            onChangeText={this.searchhandle}
                             style={{
                                 width: '85%',
                                 height: '100%'
@@ -183,10 +229,10 @@ export default class Boss extends Component {
                             // this.state.tits&&
                             this.state.tits.map((item, key) => (
                     <View style={{ width: '90%', height: 100 * s, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor:'#fff',marginBottom:'2%'}}>
-                        <TouchableOpacity style={{ width: '30%', }} onPress={() => Actions.detailboss()}>
+                        <TouchableOpacity style={{ width: '30%', }} onPress={() => Actions.detailboss({'personid':item.personid,'userid':this.state.userid})}>
                             <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={ require('../../assets/icon/1.jpg')} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ width: '70%', }} onPress={() => Actions.detailboss()}>
+                        <TouchableOpacity style={{ width: '70%', }} onPress={() => Actions.detailboss({'personid':item.personid,'userid':this.state.userid})}>
                             <Text style={{ marginTop: 15 * s, height: 45 * s, fontSize: 25 }}>{item.personname}</Text>
 
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>
