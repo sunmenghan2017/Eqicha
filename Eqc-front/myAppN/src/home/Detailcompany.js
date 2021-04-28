@@ -88,7 +88,6 @@ export default class Detailcompany extends Component {
             <View style={{
                 flex: 1,
                 flexDirection: 'column',
-                justifyContent: 'center',
                 backgroundColor: '#fff'
             }}>
 
@@ -104,14 +103,16 @@ export default class Detailcompany extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text>李彦宏</Text>
+                    <Text>北京字节跳动科技有限公司</Text>
 
                 </View>
                 <ScrollView style={{backgroundColor:'#fc9'}}>
 
 
-                    <View style={{width:540*s,justifyContent:'center',alignItems:'center',alignContent:'center',marginLeft:'10%'}}>
-                        <Text>李彦宏（Robin Li），男，汉族，无党派人士，1968年11月出生，山西阳泉人。百度创始人、董事长兼首席执行官（CEO）。</Text>
+                    <View style={{width:540*s,height:200,justifyContent:'center',alignItems:'flex-start',alignContent:'center',marginLeft:'10%',marginTop:'5%'}}>
+                        <Text style={{ lineHeight: 40, }}>北京字节跳动科技有限公司，成立于2012年3月。</Text>
+                        <Text style={{ lineHeight: 40, }}>创始人：张一鸣</Text>
+                        <Text style={{ lineHeight: 40, }}>地址：北京市海淀区知春路甲48号2号楼10A室</Text>
                     </View>
                 </ScrollView>
 

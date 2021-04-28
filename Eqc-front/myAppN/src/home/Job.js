@@ -102,6 +102,14 @@ export default class Job extends Component {
 
                     
                         <View style={{ height: 60 * s, width: 500 * s, flexDirection: 'row', marginLeft: '11%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
+                            
+                            <TextInput
+                                placeholder="请输入搜索名称"
+                                style={{
+                                    width: '85%',
+                                    height: '100%'
+                                }}
+                            />
                             <TouchableOpacity style={{ width: '15%', height: '80%' }}>
                                 <Icon1
                                     name="search"
@@ -110,13 +118,6 @@ export default class Job extends Component {
                                     }}
                                 />
                             </TouchableOpacity>
-                            <TextInput
-                                placeholder="请输入搜索名称"
-                                style={{
-                                    width: '85%',
-                                    height: '100%'
-                                }}
-                            />
                         </View>
 
                     </View>
@@ -133,15 +134,15 @@ export default class Job extends Component {
                                     alignItems: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
-                                    backgroundColor: '#eee'
+                                    backgroundColor: '#fc9'
                                 }}>
-                                    <TouchableOpacity style={{ width: '90%', height: '90%' }}>
+                                    <TouchableOpacity style={{ width: '90%', height: '90%' }} onPress={Actions.detailjob}>
                                         <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>{item.zhiwei}</Text>
 
-                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
+                                        <View style={{ flexDirection: 'row', justifyContent:'space-evenly', alignItems: 'center', width: '100%', height: '40%' }}>
 
-                                            <Text style={{ marginTop: 5 * s, width: '30%' }}>{item.companyname}</Text>
-                                            <Text style={{ color: 'red', width: '30%' }}>{item.salary}</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>负责人：李四</Text>
+                                            <Text style={{ marginTop: 5 * s, width: '80%' }}>{item.companyname}</Text>
+                                            <Text style={{ color: 'red', width: '20%' }}>{item.salary}</Text>
                                         </View>
                                     </TouchableOpacity>
                                     

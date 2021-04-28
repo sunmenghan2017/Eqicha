@@ -91,18 +91,18 @@ export default class Fabu extends Component {
 
 	render() {
 		return (
-			<View>
-				<View style={{ flexDirection: 'row', height: '10%', width: '90%', marginTop: '5%', marginBottom: '15%' }}>
+			<View style={{width:'100%'}}>
+				<View style={{ flexDirection: 'row', height: 50, width: '100%',  marginBottom: '25%' ,backgroundColor:'#fc9'}}>
 					<TouchableOpacity style={{ flexDirection: 'row', left: '5%' }} >
 						<Icon1
 							name="angle-left"
-							style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }}  onPress={Actions.pop}
+							style={{ color: '#eee', fontSize: 20, paddingRight: '5%',lineHeight:50 ,}}  onPress={Actions.pop}
 						/>
-						<Text style={{ fontSize: 16, color: "blue" }}  onPress={Actions.pop}>返回</Text>
+						
 					</TouchableOpacity>
 				</View>
 				<View
-					style={{ alignItems: 'center', justifyContent: 'center', height: '40%' }}>
+					style={{ alignItems: 'center',  height: '40%' }}>
 					<View
 						style={{
 							width: '80%',
@@ -162,7 +162,7 @@ export default class Fabu extends Component {
 							borderBottomWidth: 1,
 							flexDirection: 'row',
 							alignItems: 'center',
-							paddingLeft: 20,
+							paddingLeft: 20,marginBottom: '10%'
 						}}>
 
 						<Icon1 name="user" color="red" />
@@ -175,15 +175,17 @@ export default class Fabu extends Component {
 						style={{
 							width: '80%',
 							height: 40,
-							backgroundColor: '#ccc',
+							backgroundColor: '#fc9',
 							marginTop: 30,
 							alignItems: 'center',
-							justifyContent: 'center'
+							justifyContent: 'center',
+							borderRadius:5,
 						}}
 						onPress={this.fabu}>
-						<Text>发布</Text>
+						<Text style={{color:'#fff'}}>发布</Text>
 					</TouchableOpacity>
 				</View>
+				{/* <View style={{width:'100%',height:200}}></View> */}
 			</View>
 		);
 	}

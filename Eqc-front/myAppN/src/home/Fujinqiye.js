@@ -149,7 +149,7 @@ export default class Fujinqiye extends Component {
                                 </View>
                             </TouchableOpacity>
                             </View>
-                            <View style={{width: '90%', height: '30%', backgroundColor:'#fff',flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
+                            <View style={{width: '90%', height: '30%',marginTop:'5%', backgroundColor:'#fff',flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
                             <TouchableOpacity style={{ width: '30%',  }}>
                             <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kkvl.jpg' }}/>
                             </TouchableOpacity>

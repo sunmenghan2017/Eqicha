@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         color: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#eee',
+        backgroundColor: '#fff',
         // marginTop: 10 * s,
         // padding:'5%'
     },
@@ -109,7 +109,7 @@ export default class Home extends Component {
                 flex: 1,
                 flexDirection: 'column',
                 justifyContent: 'center',
-                backgroundColor: '#fff'
+                backgroundColor: '#eee'
             }}>
 
                 <ScrollView
@@ -122,6 +122,13 @@ export default class Home extends Component {
                                 <Text style={{ color: '#fff', }}>一站式企业信息查询服务平台</Text>
                             </View>
                             <View style={{ height: 80 * s, width: 500 * s,flexDirection:'row', marginLeft:'11%',justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
+                                <TextInput
+                                    placeholder="请输入搜索名称"
+                                    style={{
+                                        width: '85%',
+                                        height: '100%'
+                                    }}
+                                />
                                 <TouchableOpacity style={{width:'15%',height:'80%'}} onPress={Actions.detailcompany}>
                                     <Icon
                                     name="search"
@@ -130,13 +137,6 @@ export default class Home extends Component {
                                     }}
                                 />
                                 </TouchableOpacity>
-                                <TextInput
-                                    placeholder="请输入搜索名称"
-                                    style={{
-                                        width: '85%',
-                                        height: '100%'
-                                    }}
-                                />
                             </View>
                         </View>
                     </View>
@@ -227,7 +227,7 @@ export default class Home extends Component {
                                     justifyContent: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
-                                    backgroundColor: '#eee'
+                                    backgroundColor: '#fff'
                                 }}>
                                     
                                     <Text style={{ color:'#fc6',fontSize:20,paddingLeft:'5%'}}>商业资讯</Text>
@@ -236,13 +236,13 @@ export default class Home extends Component {
                                 {
                             // this.state.tits&&
                             this.state.tits.map((item, key) => (
-                                <View style={{
+                                <View  style={{
                                     width: '100%',
                                     height: 100 * s,
                                     alignItems: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
-                                    backgroundColor: '#eee'
+                                    backgroundColor: '#fff'
                                 }}>
                                     <TouchableOpacity style={{ width: '90%', height: 100*s }} onPress={Actions.detailnews}>
                                         <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:20 }}>{item.newstitle}</Text>

@@ -95,7 +95,7 @@ export default class Customer extends Component {
                 
                     <View style={{ height: 150 * s, width: 640 * s, backgroundColor: '#fc9' }}>
 
-                    <View style={{ height: 60 * s, width: 640 * s,  backgroundColor: '#fff',marginBottom:'2%', flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center', }}>
+                    <View style={{ height: 60 * s, width: 640 * s,  backgroundColor: '#fff', flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center', }}>
                             <TouchableOpacity style={{ width: '15%', height: '80%' }}>
                             <Icon name='left' color='#fc9' style={{paddingLeft:10}} onPress={Actions.pop}/>
                             </TouchableOpacity>
@@ -103,7 +103,14 @@ export default class Customer extends Component {
                         </View>
 
                     
-                        <View style={{ height: 60 * s, width: 500 * s, flexDirection: 'row', marginLeft: '11%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
+                        <View style={{ height: 60 * s, width: 500 * s, flexDirection: 'row', marginLeft: '11%',marginTop: '4%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
+                        <TextInput
+                                placeholder="请输入搜索名称"
+                                style={{
+                                    width: '85%',
+                                    height: '100%'
+                                }}
+                            />
                             <TouchableOpacity style={{ width: '15%', height: '80%' }}>
                                 <Icon1
                                     name="search"
@@ -112,17 +119,11 @@ export default class Customer extends Component {
                                     }}
                                 />
                             </TouchableOpacity>
-                            <TextInput
-                                placeholder="请输入搜索名称"
-                                style={{
-                                    width: '85%',
-                                    height: '100%'
-                                }}
-                            />
+                            
                         </View>
 
                     </View>
-                    <ScrollView>
+                    <ScrollView style={{backgroundColor: '#fc9'}}>
                         
                     <View style={{
                                     width: '100%',
@@ -130,7 +131,7 @@ export default class Customer extends Component {
                                     justifyContent: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
-                                    backgroundColor: '#eee'
+                                    backgroundColor: '#fff'
                                 }}>
                                     
                                     <Text style={{ color:'#fc6',fontSize:20,paddingLeft:'5%'}}>热门搜索</Text>
@@ -142,33 +143,32 @@ export default class Customer extends Component {
                             alignItems: 'center',
                             marginTop: 20 * s,
                             padding: 4,
-                            backgroundColor: '#eee'
                         }}>
-                            <View style={{width: '90%', height: '30%',flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center',}}>
+                            <View style={{width: '90%', height: '30%',flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center',marginBottom:'2%',backgroundColor:'#fff'}}>
                             <TouchableOpacity style={{ width: '30%',  }} onPress={() => Actions.listcust()}>
                                 <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kkvl.jpg' }}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={{ width: '70%', }}onPress={() => Actions.listcust()}>
-                                <Text style={{ marginTop: 10 * s, height: '50%', fontSize: 25 }}>信息行业</Text>
+                                <Text style={{ marginTop: 5 * s, height: '40%', fontSize: 25 }}>信息行业</Text>
                                 <Text style={{ marginTop: 5 * s, width: '30%' }}>查找相关企业</Text>
                             </TouchableOpacity>
                             </View>
 
-                            <View style={{width: '90%', height: '30%',flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center',}}>
+                            <View style={{width: '90%', height: '30%',flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center',marginBottom:'2%',backgroundColor: '#fff'}}>
                             <TouchableOpacity style={{ width: '30%',  }}>
                                 <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kktg.jpg' }}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={{ width: '70%', }}>
-                                <Text style={{ marginTop: 10 * s, height: '50%', fontSize: 25 }}>影视行业</Text>
+                                <Text style={{ marginTop: 5 * s, height: '40%', fontSize: 25 }}>影视行业</Text>
                                 <Text style={{ marginTop: 5 * s, width: '30%' }}>查找相关企业</Text>
                             </TouchableOpacity>
                             </View>
-                            <View style={{width: '90%', height: '30%',flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center',}}>
+                            <View style={{width: '90%', height: '30%',flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center',marginBottom:'2%',backgroundColor: '#fff'}}>
                             <TouchableOpacity style={{ width: '30%',  }}>
                                 <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kkvl.jpg' }}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={{ width: '70%', }}>
-                                <Text style={{ marginTop: 10 * s, height: '50%', fontSize: 25 }}>教育行业</Text>
+                                <Text style={{ marginTop: 5 * s, height: '40%', fontSize: 25 }}>教育行业</Text>
                                 <Text style={{ marginTop: 5 * s, width: '30%' }}>查找相关企业</Text>
                             </TouchableOpacity>
                             </View>

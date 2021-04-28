@@ -104,14 +104,17 @@ export default class Detailjob extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text>李彦宏</Text>
+                    <Text style={{fontSize:30}}>英语讲师</Text>
 
                 </View>
-                <ScrollView style={{backgroundColor:'#fc9'}}>
+                <ScrollView style={{ backgroundColor: '#fc9' }}>
 
 
-                    <View style={{width:540*s,justifyContent:'center',alignItems:'center',alignContent:'center',marginLeft:'10%'}}>
-                        <Text>李彦宏（Robin Li），男，汉族，无党派人士，1968年11月出生，山西阳泉人。百度创始人、董事长兼首席执行官（CEO）。</Text>
+                    <View style={{ width: 540 * s, height:200, alignItems: 'center', alignContent: 'center', marginLeft: '10%' }}>
+                        <Text style={{  width: '100%' ,lineHeight:40}}>猿辅导</Text>
+                        <Text style={{ color: 'red', width: '100%' ,lineHeight:40}}>4000-5000</Text>
+                        <Text style={{ marginTop: 5 * s, width: '100%' ,lineHeight:40}}>英语好责任心强，本科</Text>
+                        <Text style={{ color: 'red', width: '100%',lineHeight:40 }}>北京</Text>
                     </View>
                 </ScrollView>
 

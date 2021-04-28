@@ -241,7 +241,7 @@ export default class Find extends Component {
                                     justifyContent: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
-                                    backgroundColor: '#eee'
+                                    backgroundColor: '#fff'
                                 }}>
                                     
                                     <Text style={{ color:'#fc6',fontSize:20,paddingLeft:'5%'}}>金融小Tips</Text>
@@ -269,14 +269,14 @@ export default class Find extends Component {
                                     alignItems: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
-                                    backgroundColor: '#eee'
+                                    backgroundColor: '#fc9'
                                 }}>
                                     <TouchableOpacity style={{ width: '90%', height: 90 * s }} onPress={Actions.zixun}>
                                         <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:25 }} >{item.tipstitle}</Text>
                                 
                                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 30 * s }}>
                                             <Text style={{width:'60%' }}>{item.tipscontent.lenght<=15?item.tipscontent:item.tipscontent.slice(0,15)+'···'}</Text>
-                                            <Icon name="star" style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }} />
+                                            
                                         </View>
                                     </TouchableOpacity>
                                 </View>

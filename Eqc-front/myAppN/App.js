@@ -148,8 +148,7 @@ const App = () => {
 								>
 									<Scene key='home' hideNavBar={true} component={Home}/>
 									<Scene key='detailnews' hideNavBar={true} component={Detailnews}/>
-									<Scene key='detailcompany' hideNavBar={true} component={Detailcompany}/>
-								</Scene>
+									</Scene>
 								{/* 商品分类 */}
 								<Scene key='goodsPage'
 									title='查Boss'
@@ -192,7 +191,7 @@ const App = () => {
 									<Scene key='mine' hideNavBar={true} component={Mine}/>
 									
 									<Scene key='tousu' hideNavBar={true} component={Tousu}/>
-									<Scene key='shoucang' hideNavBar={true} component={Shoucang}/>
+									{/* <Scene key='shoucang' hideNavBar={true} component={Shoucang}/> */}
 									<Scene key='qiye' hideNavBar={true} component={Qiye}/>
 									<Scene key='lianxi' hideNavBar={true} component={Lianxi}/>
 									
@@ -210,7 +209,12 @@ const App = () => {
 				<Scene key='xiugai' hideNavBar component={Xiugai} />
 				<Scene key='fabu' hideNavBar={true} component={Fabu}/>
 				<Scene key='detailjob' hideNavBar={true} component={Detailjob}/>
+				<Scene key='detailcompany' hideNavBar={true} component={Detailcompany}/>
+								
+				<Scene key='mine' hideNavBar={true} component={Mine}/>
 				
+				
+				<Scene key='shoucang' hideNavBar={true} component={Shoucang}/>
 				<Scene key='shezhi' hideNavBar component={Shezhi}/>
 				<Scene key='job' hideNavBar component={Job} />
 				<Scene key='customer' hideNavBar component={Customer} />

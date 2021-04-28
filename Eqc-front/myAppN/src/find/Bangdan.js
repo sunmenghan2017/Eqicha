@@ -88,9 +88,9 @@ export default class Bangdan extends Component {
             }}>
 
 
-                <View style={{ height: 30 * s, width: 640 * s, backgroundColor: '#eee', }}>
-                    <TouchableOpacity style={{ width: '15%', height: '80%' }}  onPress={Actions.pop}>
-                        <Icon name='left' color='#fc9' style={{ paddingLeft: 10 }} />
+<View style={{ height: 50 * s, width: '100%',backgroundColor:'#fc9'}}>
+                    <TouchableOpacity style={{ width: '25%', height: '100%' }}  onPress={Actions.pop}>
+                        <Icon name='left' color='#eee' style={{ paddingLeft: 10,lineHeight:40 }} />
                     </TouchableOpacity>
                 </View>
                 <View style={{
@@ -102,7 +102,7 @@ export default class Bangdan extends Component {
                     {
                         // this.state.tits&&
                         this.state.tits.map((item, key) => (
-                            <View style={{ width: '90%', height: 200 * s, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%' }}>
+                            <View style={{ width: '90%', height: 200 * s,  backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%',paddingLeft:'5%' }}>
 
                                 <TouchableOpacity style={{ width: '90%', }} onPress={() => Actions.detailboss()}>
                                     <Text style={{ marginTop: 15 * s, height: 40 * s, fontSize: 25 }}>{item.bangdanname}</Text>

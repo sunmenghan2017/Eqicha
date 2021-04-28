@@ -28,22 +28,22 @@ export default class Shoucang extends Component {
             this.setState({
                             data:res
                         }) 
-            console.log("userid:"+this.state.userID);
+            // console.log("userid:"+this.state.userID);
             // console.log('this.state.data:'+this.state.data);
         })
     }
     render() {
         return (
             <View>
-                <View style={{flexDirection: 'row',height:40,paddingTop:10,width:'100%'}}>
-                    <Icon name='left' color='black' style={{paddingLeft:10}} onPress={Actions.pop}/>
-                    <Text style={{fontSize:18,paddingLeft:'30%'}}>我的收藏</Text>
+                <View style={{flexDirection: 'row',height:40,paddingTop:10,width:'100%',marginBottom:'5%',backgroundColor:'#fc9'}}>
+                    <Icon name='left' color='#eee' style={{paddingLeft:10,}} onPress={Actions.pop}/>
+                    <Text style={{fontSize:18,paddingLeft:'35%'}}>我的收藏</Text>
                 </View>
                 <ScrollView>
                 {
                         // this.state.tits&&
                         this.state.data.map((item, key) => (
-                    <View style={{width:'90%',alignItems:'center',marginTop:'20px'}}><Text>{item.tipstitle}</Text></View>
+                    <View style={{width:'100%',paddingLeft:'10%',backgroundColor:'#fc9',marginBottom:'2%'}} ><Text style={{lineHeight:40}} onPress={()=>Actions.zixun()}>{item.tipstitle}</Text></View>
                         ))
     }
                 </ScrollView>

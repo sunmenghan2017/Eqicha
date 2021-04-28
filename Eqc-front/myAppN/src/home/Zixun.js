@@ -112,8 +112,8 @@ export default class Zixun extends Component {
 
 
 
-                <View style={{ height: 60 * s, width: 640 * s, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#fff' }}>
-                    <TouchableOpacity style={{ width: '15%', height: '80%' }}>
+                <View style={{ height: 60 * s, width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
+                    <TouchableOpacity style={{ width: '25%', height: '100%' }}>
                         <Icon
                             name="left"
                             style={{
@@ -122,14 +122,15 @@ export default class Zixun extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text>{this.state.data.tipstitle}</Text>
-                    <Icon name="star" style={{float:'right',color:'gray'}} onPress={this.shoucang}/>
+                    {/* <Text>{this.state.data.tipstitle}</Text> */}
+                    <Text style={{width:'50%',fontSize:30}}>国际收支差额</Text>
+                    <Icon name="star" style={{width:'10%',float:'right',color:'gray'}} onPress={this.shoucang}/>
 
                 </View>
                 <ScrollView style={{backgroundColor:'#fc9'}}>
 
 
-                    <View style={{width:640*s,justifyContent:'center',alignItems:'center'}}><Text>{this.state.data.tipscontent}</Text>
+                    <View style={{width:'100%',height:200,marginTop:'5%',alignItems:'flex-start',paddingLeft:'5%',paddingRight:'5%'}}><Text style={{lineHeight:40}}>国际收支差额既受汇率的影响又国际收支差额既受汇率的影响又国际收支差额既受汇率的影响又国际收支差额既受汇率的影响又{this.state.data.tipscontent}</Text>
                     </View>
                 </ScrollView>
 

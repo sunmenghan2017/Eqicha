@@ -162,10 +162,10 @@ export default class Login extends Component {
           <TouchableOpacity style={{ width: '10%', paddingLeft: '5%' }} onPress={() => Actions.homePage()}>
             <Icon1
               name="close"
-              style={{ color: '#fff', fontSize: 20 }}
+              style={{ color: '#f33', fontSize: 20 }}
             />
           </TouchableOpacity>
-          <Text style={{ color: '#fff', fontSize: 25, width: '80%', textAlign: 'center' }}>登录</Text>
+          <Text style={{ color: '#f33', fontSize: 25, width: '80%', textAlign: 'center' }}>登录</Text>
         </View>
         <View style={styles.slide}>
           <View style={{
@@ -212,14 +212,14 @@ export default class Login extends Component {
           <TouchableOpacity
             style={styles.login}
             onPress={this.loginCheck}>
-            <Text style={{ color: '#fff', fontSize: 25 }}>登录</Text>
+            <Text style={{ color: '#f33', fontSize: 25 }}>登录</Text>
           </TouchableOpacity>
           <View style={styles.rows}>
             <TouchableOpacity onPress={() => Actions.register()} style={{ width: 180 * s, height: 50 * s, alignItems: 'center', justifyContent: 'center' }} >
-              <Text style={{ fontSize: 16, color: "blue" }}>手机快速注册</Text>
+              <Text style={{ fontSize: 16, color: "black" }}>手机快速注册</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => Actions.forget()} style={{ width: 120 * s, height: 50 * s, alignItems: 'center', justifyContent: 'center' }}>
-              <Text style={{ fontSize: 16, color: "blue" }}>忘记密码</Text>
+              <Text style={{ fontSize: 16, color: "black" }}>忘记密码</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: 'red',
+    backgroundColor: '#fc9',
   },
   icons: {
     textAlign: 'center',
@@ -282,14 +282,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     textAlignVertical: 'center',
-    backgroundColor: '#ccc',
+    backgroundColor: '#eee',
     paddingLeft: 20 * s,
     marginTop: 20 * s
   },
   login: {
     width: 340 * s,
     height: 50,
-    backgroundColor: 'red',
+    backgroundColor: '#fc9',
     marginTop: 30 * s,
     alignItems: 'center',
     justifyContent: 'center',
@@ -298,7 +298,6 @@ const styles = StyleSheet.create({
   slide: {
     width: 640 * s,
     height: 260 * s,
-    backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
     // backgroundColor:'red',
@@ -311,7 +310,6 @@ const styles = StyleSheet.create({
     width: 540 * s,
     height: 50 * s,
     flexDirection: 'row',
-    backgroundColor: '#fff',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -321,7 +319,6 @@ const styles = StyleSheet.create({
     width: 640 * s,
     height: 50 * s,
     flexDirection: 'row',
-    backgroundColor: '#fff',
     justifyContent: 'space-evenly',
     alignItems: 'center',
     marginTop: 30 * s,

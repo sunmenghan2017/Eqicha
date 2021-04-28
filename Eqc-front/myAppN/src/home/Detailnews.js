@@ -88,7 +88,6 @@ export default class Detailnews extends Component {
             <View style={{
                 flex: 1,
                 flexDirection: 'column',
-                justifyContent: 'center',
                 backgroundColor: '#fff'
             }}>
 
@@ -104,16 +103,17 @@ export default class Detailnews extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text>李彦宏</Text>
+                    <Text style={{fontSize:30}}>百度百度百度百度百度</Text>
 
                 </View>
-                <ScrollView style={{backgroundColor:'#fc9'}}>
+                <View style={{ width: '100%', height: 900, backgroundColor: '#fc9', paddingTop: '10%', alignItems: 'center', }}>
 
 
-                    <View style={{width:540*s,justifyContent:'center',alignItems:'center',alignContent:'center',marginLeft:'10%'}}>
-                        <Text>李彦宏（Robin Li），男，汉族，无党派人士，1968年11月出生，山西阳泉人。百度创始人、董事长兼首席执行官（CEO）。</Text>
+                    <View style={{ width: '80%', justifyContent: 'center', alignItems: 'flex-start', alignContent: 'center', }}>
+                        <Text style={{ lineHeight: 40, }}>百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度百度。李彦宏（Robin Li），男，汉族，无党派人士，1968年11月出生，山西阳泉人。</Text>
+                        
                     </View>
-                </ScrollView>
+                </View>
 
 
             </View>

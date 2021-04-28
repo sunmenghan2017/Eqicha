@@ -8,8 +8,8 @@ export default class Lianxi extends Component {
     render() {
         return (
             <View>
-                <View style={{flexDirection: 'row',height:50,paddingTop:10,width:'100%',borderBottomWidth:1,borderBottomColor:'#bbb'}}>
-                    <Icon name='left' color='black' style={{paddingLeft:10}} onPress={Actions.pop}/>
+                <View style={{flexDirection: 'row',height:50,paddingTop:10,width:'100%',borderBottomWidth:1,borderBottomColor:'#bbb',backgroundColor:'#fc9'}}>
+                    <Icon name='left' color='#eee' style={{paddingLeft:10}} onPress={Actions.pop}/>
                     <Text style={{fontSize:18,paddingLeft:'32%'}}>联系我们</Text>
                 </View>
                 <View style={{height:250,width:'100%',justifyContent:'center',alignContent:'center',paddingLeft:'36%',borderBottomWidth:1,borderBottomColor:'#bbb'}}>

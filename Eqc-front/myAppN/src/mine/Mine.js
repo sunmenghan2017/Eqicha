@@ -39,7 +39,6 @@ export default class Mine extends Component {
                 if(res[i].isloading==1){
                     this.setState({
                         userID:res[i].userid,
-                        imageUrl:res[i].userauatar,
                         data:res[i],
                     })
                 }
@@ -100,11 +99,11 @@ export default class Mine extends Component {
     render() {
         return (
             <View  style={{flex: 1,backgroundColor: '#fff'}}>
-                <View style={{flexDirection: 'row',height:40,paddingTop:10,width:'100%'}}>
-                    <Text style={{fontSize:18,paddingLeft:'45%'}}>我的</Text>
-                    <Icon name="setting" style={{paddingLeft:130,color:'black'}} onPress={Actions.xiugai}/>
+                <View style={{flexDirection: 'row',height:50,width:'100%',backgroundColor:'#fff'}}>
+                    <Text style={{fontSize:18,paddingLeft:'45%',color:'#fc9',lineHeight:50}}>我的</Text>
+                    <Icon name="setting" style={{paddingLeft:130,color:'#fc9',lineHeight:50}} onPress={Actions.xiugai}/>
                 </View>
-                <View style={{height:120,flexDirection: 'row'}}>
+                <View style={{height:140,flexDirection: 'row',borderBottomWidth:1,borderBottomColor:'#bbb',backgroundColor:'#fc9',paddingTop:'1%'}}>
                     <Button 
                         onPress={()=>{this.takephoto()}}
                         >
@@ -120,10 +119,10 @@ export default class Mine extends Component {
 
                             }
                     </Button>
-                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:20}}>{this.state.data.username}</Text>
-                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:20}}>{this.state.data.companyname}</Text>
+                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:40}}>{this.state.data.username}</Text>
+                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:40}}>{this.state.data.companyname}</Text>
                 </View>
-                
+                <View style={{width:'100%',height:'2%',backgroundColor:'#fff'}}></View>
                 <View style={styles.view2}>
                     <Text style={{paddingLeft:20}} onPress={Actions.shoucang}>我的收藏</Text>
                 </View>
@@ -148,12 +147,13 @@ const styles = StyleSheet.create({
         width:'30%',
         marginLeft:10,
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
     },
     view2:{
         borderBottomWidth:1,
         borderBottomColor:'#bbb',
         height:50,
-        justifyContent:'center'
+        justifyContent:'center',
+        backgroundColor:'#fc9'
     }
 })
