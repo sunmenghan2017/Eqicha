@@ -113,7 +113,7 @@ export default class Home extends Component {
             }}>
 
                 <ScrollView
-                    style={{ height: 250 * s, width: 640 * s }}
+                    style={{ height: 350 * s, width: 640 * s }}
                 >
                     <View style={{ height: 350 * s, width: 640 * s, backgroundColor: '#fc9' }}>
                         <View style={{ height: 240 * s, width: 640 * s, }}>
@@ -124,6 +124,7 @@ export default class Home extends Component {
                             <View style={{ height: 80 * s, width: 500 * s,flexDirection:'row', marginLeft:'11%',justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
                                 <TextInput
                                     placeholder="请输入搜索名称"
+                                    // clearTextOnFocus={true}
                                     onChangeText={this.searchhandle}
                                     style={{
                                         width: '85%',
