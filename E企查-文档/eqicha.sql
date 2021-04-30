@@ -73,6 +73,24 @@ CREATE TABLE `company` (
 
 insert  into `company`(`companyid`,`companyname`,`personname`,`companypos`,`zhiwei`,`projectname`,`companytel`,`companyintro`,`companylogo`,`newsid`,`companytime`,`city`) values ('c2','北京字节跳动科技有限公司1','张一鸣','北京市海淀区知春路甲48号2号楼10A室','创始人','抖音','222222','北京字节跳动科技有限公司，成立于2012年3月',NULL,'n2','2012年','北京'),('c931','衡水至臻','李明','衡水桃城区','主任',NULL,'111111','衡二的民办中学号',NULL,'n3','2010年','衡水'),('c430','企小企有限公司','齐小企','河北省石家庄市雨花区','CEO','E企查','6666666','企小企公司是一家以企业服务为主体的服务型公司',NULL,NULL,'2010年','石家庄');
 
+/*Table structure for table `customer` */
+
+DROP TABLE IF EXISTS `customer`;
+
+CREATE TABLE `customer` (
+  `cuid` varchar(50) DEFAULT NULL,
+  `hangye` varchar(200) DEFAULT NULL,
+  `companyname` varchar(200) DEFAULT NULL,
+  `projectname` varchar(200) DEFAULT NULL,
+  `cuyaoqiu` varchar(200) DEFAULT NULL,
+  `cuposition` varchar(200) DEFAULT NULL,
+  `cutel` varchar(200) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/*Data for the table `customer` */
+
+insert  into `customer`(`cuid`,`hangye`,`companyname`,`projectname`,`cuyaoqiu`,`cuposition`,`cutel`) values ('cu111','信息行业','北京市百度有限公司','百度','软件外包','北京市海淀区','12345678'),('cu222','影视行业','哇唧唧哇','偶像养成','养成计划','北京市朝阳区','666666'),('cu333','教育行业','北京市中公教育有限公司','教育培训','教育培训机构','北京市东城区','2222222');
+
 /*Table structure for table `denglu` */
 
 DROP TABLE IF EXISTS `denglu`;
@@ -85,6 +103,30 @@ CREATE TABLE `denglu` (
 /*Data for the table `denglu` */
 
 insert  into `denglu`(`userid`) values ('u123456'),('u654321');
+
+/*Table structure for table `fujin` */
+
+DROP TABLE IF EXISTS `fujin`;
+
+CREATE TABLE `fujin` (
+  `fujinid` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `companyname` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `personname` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `companypos` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `zhiwei` varchar(20) DEFAULT NULL,
+  `projectname` varchar(20) DEFAULT NULL,
+  `companytel` varchar(20) DEFAULT NULL,
+  `companyintro` varchar(100) DEFAULT NULL,
+  `companylogo` varchar(1000) DEFAULT NULL,
+  `newsid` varchar(50) DEFAULT NULL,
+  `companytime` varchar(6) DEFAULT NULL,
+  `city` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`fujinid`,`companyname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf32;
+
+/*Data for the table `fujin` */
+
+insert  into `fujin`(`fujinid`,`companyname`,`personname`,`companypos`,`zhiwei`,`projectname`,`companytel`,`companyintro`,`companylogo`,`newsid`,`companytime`,`city`) values ('c2','北京字节跳动科技有限公司1','张一鸣','北京市海淀区知春路甲48号2号楼10A室','创始人','抖音','222222','北京字节跳动科技有限公司，成立于2012年3月',NULL,'n2','2012年','北京'),('c931','衡水至臻','李明','衡水桃城区','主任',NULL,'111111','衡二的民办中学号',NULL,'n3','2010年','衡水'),('c430','企小企有限公司','齐小企','河北省石家庄市雨花区','CEO','E企查','6666666','企小企公司是一家以企业服务为主体的服务型公司',NULL,NULL,'2010年','石家庄');
 
 /*Table structure for table `manager` */
 

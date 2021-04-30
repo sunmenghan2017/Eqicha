@@ -331,7 +331,7 @@ app.post('/addzhiwei',function(req,res,next){
   var zhaopintel=req.body.zhaopintel;
   var zhaopinpos=req.body.zhaopinpos;
   con.query("insert into zhaopin(zhaopinid,userid,zhiwei,yaoqiu,companyname,salary,zhaopintel,zhaopinpos) values(?,?,?,?,?,?,?,?)",
-  [parseInt(('z'+Math.random()*1000)),userid,zhiwei,yaoqiu,companyname,salary,zhaopintel,zhaopinpos],function(err,result){
+  ['z'+parseInt((Math.random()*1000)),userid,zhiwei,yaoqiu,companyname,salary,zhaopintel,zhaopinpos],function(err,result){
     if(err){
       console.log(err);
     }
