@@ -93,13 +93,13 @@ export default class Customer extends Component {
             }}>
 
                 
-                    <View style={{ height: 150 * s, width: 640 * s, backgroundColor: '#fc9' }}>
+                    <View style={{ height: 150 * s, width: 640 * s, backgroundColor: '#ff4500' }}>
 
                     <View style={{ height: 60 * s, width: 640 * s,  backgroundColor: '#fff', flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center', }}>
                             <TouchableOpacity style={{ width: '15%', height: '80%' }}>
-                            <Icon name='left' color='#fc9' style={{paddingLeft:10}} onPress={Actions.pop}/>
+                            <Icon name='left' color='#ff4500' style={{paddingLeft:10}} onPress={Actions.pop}/>
                             </TouchableOpacity>
-                            <Text style={{width: '85%',height: '80%',color:'#fc9',fontSize:20}}>找客户</Text>
+                            <Text style={{width: '85%',height: '80%',color:'#ff4500',fontSize:20}}>找客户</Text>
                         </View>
 
                     
@@ -123,7 +123,7 @@ export default class Customer extends Component {
                         </View>
 
                     </View>
-                    <ScrollView style={{backgroundColor: '#fc9'}}>
+                    <ScrollView style={{backgroundColor: '#ff4500'}}>
                         
                     <View style={{
                                     width: '100%',

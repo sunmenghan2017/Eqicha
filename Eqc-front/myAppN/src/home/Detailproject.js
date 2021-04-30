@@ -92,18 +92,18 @@ export default class Detailproject extends Component {
                         <Icon
                             name="left"
                             style={{
-                                color: '#fc9', padding: '10%', fontSize: 20
+                                color: '#ff4500', padding: '10%', fontSize: 20
                             }}
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30}}>{this.state.data.projectname}</Text>
+                    <Text style={{fontSize:30,color: '#ff4500'}}>{this.state.data.projectname}</Text>
 
                 </View>
                 <ScrollView style={{ backgroundColor: '#fc9' }}>
 
 
-                    <View style={{ width: 540 * s, height:200, alignItems: 'center', alignContent: 'center', marginLeft: '10%' }}>
+                    <View style={{ width: 540 * s, height:200, alignItems: 'center', alignContent: 'center', marginLeft: '10%',marginTop:'5%' }}>
                         <Text style={{  width: '100%' ,lineHeight:40}}>负责人：{this.state.data.personname}——{this.state.data.companyname}</Text>
                         <Text style={{  width: '100%' ,lineHeight:40}}>{this.state.data.projectintro}</Text>
                     </View>

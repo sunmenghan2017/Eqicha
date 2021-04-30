@@ -52,7 +52,7 @@ export default class Home extends Component {
             // color:'',
             wish: false,
             tits: [],
-            page: 1,search:'',
+            page: 1, search: '',
             tit: [], data: '',
             // user:this.props.userid
         }
@@ -108,20 +108,19 @@ export default class Home extends Component {
             <View style={{
                 flex: 1,
                 flexDirection: 'column',
-                justifyContent: 'center',
                 backgroundColor: '#eee'
             }}>
 
-                <ScrollView
-                    style={{ height: 350 * s, width: 640 * s }}
+                <View
+                    style={{ height: 540 * s, width: 640 * s }}
                 >
-                    <View style={{ height: 350 * s, width: 640 * s, backgroundColor: '#fc9' }}>
+                    <View style={{ height: 340 * s, width: 640 * s, backgroundColor: '#ff4500' }}>
                         <View style={{ height: 240 * s, width: 640 * s, }}>
-                            <View style={{ height: 160 * s, width: 640 * s,marginTop:'10%', justifyContent: 'center', alignItems: 'center', }}>
-                                <Text style={{ color: '#fff', fontSize:40}}>E企查</Text>
+                            <View style={{ height: 160 * s, width: 640 * s, marginTop: '10%', justifyContent: 'center', alignItems: 'center', }}>
+                                <Text style={{ color: '#fff', fontSize: 40 }}>E企查</Text>
                                 <Text style={{ color: '#fff', }}>一站式企业信息查询服务平台</Text>
                             </View>
-                            <View style={{ height: 80 * s, width: 500 * s,flexDirection:'row', marginLeft:'11%',justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
+                            <View style={{ height: 80 * s, width: 500 * s, flexDirection: 'row', marginLeft: '11%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
                                 <TextInput
                                     placeholder="请输入搜索名称"
                                     // clearTextOnFocus={true}
@@ -131,71 +130,71 @@ export default class Home extends Component {
                                         height: '100%'
                                     }}
                                 />
-                                <TouchableOpacity style={{width:'15%',height:'80%'}} onPress={Actions.detailcompany}>
+                                <TouchableOpacity style={{ width: '15%', height: '80%' }} onPress={Actions.detailcompany}>
                                     <Icon
-                                    name="search"
-                                    style={{
-                                        color: 'gray',padding:'20%',fontSize:20
-                                    }}
-                                />
+                                        name="search"
+                                        style={{
+                                            color: 'gray', padding: '20%', fontSize: 20
+                                        }}
+                                    />
                                 </TouchableOpacity>
                             </View>
                         </View>
                     </View>
-                    <View style={{width:'100%',height:'40%',flexDirection:'row',justifyContent:'flex-start',alignContent:'center'}}>
+                    <View style={{ width: '100%', height: 200 * s, flexDirection: 'row', justifyContent: 'flex-start', alignContent: 'center' }}>
                         <View style={{
-                                    width:'33%',
-                                    height: 200 * s,
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
-                                }}>
-                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.job()}>
-                                        <View style={styles.img}>
-                                            <Icon
-                                                name="eye"
-                                                style={{
-                                                    color: '#fc9',fontSize:70
-                                                }}
-                                            />
-                                        </View>
-                                        <Text style={{color:'#fc9'}}>找工作</Text>
-                                    </TouchableOpacity>
+                            width: '33%',
+                            height: 200 * s,
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+                            <TouchableOpacity style={styles.btn} onPress={() => Actions.job()}>
+                                <View style={styles.img}>
+                                    <Icon
+                                        name="eye"
+                                        style={{
+                                            color: '#ff4500', fontSize: 70
+                                        }}
+                                    />
+                                </View>
+                                <Text style={{ color: '#ff4500' }}>找工作</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{
-                                    width: '33%',
-                                    height: 200 * s,
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
-                                }}>
-                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.customer()}>
-                                        <View style={styles.img}>
-                                        <Icon
-                                                name="user"
-                                                style={{
-                                                    color: '#fc9',fontSize:70
-                                                }}
-                                            />
-                                        </View>
-                                        <Text style={{color:'#fc9'}}>找客户</Text>
-                                    </TouchableOpacity>
+                            width: '33%',
+                            height: 200 * s,
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+                            <TouchableOpacity style={styles.btn} onPress={() => Actions.customer()}>
+                                <View style={styles.img}>
+                                    <Icon
+                                        name="user"
+                                        style={{
+                                            color: '#ff4500', fontSize: 70
+                                        }}
+                                    />
+                                </View>
+                                <Text style={{ color: '#ff4500' }}>找客户</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{
-                                    width: '33%',
-                                    height: 200 * s,
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
-                                }}>
-                                    <TouchableOpacity style={styles.btn} onPress={() => Actions.fuqi()}>
-                                        <View style={styles.img}>
-                                        <Icon
-                                                name="windows"
-                                                style={{
-                                                    color: '#fc9',fontSize:70
-                                                }}
-                                            />
-                                        </View>
-                                        <Text style={{color:'#fc9'}}>附近企业</Text>
-                                    </TouchableOpacity>
+                            width: '33%',
+                            height: 200 * s,
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+                            <TouchableOpacity style={styles.btn} onPress={() => Actions.fuqi()}>
+                                <View style={styles.img}>
+                                    <Icon
+                                        name="windows"
+                                        style={{
+                                            color: '#ff4500', fontSize: 70
+                                        }}
+                                    />
+                                </View>
+                                <Text style={{ color: '#ff4500' }}>附近企业</Text>
+                            </TouchableOpacity>
                         </View>
                         {/* {
                             // this.state.tits&&
@@ -218,94 +217,54 @@ export default class Home extends Component {
                             ))
                         } */}
 
-                    </View> 
-                </ScrollView>
-                <ScrollView>
-               
-                    <View style={{  justifyContent: 'center', alignItems: 'center', }}>
-                            <View style={{
-                                    width: '100%',
-                                    height: 100 * s,
-                                    justifyContent: 'center',
-                                    marginTop: 20 * s,
-                                    padding: 4,
-                                    backgroundColor: '#fff'
-                                }}>
-                                    
-                                    <Text style={{ color:'#fc6',fontSize:20,paddingLeft:'5%'}}>商业资讯</Text>
-                                    
-                                </View>
-                                {
-                            // this.state.tits&&
-                            this.state.tits.map((item, key) => (
-                                <View  style={{
-                                    width: '100%',
-                                    height: 100 * s,
-                                    alignItems: 'center',
-                                    marginTop: 20 * s,
-                                    padding: 4,
-                                    backgroundColor: '#fff'
-                                }}>
-                                    <TouchableOpacity style={{ width: '90%', height: 100*s }} onPress={()=>Actions.detailnews({'newsid':item.newsid,'userid':this.state.userid})}>
-                                        <Text style={{ marginTop: 15 * s, height: 40 * s,fontSize:20 }}>{item.newstitle}</Text>
-                                
-                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>
+                    </View>
+                </View>
+                <View>
 
-                                            <Text style={{ marginTop: 5 * s ,width:'60%'}}>{item.companyname}</Text>
-                                            <Text style={{ marginTop: 5 * s ,width:'30%'}}>{item.newstime}</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                </View>
+                    <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                        <View style={{
+                            width: '100%',
+                            height: 100 * s,
+                            justifyContent: 'center',
+                            padding: 4,
+                            backgroundColor: '#ff4500'
+                        }}>
+
+                            <Text style={{ color: '#fc9', fontSize: 20, paddingLeft: '5%' }}>商业资讯</Text>
+
+                        </View>
+                        
+                            <ScrollView
+                                pagingEnabled={true}
+                                horizontal={true}
+                                style={{ height: 565 * s, width: 640 * s }}
+                            >
+                                {
+                                // this.state.tits&&
+                                this.state.tits.map((item, key) => (
+                                    <View style={{
+                                        width: 640*s,
+                                        height: 450 * s,
+                                        alignItems: 'center',
+                                        marginTop: 100 * s,
+                                    }}>
+                                        <TouchableOpacity style={{ width: '90%', height: 450 * s }} onPress={() => Actions.detailnews({ 'newsid': item.newsid, 'userid': this.state.userid })}>
+                                            <Image style={{width:'100%',height:'65%'}} resizeMode='stretch' source={require('../../assets/zixun.png')} />
+                                            <Text style={{ marginTop: 15 * s, height: 40 * s, fontSize: 20,color:'#ff4500' }}>{item.newstitle}</Text>
+
+                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>
+
+                                                <Text style={{ marginTop: 5 * s, width: '60%',color:'#ff4500' }}>{item.companyname}</Text>
+                                                <Text style={{ marginTop: 5 * s, width: '30%' ,color:'#ff4500'}}>{item.newstime}</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
                                 ))
                             }
-                            </View>
-                             
-                    {/* {
-                        this.state.tit.map((item, key) => (
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', flexWrap: 'wrap', }}>
-                                <View style={{
-                                    width: '45%',
-                                    height: 500 * s,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginTop: 20 * s,
-                                    padding: 4,
-                                    backgroundColor: '#eee'
-                                }}>
-                                    <TouchableOpacity style={{ width: '100%', height: '90%' }} onPress={() => Actions.detail({ 'merid': item.merid, 'userid': this.state.user })}>
-                                        <Image style={{ width: '100%', height: '90%', borderRadius: 20 }}
-                                            resizeMode='stretch'
-                                            source={{ uri: `${item.merimg}` }} />
-                                        <Text style={{ marginTop: 15 * s }}>{item.tit.slice(8,)}</Text>
-                                    </TouchableOpacity>
-                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '10%' }}>
-                                        <Text style={{ marginTop: 5 * s }}>{item.shopbrand}</Text>
-                                        <Text style={{ color: 'red', }}>￥{item.price}/4日</Text>
-                                    </View>
-                                </View>
-
-                                <View style={{
-                                    width: '45%',
-                                    height: 500 * s,
-                                    alignItems: 'center',
-                                    marginTop: 20 * s,
-                                    padding: 4,
-                                    backgroundColor: '#eee'
-                                }}>
-                                    <TouchableOpacity style={{ width: '100%', height: '90%' }}>
-                                        <Image style={{ width: '100%', height: '90%', borderRadius: 20 }} resizeMode='stretch' source={require('../../assets/v2_q5klq0.jpg')} />
-                                        <Text style={{ marginTop: 15 * s }}>宝石蓝抹胸晚礼服</Text>
-                                    </TouchableOpacity>
-                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '10%' }}>
-
-                                        <Text style={{ marginTop: 5 * s }}>BLANCHE</Text>
-                                        <Text style={{ color: 'red' }}>￥399/4日</Text>
-                                    </View>
-                                </View>
-                            </View>
-                        ))
-                    } */}
-                </ScrollView>
+                            </ScrollView>
+                            
+                    </View>
+                </View>
             </View>
 
 

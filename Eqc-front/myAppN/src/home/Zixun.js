@@ -122,13 +122,13 @@ export default class Zixun extends Component {
                         <Icon
                             name="left"
                             style={{
-                                color: '#fc9', padding: '10%', fontSize: 20
+                                color: '#ff4500', padding: '10%', fontSize: 20
                             }}
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
                     {/* <Text>{this.state.data.tipstitle}</Text> */}
-                    <Text style={{width:'50%',fontSize:30}}>{this.state.data.tipstitle}</Text>
+                    <Text style={{width:'50%',color: '#ff4500',fontSize:30}}>{this.state.data.tipstitle}</Text>
                     <Icon name={this.state.name} style={{color:this.state.color,width:'10%',float:'right'}} onPress={this.shoucang}/>
 
                 </View>

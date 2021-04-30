@@ -92,12 +92,12 @@ export default class Detailboss extends Component {
                         <Icon
                             name="left"
                             style={{
-                                color: '#fc9', paddingLeft: '10%',paddingTop:'5%', fontSize: 20
+                                color: '#ff4500', paddingLeft: '10%',paddingTop:'5%', fontSize: 20
                             }}
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30}}>{this.state.data.personname}</Text>
+                    <Text style={{fontSize:30,color:'#ff4500'}}>{this.state.data.personname}</Text>
 
                 </View>
                 <View style={{width:'100%',height:900,backgroundColor:'#fc9',paddingTop:'10%',alignItems:'center',}}>

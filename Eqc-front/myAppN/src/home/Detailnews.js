@@ -92,12 +92,12 @@ export default class Detailnews extends Component {
                         <Icon
                             name="left"
                             style={{
-                                color: '#fc9', padding: '10%', fontSize: 20
+                                color: '#ff4500', padding: '10%', fontSize: 20
                             }}
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30}}>{this.state.data.newstitle}</Text>
+                    <Text style={{color: '#ff4500',fontSize:30}}>{this.state.data.newstitle}</Text>
 
                 </View>
                 <View style={{ width: '100%', height: 900, backgroundColor: '#fc9', paddingTop: '10%', alignItems: 'center', }}>

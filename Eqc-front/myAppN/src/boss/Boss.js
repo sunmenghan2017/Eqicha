@@ -171,14 +171,14 @@ export default class Boss extends Component {
                 flex: 1,
                 flexDirection: 'column',
                 justifyContent: 'center',
-                backgroundColor: '#fc9'
+                backgroundColor: '#ff4500'
             }}>
 
 
-                <View style={{ height: 150 * s, width: 640 * s, backgroundColor: '#fc9' }}>
+                <View style={{ height: 150 * s, width: 640 * s, backgroundColor: '#ff4500' }}>
 
                     <View style={{ height: 60 * s, width: 640 * s, backgroundColor: '#fff', marginBottom: '4%', paddingLeft: '40%', justifyContent: 'center', alignItems: 'center' }}>
-                        <Text style={{ width: '100%', height: '80%', color: '#fc9', fontSize: 30, }}>查Boss</Text>
+                        <Text style={{ width: '100%', height: '80%', color: '#ff4500', fontSize: 30, }}>查Boss</Text>
                     </View>
 
 
@@ -223,7 +223,7 @@ export default class Boss extends Component {
                     alignItems: 'center',
                     marginTop: 20 * s,
                     padding: 4,
-                    backgroundColor: '#fc9'
+                    backgroundColor: '#ff4500'
                 }}>
                 {
                             // this.state.tits&&
@@ -246,7 +246,7 @@ export default class Boss extends Component {
             }
                 </View>
                 <ScrollView style={{
-                        backgroundColor: '#fc9'}}>
+                        backgroundColor: '#ff4500'}}>
 
 
                     <View style={{

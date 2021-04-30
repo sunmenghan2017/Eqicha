@@ -84,14 +84,14 @@ export default class Shoucang extends Component {
     render() {
         return (
             <View>
-                <View style={{flexDirection: 'row',height:40,paddingTop:10,width:'100%',marginBottom:'5%',backgroundColor:'#fc9'}}>
-                    <Icon name='left' color='#eee' style={{paddingLeft:10,}} onPress={Actions.pop}/>
-                    <Text style={{fontSize:18,paddingLeft:'35%'}}>我的收藏</Text>
+                <View style={{flexDirection: 'row',height:40,paddingTop:10,width:'100%',marginBottom:'5%',backgroundColor:'#ff4500'}}>
+                    <Icon name='left' color='#fff' style={{paddingLeft:10,}} onPress={Actions.pop}/>
+                    <Text style={{color:'#fff',fontSize:18,paddingLeft:'35%'}}>我的收藏</Text>
                 </View>
                 <ScrollView>
                 {
                     this.state.list.map((i) =>(
-                    <View style={{width:'100%',paddingLeft:'10%',backgroundColor:'#fc9',marginBottom:'2%'}} ><Text style={{lineHeight:40}} onPress={()=>Actions.zixun({'tipsid':this.state.tipsid[i],'userid':this.state.userid})}>{this.state.tit[i].tipstitle}</Text></View>
+                    <View style={{width:'100%',paddingLeft:'10%',backgroundColor:'#ff4500',marginBottom:'2%'}} ><Text style={{color:'#fff',lineHeight:40}} onPress={()=>Actions.zixun({'tipsid':this.state.tipsid[i],'userid':this.state.userid})}>{this.state.tit[i].tipstitle}</Text></View>
                         ))
     }
                 </ScrollView>

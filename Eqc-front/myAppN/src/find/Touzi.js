@@ -88,9 +88,9 @@ export default class Touzi extends Component {
             }}>
 
 
-<View style={{ height: 50 * s, width: '100%',backgroundColor:'#fc9'}}>
+<View style={{ height: 50 * s, width: '100%',backgroundColor:'#ff4500'}}>
                     <TouchableOpacity style={{ width: '25%', height: '100%' }}  onPress={Actions.pop}>
-                        <Icon name='left' color='#eee' style={{ paddingLeft: 10,lineHeight:40 }} />
+                        <Icon name='left' color='#fff' style={{ paddingLeft: 10,lineHeight:40 }} />
                     </TouchableOpacity>
                 </View>
                 <View style={{
@@ -102,14 +102,14 @@ export default class Touzi extends Component {
                     {
                         // this.state.tits&&
                         this.state.tits.map((item, key) => (
-                            <View style={{ width: '90%', height: 200 * s, backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%',paddingLeft:'5%' }}>
+                            <View style={{ width: '90%', height: 200 * s, backgroundColor:'#ff4500',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%',paddingLeft:'5%' }}>
 
                                 <TouchableOpacity style={{ width: '100%', }} onPress={() => Actions.detailcompany({'companyid':item.companyid,'userid':this.state.userid})}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 130 * s }}>
-                                        <Text style={{ marginTop: 5 * s, width: '50%', height: 40 * s, fontSize: 25 }}>{item.companyname}</Text>
-                                        <Text style={{ marginTop: 15 * s, width: '20%', }}>{item.personname}</Text>
+                                        <Text style={{ marginTop: 5 * s, width: '50%', height: 40 * s, fontSize: 25,color: '#fff' }}>{item.companyname}</Text>
+                                        <Text style={{ marginTop: 15 * s, width: '20%', color: '#fff'}}>{item.personname}</Text>
                                     </View>
-                                    <Text style={{ marginTop: 5 * s, width: '100%', }}>{item.companyintro}</Text>
+                                    <Text style={{ marginTop: 5 * s, width: '100%', color: '#fff'}}>{item.companyintro}</Text>
                                 </TouchableOpacity>
                             </View>
                         ))

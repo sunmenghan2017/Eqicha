@@ -88,22 +88,22 @@ export default class Detailbangdan extends Component {
 
 
                 <View style={{ height: 60 * s, width: 640 * s, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#fff' }}>
-                    <TouchableOpacity style={{ width: '15%', height: '80%' }}>
+                    <TouchableOpacity style={{ width: '13%', height: '80%' }}>
                         <Icon
                             name="left"
                             style={{
-                                color: '#fc9', padding: '10%', fontSize: 20
+                                color: '#ff4500', padding: '10%', fontSize: 20
                             }}
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30}}>{this.state.data.bangdanname}</Text>
+                    <Text style={{fontSize:30,color:'#ff4500'}}>{this.state.data.bangdanname}</Text>
 
                 </View>
                 <ScrollView style={{ backgroundColor: '#fc9' }}>
 
 
-                    <View style={{ width: 540 * s, height:200, alignItems: 'center', alignContent: 'center', marginLeft: '10%' }}>
+                    <View style={{ width: 540 * s, height:200, alignItems: 'center', alignContent: 'center', marginLeft: '10%',marginTop:'5%' }}>
                         <Text style={{  width: '100%' ,lineHeight:40,color:'red',textDecorationLine:'underline'}}>{this.state.data.bangdancontent}</Text>
                         <Text style={{  width: '100%' ,lineHeight:40}}>{this.state.data.bangdanintro}</Text>
                     </View>

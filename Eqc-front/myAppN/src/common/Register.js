@@ -232,9 +232,9 @@ export default class Register extends Component {
 					<TouchableOpacity onPress={() => Actions.login()} style={{ flexDirection: 'row', left: '5%' }} >
 						<Icon1
 							name="angle-left"
-							style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }}
+							style={{ color: '#ff4500', fontSize: 20, paddingRight: '5%' }}
 						/>
-						<Text style={{ fontSize: 16, color: "blue" }}>返回</Text>
+						<Text style={{ fontSize: 16, color: "#ff4500" }}>返回</Text>
 					</TouchableOpacity>
 				</View>
 				<View
@@ -309,12 +309,12 @@ export default class Register extends Component {
 							style={{
 								width: '40%',
 								height: 40,
-								backgroundColor: '#ccc',
+								backgroundColor: '#ff4500',
 								alignItems: 'center',
 								justifyContent: 'center'
 							}}
 							onPress={this.changeImg}>
-							<Text id="code" title="看不清，换一张">{this.state.yzm}</Text>
+							<Text id="code" title="看不清，换一张" style={{color:'#fff'}}>{this.state.yzm}</Text>
 						</TouchableOpacity>
 					</View>
 
@@ -322,13 +322,13 @@ export default class Register extends Component {
 						style={{
 							width: '80%',
 							height: 40,
-							backgroundColor: '#ccc',
+							backgroundColor: '#ff4500',
 							marginTop: 30,
 							alignItems: 'center',
 							justifyContent: 'center'
 						}}
 						onPress={this.register}>
-						<Text>注册</Text>
+						<Text style={{color:'#fff'}}>注册</Text>
 					</TouchableOpacity>
 				</View>
 			</View>

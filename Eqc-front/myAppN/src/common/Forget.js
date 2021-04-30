@@ -78,9 +78,9 @@ render() {
                 <TouchableOpacity onPress={() => Actions.login()} style={{ flexDirection: 'row', left: '5%' }} >
                     <Icon1
                         name="angle-left"
-                        style={{ color: 'gray', fontSize: 20, paddingRight: '5%' }}
+                        style={{ color: '#ff4500', fontSize: 20, paddingRight: '5%' }}
                     />
-                    <Text style={{ fontSize: 16, color: "blue" }}>返回</Text>
+                    <Text style={{ fontSize: 16, color: "#ff4500" }}>返回</Text>
                 </TouchableOpacity>
             </View>
             <View
@@ -105,7 +105,7 @@ render() {
                         style={{
                             width: '35%',
                             height: 50,
-                            backgroundColor: '#ccc',
+                            backgroundColor: '#ff4500',
                             alignItems: 'center',
                             justifyContent: 'center',
                             borderRadius: 10
@@ -138,7 +138,7 @@ render() {
                                 style={{
                                     width: '35%',
                                     height: 50,
-                                    backgroundColor: '#ccc',
+                                    backgroundColor: '#ff4500',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     borderRadius: 10

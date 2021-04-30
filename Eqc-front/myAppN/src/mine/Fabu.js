@@ -12,6 +12,7 @@ export default class Fabu extends Component {
 		this.state = {
             userid: '',
             zhaopintel: '',
+            zhaopinpos: '',
 			zhiwei: '',
 			yaoqiu: '',
             companyname: '',
@@ -65,8 +66,11 @@ export default class Fabu extends Component {
     zhaopintelhandle = (text) => {
 		this.setState({ zhaopintel: text })
 	}
+	zhaopinposhandle = (text) => {
+		this.setState({ zhaopinpos: text })
+	}
 	fabu = () => {
-		const registerValue = { "userid": this.state.userid, "zhapointel": this.state.zhaopintel, "zhiwei": this.state.zhiwei,"salary": this.state.salary,"companyname": this.state.companyname,"yaoqiu": this.state.yaoqiu, }
+		const registerValue = { "userid": this.state.userid, "zhaopintel": this.state.zhaopintel, "zhiwei": this.state.zhiwei,"zhaopinpos": this.state.zhaopinpos,"salary": this.state.salary,"companyname": this.state.companyname,"yaoqiu": this.state.yaoqiu, }
 
 		if (this.state.zhaopintel != "" && this.state.zhiwei != "") {
 			fetch('http://192.168.43.36:3000/addzhiwei', {
@@ -92,14 +96,15 @@ export default class Fabu extends Component {
 	render() {
 		return (
 			<View style={{width:'100%'}}>
-				<View style={{ flexDirection: 'row', height: 50, width: '100%',  marginBottom: '25%' ,backgroundColor:'#fc9'}}>
+				<View style={{ flexDirection: 'row', height: 50, width: '100%',  marginBottom: '25%' ,backgroundColor:'#ff4500'}}>
 					<TouchableOpacity style={{ flexDirection: 'row', left: '5%' }} >
 						<Icon1
 							name="angle-left"
-							style={{ color: '#eee', fontSize: 20, paddingRight: '5%',lineHeight:50 ,}}  onPress={Actions.pop}
+							style={{ color: '#fff', fontSize: 20, paddingRight: '5%',lineHeight:45 ,}}  onPress={Actions.pop}
 						/>
 						
 					</TouchableOpacity>
+                    <Text style={{color:'#fff',fontSize:18,paddingLeft:'35%',lineHeight:45}}>我的招聘</Text>
 				</View>
 				<View
 					style={{ alignItems: 'center',  height: '40%' }}>
@@ -138,6 +143,22 @@ export default class Fabu extends Component {
 							placeholder="公司"
 						/>
 					</View>
+					<View
+						style={{
+							width: '80%',
+							marginRight: 10,
+							borderBottomColor: '#ccc',
+							borderBottomWidth: 1,
+							flexDirection: 'row',
+							alignItems: 'center',
+							paddingLeft: 20,
+						}}>
+						<Icon1 name="keyboard-o" color="red" />
+						<TextInput
+							onChangeText={this.zhaopinposhandle}
+							placeholder="工作地点"
+						/>
+					</View>
                     <View
 						style={{
 							width: '80%',
@@ -164,18 +185,34 @@ export default class Fabu extends Component {
 							alignItems: 'center',
 							paddingLeft: 20,marginBottom: '10%'
 						}}>
+						<Icon1 name="user" color="red" />
+						<TextInput
+							onChangeText={this.zhaopintelhandle}
+							placeholder="负责人手机号"
+						/>
+					</View>
+					{/* <View
+						style={{
+							width: '80%',
+							marginRight: 10,
+							borderBottomColor: '#ccc',
+							borderBottomWidth: 1,
+							flexDirection: 'row',
+							alignItems: 'center',
+							paddingLeft: 20,marginBottom: '10%'
+						}}>
 
 						<Icon1 name="user" color="red" />
 						<TextInput placeholder="负责人手机号"
 							onChangeText={this.zhaopintelhandle}
 						/>
-					</View>
+					</View> */}
 					
 					<TouchableOpacity
 						style={{
 							width: '80%',
 							height: 40,
-							backgroundColor: '#fc9',
+							backgroundColor: '#ff4500',
 							marginTop: 30,
 							alignItems: 'center',
 							justifyContent: 'center',

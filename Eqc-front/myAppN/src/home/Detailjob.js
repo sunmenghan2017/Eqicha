@@ -61,7 +61,7 @@ export default class Detailjob extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.43.36:3000/zhiwei')
+        fetch('http://192.168.43.36:3000/zhaopin')
             .then(res => res.json())
             .then(res => {
                 for(var i=0;i<res.length;i++){
@@ -92,22 +92,22 @@ export default class Detailjob extends Component {
                         <Icon
                             name="left"
                             style={{
-                                color: '#fc9', padding: '10%', fontSize: 20
+                                color: '#ff4500', padding: '10%', fontSize: 20
                             }}
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30}}>{this.state.data.zhiwei}</Text>
+                    <Text style={{fontSize:30,color:'#ff4500'}}>{this.state.data.zhiwei}</Text>
 
                 </View>
                 <ScrollView style={{ backgroundColor: '#fc9' }}>
 
 
-                    <View style={{ width: 540 * s, height:200, alignItems: 'center', alignContent: 'center', marginLeft: '10%' }}>
-                        <Text style={{  width: '100%' ,lineHeight:40}}>{this.state.data.companyname}</Text>
-                        <Text style={{ color: 'red', width: '100%' ,lineHeight:40}}>{this.state.data.salary}</Text>
+                    <View style={{ width: 540 * s, height:200, alignItems: 'center', alignContent: 'center', marginLeft: '10%',marginTop:'5%' }}>
+                        <Text style={{  width: '100%' ,lineHeight:40,}}>{this.state.data.companyname}</Text>
+                        <Text style={{ color: 'red',textDecorationLine:'underline', width: '100%' ,lineHeight:40}}>{this.state.data.salary}</Text>
                         <Text style={{ marginTop: 5 * s, width: '100%' ,lineHeight:40}}>{this.state.data.yaoqiu}</Text>
-                        <Text style={{ color: 'red', width: '100%',lineHeight:40 }}>{this.state.data.zhaopinpos}</Text>
+                        <Text style={{  width: '100%',lineHeight:40 }}>{this.state.data.zhaopinpos}</Text>
                         <Text style={{ marginTop: 5 * s, width: '100%' ,lineHeight:40}}>{this.state.data.zhaopintel}</Text>
                     </View>
                 </ScrollView>

@@ -14,12 +14,13 @@ const s = width / 640;
 
 const styles = StyleSheet.create({
     btn: {
-        width: 170 * s,
+        width: 150 * s,
         height: 160 * s,
         color: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#eee',
+        backgroundColor: '#fff',
+        borderRadius:10
         // marginTop: 10 * s,
         // padding:'5%'
     },
@@ -152,28 +153,28 @@ export default class Find extends Component {
             }} >
 
                 
-                    <View style={{ height: 300 * s, width: 640 * s, backgroundColor: '#eee' }}>
+                    <View style={{ height: 300 * s, width: 640 * s, backgroundColor: '#ff4500' }}>
 
                         <View style={{ height: 60 * s, width: 640 * s,  backgroundColor: '#fff',marginBottom:'2%',paddingLeft:'40%',justifyContent: 'center',alignItems:'center' }}>
-                            <Text style={{width: '100%',height: '80%',color:'#fc9',fontSize:30,}}>发现更多</Text>
+                            <Text style={{width: '100%',height: '80%',color:'#ff4500',fontSize:30,}}>发现更多</Text>
                         </View>
                         <View style={{width:'100%',height:'20%',flexDirection:'row',justifyContent:'space-evenly',alignContent:'center'}}>
                         <View style={{
                                     width:'20%',
                                     height: 200 * s,
                                     alignItems: 'center',
-                                    justifyContent: 'center'
+                                    justifyContent: 'center',
                                 }}>
                                     <TouchableOpacity style={styles.btn} onPress={() => Actions.xinzeng()}>
                                         <View style={styles.img}>
                                             <Icon
                                                 name="eye"
                                                 style={{
-                                                    color: '#fc9',fontSize:70
+                                                    color: '#ff4500',fontSize:70
                                                 }}
                                             />
                                         </View>
-                                        <Text>增企业</Text>
+                                        <Text style={{color: '#ff4500'}}>增企业</Text>
                                     </TouchableOpacity>
                         </View>
                         <View style={{
@@ -187,11 +188,11 @@ export default class Find extends Component {
                                             <Icon
                                                 name="search"
                                                 style={{
-                                                    color: '#fc9',fontSize:70
+                                                    color: '#ff4500',fontSize:70
                                                 }}
                                             />
                                         </View>
-                                        <Text>查榜单</Text>
+                                        <Text style={{color: '#ff4500'}}>查榜单</Text>
                                     </TouchableOpacity>
                         </View>
                         <View style={{
@@ -205,11 +206,11 @@ export default class Find extends Component {
                                         <Icon
                                                 name="user"
                                                 style={{
-                                                    color: '#fc9',fontSize:70
+                                                    color: '#ff4500',fontSize:70
                                                 }}
                                             />
                                         </View>
-                                        <Text >项目产品</Text>
+                                        <Text style={{color: '#ff4500'}} >项目产品</Text>
                                     </TouchableOpacity>
                         </View>
                         <View style={{
@@ -223,11 +224,11 @@ export default class Find extends Component {
                                         <Icon
                                                 name="windows"
                                                 style={{
-                                                    color: '#fc9',fontSize:70
+                                                    color: '#ff4500',fontSize:70
                                                 }}
                                             />
                                         </View>
-                                        <Text >投资机构</Text>
+                                        <Text style={{color: '#ff4500'}} >投资机构</Text>
                                     </TouchableOpacity>
                         </View>
                         </View>
@@ -269,12 +270,12 @@ export default class Find extends Component {
                                     alignItems: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
-                                    backgroundColor: '#fc9'
+                                    backgroundColor: '#ff4500'
                                 }}>
                                     <TouchableOpacity style={{ width: '90%', height: 90 * s }} onPress={()=>Actions.zixun({'tipsid':item.tipsid,'userid':this.state.userid})}>
                                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 90 * s }}>
-                                            <Text style={{ lineHeight:40, height: 50 * s,fontSize:25 }} >{item.tipstitle}</Text>
-                                            <Text style={{width:'60%' }}>{item.tipscontent.lenght<=15?item.tipscontent:item.tipscontent.slice(0,15)+'···'}</Text>
+                                            <Text style={{ lineHeight:40, height: 50 * s,fontSize:25,color:'#fff' }} >{item.tipstitle}</Text>
+                                            <Text style={{width:'60%',color:'#fff' }}>{item.tipscontent.lenght<=15?item.tipscontent:item.tipscontent.slice(0,15)+'···'}</Text>
                                             
                                         </View>
                                     </TouchableOpacity>

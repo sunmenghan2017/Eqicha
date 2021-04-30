@@ -134,7 +134,7 @@ const App = () => {
 							<Tabs 
 								key='tabbar'
 								hideNavBar
-								activeTintColor="#fc9"
+								activeTintColor="#ff4500"
 								inactiveTintColor="gray"
 								tabBarStyle={{backgroundColor:'#333'}}
 							>
@@ -144,12 +144,14 @@ const App = () => {
 									hideNavBar={true}
 									icon={
 										({focused})=><Icon 
-											color={focused?'#fc9':'gray'} 
+											color={focused?'#ff4500':'gray'} 
 											name="home"
 										/>
 									}
 								>
 									<Scene key='home' hideNavBar={true} component={Home}/>
+									<Scene key='job' hideNavBar component={Job} />
+									<Scene key='detailjob' hideNavBar={true} component={Detailjob}/>
 									<Scene key='detailnews' hideNavBar={true} component={Detailnews}/>
 									</Scene>
 								{/* 商品分类 */}
@@ -157,7 +159,7 @@ const App = () => {
 									title='查Boss'
 									icon={
 										({focused})=><Icon 
-											color={focused?'#fc9':'gray'} 
+											color={focused?'#ff4500':'gray'} 
 											name="search"
 										/>
 									}
@@ -170,7 +172,7 @@ const App = () => {
 									title='发现'
 									icon={
 										({focused})=><Icon 
-											color={focused?'#fc9':'gray'} 
+											color={focused?'#ff4500':'gray'} 
 											name="star"
 										/>
 									}
@@ -184,7 +186,7 @@ const App = () => {
 									hideDrawerButton
 									icon={({focused})=>
 										<Icon 
-											color={focused?'#fc9':'gray'} 
+											color={focused?'#ff4500':'gray'} 
 											name='user'/>
 										}
 									title="我的"
@@ -205,7 +207,9 @@ const App = () => {
 					</Drawer>
 					{/* <Scene key='light' component={Mybox}/> */}
 				</Lightbox>
-
+				{/* <Scene key='home' hideNavBar={true} component={Home}/>	 */}
+				{/* <Scene key="boss" hideNavBar={true} component={Boss}/>	 */}
+				{/* <Scene key="find" hideNavBar={true} component={Find}/>				 */}
 				<Scene initial={!isLogin} key="login" component={Login} />
 				<Scene key='register' hideNavBar component={Register} />
 				<Scene key='forget' hideNavBar component={Forget} />
@@ -217,7 +221,7 @@ const App = () => {
 				<Scene key='detailxinzeng' hideNavBar={true} component={Detailxinzeng}/>
 				<Scene key='detailbangdan' hideNavBar={true} component={Detailbangdan}/>
 								
-				<Scene key='mine' hideNavBar={true} component={Mine}/>
+				{/* <Scene key='mine' hideNavBar={true} component={Mine}/> */}
 				
 				
 				<Scene key='shoucang' hideNavBar={true} component={Shoucang}/>

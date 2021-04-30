@@ -91,12 +91,12 @@ export default class Detailcompany extends Component {
                         <Icon
                             name="left"
                             style={{
-                                color: '#fc9', padding: '10%', fontSize: 20
+                                color: '#ff4500', padding: '10%', fontSize: 20
                             }}
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text>{this.state.data.companyname}</Text>
+                    <Text style={{fontSize:30,color:'#ff4500'}}>{this.state.data.companyname}</Text>
 
                 </View>
                 <ScrollView style={{backgroundColor:'#fc9'}}>

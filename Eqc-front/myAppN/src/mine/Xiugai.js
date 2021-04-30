@@ -76,11 +76,11 @@ export default class Xiugai extends Component {
     render() {
         return (
             <View >
-                <View style={{ flexDirection: 'row', height:40, width: '100%',  marginBottom: '15%',backgroundColor:'#fc9' ,paddingLeft:'5%'}}>
+                <View style={{ flexDirection: 'row', height:40, width: '100%',  marginBottom: '15%',backgroundColor:'#ff4500' ,paddingLeft:'5%'}}>
                     <TouchableOpacity onPress={Actions.pop} style={{width:'10%',height:40,}}>
                         <Icon1
                             name="angle-left"
-                            style={{ color: '#eee', fontSize: 20, lineHeight:40}}
+                            style={{ color: '#fff', fontSize: 20, lineHeight:40}}
                         />
                     </TouchableOpacity>
                 </View>
@@ -106,14 +106,14 @@ export default class Xiugai extends Component {
                             style={{
                                 width: '35%',
                                 height: 50,
-                                backgroundColor: '#fc9',
+                                backgroundColor: '#ff4500',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 borderRadius: 10
                             }}
                             onPress={this.reset}
                         >
-                            <Text style={{ color: '#eee' }}>修改信息</Text>
+                            <Text style={{ color: '#fff' }}>修改信息</Text>
                         </TouchableOpacity>
                     </View>
                     {
@@ -142,14 +142,14 @@ export default class Xiugai extends Component {
                                     style={{
                                         width: '35%',
                                         height: 50,
-                                        backgroundColor: '#fc9',
+                                        backgroundColor: '#ff4500',
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         borderRadius: 10,
                                     }}
                                     onPress={this.ok}
                                 >
-                                    <Text style={{ color: '#eee',alignItems: 'center',justifyContent:'center',alignContent:'center' }}>确定</Text>
+                                    <Text style={{ color: '#fff',alignItems: 'center',justifyContent:'center',alignContent:'center' }}>确定</Text>
                                 </TouchableOpacity>
                             </View>
                             : null

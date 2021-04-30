@@ -61,7 +61,7 @@ export default class Job extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.43.36:3000/zhiwei')
+        fetch('http://192.168.43.36:3000/zhaopin')
             .then(res => res.json())
             .then(res => {
                 // for(var i=0;i<res.length;i++){
@@ -90,15 +90,15 @@ export default class Job extends Component {
             }}>
 
                 
-                    <View style={{ height: 150 * s, width: 640 * s, backgroundColor: '#fc9' }}>
+                    <View style={{ height: 150 * s, width: 640 * s, backgroundColor: '#ff4500' }}>
 
                     <View style={{ height: 60 * s, width: 640 * s,  backgroundColor: '#fff',marginBottom:'2%', flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center', }}>
                             <TouchableOpacity style={{ width: '15%', height: '80%' }}>
-                            <Icon name='left' color='#fc9' style={{paddingLeft:10}} onPress={Actions.pop}/>
+                            <Icon name='left' color='#ff4500' style={{paddingLeft:10}} onPress={Actions.home}/>
                             </TouchableOpacity>
-                            <Text style={{width: '65%',height: '80%',color:'#fc9',fontSize:20,}}>找工作</Text>
+                            <Text style={{width: '65%',height: '80%',color:'#ff4500',fontSize:20,}}>找工作</Text>
                             <TouchableOpacity style={{ width: '18%', height: '80%' }} onPress={Actions.fabu}>
-                            <Text style={{width: '100%',height: '80%',color:'#fff',fontSize:20,backgroundColor:'#fc9',marginLeft:'-15%'}}>招聘发布</Text>
+                            <Text style={{width: '100%',height: '80%',color:'#fff',fontSize:20,backgroundColor:'#ff4500',marginLeft:'-15%'}}>招聘发布</Text>
                             </TouchableOpacity>
                         </View>
 
@@ -137,15 +137,15 @@ export default class Job extends Component {
                                     alignItems: 'center',
                                     marginTop: 20 * s,
                                     padding: 4,
-                                    backgroundColor: '#fc9'
+                                    backgroundColor: '#ff4500'
                                 }}>
                                     <TouchableOpacity style={{ width: '90%', height: '90%' }} onPress={()=>Actions.detailjob({'zhaopinid':item.zhaopinid,'userid':this.state.userid})}>
-                                        <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>{item.zhiwei}</Text>
+                                        <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25,color:'#fff' }}>{item.zhiwei}</Text>
 
                                         <View style={{ flexDirection: 'row', justifyContent:'space-evenly', alignItems: 'center', width: '100%', height: '40%' }}>
 
-                                            <Text style={{ marginTop: 5 * s, width: '80%' }}>{item.companyname}</Text>
-                                            <Text style={{ color: 'red', width: '20%' }}>{item.salary}</Text>
+                                            <Text style={{ marginTop: 5 * s, width: '80%',color:'#fff' }}>{item.companyname}</Text>
+                                            <Text style={{ color: '#fff', width: '20%',textDecorationLine:'underline' }}>{item.salary}</Text>
                                         </View>
                                     </TouchableOpacity>
                                     

@@ -100,10 +100,10 @@ export default class Mine extends Component {
         return (
             <View  style={{flex: 1,backgroundColor: '#fff'}}>
                 <View style={{flexDirection: 'row',height:50,width:'100%',backgroundColor:'#fff'}}>
-                    <Text style={{fontSize:18,paddingLeft:'45%',color:'#fc9',lineHeight:50}}>我的</Text>
-                    <Icon name="setting" style={{paddingLeft:130,color:'#fc9',lineHeight:50}} onPress={Actions.xiugai}/>
+                    <Text style={{fontSize:18,paddingLeft:'45%',color:'#ff4500',lineHeight:50}}>我的</Text>
+                    <Icon name="setting" style={{paddingLeft:130,color:'#ff4500',lineHeight:50}} onPress={Actions.xiugai}/>
                 </View>
-                <View style={{height:140,flexDirection: 'row',borderBottomWidth:1,borderBottomColor:'#bbb',backgroundColor:'#fc9',paddingTop:'1%'}}>
+                <View style={{height:140,flexDirection: 'row',borderBottomWidth:1,borderBottomColor:'#bbb',backgroundColor:'#ff4500',paddingTop:'1%'}}>
                     <Button 
                         onPress={()=>{this.takephoto()}}
                         >
@@ -119,24 +119,25 @@ export default class Mine extends Component {
 
                             }
                     </Button>
-                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:40}}>{this.state.data.username}</Text>
-                        <Text style={{fontSize:17,paddingTop:50,paddingLeft:40}}>{this.state.data.companyname}</Text>
+                        <Text style={{fontSize:17, color:'#fff',paddingTop:50,paddingLeft:40}}>{this.state.data.username}</Text>
+                        <Text style={{fontSize:17, color:'#fff',paddingTop:50,paddingLeft:40}}>{this.state.data.companyname}</Text>
+                        <Text style={{fontSize:17, color:'#fff',paddingTop:50,paddingLeft:40}}>{this.state.data.userzhiwei}</Text>
                 </View>
                 <View style={{width:'100%',height:'2%',backgroundColor:'#fff'}}></View>
                 <View style={styles.view2}>
-                    <Text style={{paddingLeft:20}} onPress={Actions.shoucang}>我的收藏</Text>
+                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.shoucang}>我的收藏</Text>
                 </View>
                 <View style={styles.view2}>
-                    <Text style={{paddingLeft:20}} onPress={Actions.fabu}>我的招聘</Text>
+                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.fabu}>我的招聘</Text>
                 </View>
                 <View style={styles.view2}>
-                    <Text style={{paddingLeft:20}} onPress={Actions.tousu}>我的消息</Text>
+                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.tousu}>我的消息</Text>
                 </View>
                 <View style={styles.view2}>
-                    <Text style={{paddingLeft:20}} onPress={Actions.lianxi}>联系我们</Text>
+                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.lianxi}>联系我们</Text>
                 </View>
                 <View style={styles.view2}>
-                    <Text style={{paddingLeft:20}} onPress={Actions.shezhi}>设置</Text>
+                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.shezhi}>设置</Text>
                 </View>
             </View>
         )
@@ -154,6 +155,6 @@ const styles = StyleSheet.create({
         borderBottomColor:'#bbb',
         height:50,
         justifyContent:'center',
-        backgroundColor:'#fc9'
+        backgroundColor:'#ff4500'
     }
 })

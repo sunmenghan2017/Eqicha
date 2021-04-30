@@ -93,15 +93,15 @@ export default class Fujinqiye extends Component {
             }}>
 
                 
-                    <View style={{ height: 150 * s, width: 640 * s, backgroundColor: '#fc9' }}>
+                    <View style={{ height: 150 * s, width: 640 * s, backgroundColor: '#ff4500' }}>
 
                     <View style={{ height: 60 * s, width: 640 * s,  backgroundColor: '#fff',marginBottom:'2%', flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center', }}>
                             <TouchableOpacity style={{ width: '15%', height: '80%' }}>
-                            <Icon name='left' color='#fc9' style={{paddingLeft:10}} onPress={Actions.pop}/>
+                            <Icon name='left' color='#ff4500' style={{paddingLeft:10}} onPress={Actions.pop}/>
                             </TouchableOpacity>
-                            <Text style={{width: '70%',height: '80%',color:'#fc9',fontSize:20}}>附近企业</Text>
+                            <Text style={{width: '70%',height: '80%',color:'#ff4500',fontSize:20}}>附近企业</Text>
                             <TouchableOpacity style={{ width: '15%', height: '80%' }}>
-                            <Icon name='windows' color='#fc9' style={{paddingLeft:'50%'}}  onPress={Actions.pop}/>
+                            <Icon name='windows' color='#ff4500' style={{paddingLeft:'50%'}}  onPress={Actions.pop}/>
                             </TouchableOpacity>
                         </View>
 

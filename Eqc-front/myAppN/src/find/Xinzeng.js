@@ -88,9 +88,9 @@ export default class Xinzeng extends Component {
             }}>
 
 
-                <View style={{ height: 50 * s, width: '100%',backgroundColor:'#fc9'}}>
+                <View style={{ height: 50 * s, width: '100%',backgroundColor:'#ff4500'}}>
                     <TouchableOpacity style={{ width: '25%', height: '100%' }}  onPress={Actions.pop}>
-                        <Icon name='left' color='#eee' style={{ paddingLeft: 10,lineHeight:40 }} />
+                        <Icon name='left' color='#fff' style={{ paddingLeft: 10,lineHeight:40 }} />
                     </TouchableOpacity>
                 </View>
                 <View style={{
@@ -102,10 +102,10 @@ export default class Xinzeng extends Component {
                     {
                         // this.state.tits&&
                         this.state.tits.map((item, key) => (
-                            <View style={{ width: '100%', height: 100 * s,paddingLeft:'5%', backgroundColor:'#fc9',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%' }}>
+                            <View style={{ width: '100%', height: 100 * s,paddingLeft:'5%', backgroundColor:'#ff4500',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2%' }}>
 
                                 <TouchableOpacity style={{ width: '90%', }} onPress={() => Actions.detailxinzeng({'xinzengid':item.xinzengid,'userid':this.state.userid})}>
-                                    <Text style={{ height: 50 * s, fontSize: 25 }}>{item.xinzengtitle}</Text>
+                                    <Text style={{ height: 50 * s, fontSize: 25,color:'#fff' }}>{item.xinzengtitle}</Text>
 
                                 </TouchableOpacity>
                             </View>
