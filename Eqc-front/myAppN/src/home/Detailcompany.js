@@ -56,7 +56,7 @@ export default class Detailcompany extends Component {
             tits: [],
             page: 1,
             tit: [], data: '',
-            userid:this.props.userid
+            userid: this.props.userid
         }
     }
     componentDidMount() {
@@ -64,10 +64,10 @@ export default class Detailcompany extends Component {
         fetch('http://192.168.43.36:3000/company')
             .then(res => res.json())
             .then(res => {
-                for(var i=0;i<res.length;i++){
-                    if(this.props.companyid==res[i].companyid){
+                for (var i = 0; i < res.length; i++) {
+                    if (this.props.companyid == res[i].companyid) {
                         this.setState({
-                            data:res[i],
+                            data: res[i],
                         })
                     }
                 }
@@ -83,9 +83,6 @@ export default class Detailcompany extends Component {
                 flexDirection: 'column',
                 backgroundColor: '#fff'
             }}>
-
-
-
                 <View style={{ height: 60 * s, width: 640 * s, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#fff' }}>
                     <TouchableOpacity style={{ width: '15%', height: '80%' }}>
                         <Icon
@@ -96,16 +93,33 @@ export default class Detailcompany extends Component {
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30,color:'#ff4500'}}>{this.state.data.companyname}</Text>
+                    <Text style={{ fontSize: 30, color: '#ff4500' }}>{this.state.data.companyname != null ? this.state.data.companyname : '北京字节跳动科技有限公司'}</Text>
 
                 </View>
-                <ScrollView style={{backgroundColor:'#fc9'}}>
+                <ScrollView
+                    pagingEnabled={true}
+                    horizontal={true}
+                    style={{ width: 640 * s }}
+                >
+
+                    <View style={{ height: 365 * s, width: 640 * s }}>
+                        <Image style={{ width: '100%', height: '100%' }} resizeMode='stretch' source={require('../../assets/zixun.png')} />
+                    </View>
+                    <View style={{ height: 365 * s, width: 640 * s }}>
+                        <Image style={{ width: '100%', height: '100%' }} resizeMode='stretch' source={require('../../assets/raw_1528737129.png')} />
+                    </View>
+                    <View style={{ height: 365 * s, width: 640 * s }}>
+                        <Image style={{ width: '100%', height: '100%' }} resizeMode='stretch' source={require('../../assets/zixun.png')} />
+                    </View>
+
+                </ScrollView>
+                <ScrollView style={{ backgroundColor: '#fc9', width: 640 * s, height: 840 * s }}>
 
 
-                    <View style={{width:540*s,height:200,justifyContent:'center',alignItems:'flex-start',alignContent:'center',marginLeft:'10%',marginTop:'5%'}}>
-                        <Text style={{ lineHeight: 40, }}>{this.state.data.companyintro}</Text>
-                        <Text style={{ lineHeight: 40, }}>创始人：{this.state.data.personname}</Text>
-                        <Text style={{ lineHeight: 40, }}>地址：{this.state.data.companypos}</Text>
+                    <View style={{ width: 540 * s, height: 200, justifyContent: 'center', alignItems: 'flex-start', alignContent: 'center', marginLeft: '10%', }}>
+                        <Text style={{ lineHeight: 40, }}>公司简介：{this.state.data.companyintro != null ? this.state.data.companyintro : '北京字节跳动科技有限公司，成立于2012年3月'}</Text>
+                        <Text style={{ lineHeight: 40, }}>创始人：{this.state.data.personname != null ? this.state.data.personname : '张一鸣'}</Text>
+                        <Text style={{ lineHeight: 40, }}>地址：{this.state.data.companypos != null ? this.state.data.companypos : '北京市海淀区知春路甲48号2号楼10A室'}</Text>
                     </View>
                 </ScrollView>
 

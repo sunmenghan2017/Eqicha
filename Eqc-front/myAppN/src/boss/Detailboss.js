@@ -56,7 +56,7 @@ export default class Detailboss extends Component {
             tits: [],
             page: 1,
             tit: [], data: '',
-            userid:this.props.userid
+            userid: this.props.userid
         }
     }
     componentDidMount() {
@@ -64,15 +64,15 @@ export default class Detailboss extends Component {
         fetch('http://192.168.43.36:3000/person')
             .then(res => res.json())
             .then(res => {
-                for(var i=0;i<res.length;i++){
-                    if(this.props.personid==res[i].personid){
+                for (var i = 0; i < res.length; i++) {
+                    if (this.props.personid == res[i].personid) {
                         this.setState({
-                            data:res[i],
+                            data: res[i],
                         })
                     }
                 }
             })
-        
+
     }
 
 
@@ -92,24 +92,30 @@ export default class Detailboss extends Component {
                         <Icon
                             name="left"
                             style={{
-                                color: '#ff4500', paddingLeft: '10%',paddingTop:'5%', fontSize: 20
+                                color: '#ff4500', paddingLeft: '10%', paddingTop: '5%', fontSize: 20
                             }}
                             onPress={Actions.pop}
                         />
                     </TouchableOpacity>
-                    <Text style={{fontSize:30,color:'#ff4500'}}>{this.state.data.personname}</Text>
+                    <Text style={{ fontSize: 30, color: '#ff4500' }}>{this.state.data.personname != null ? this.state.data.personname : '张一鸣'}</Text>
 
                 </View>
-                <View style={{width:'100%',height:900,backgroundColor:'#fc9',paddingTop:'10%',alignItems:'center',}}>
+                <View style={{ width: '100%', height: 280*s, backgroundColor: '#fc9', paddingTop: '10%', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', }}>
+                    <View style={{ width: '40%', height: 280*s, alignItems: 'center', paddingTop: '5%' }}>
+                        <Image style={{ width: '60%', height: 200 * s }} resizeMode='stretch' source={require('../../assets/icon/1.jpg')} />
+                    </View>
+                    <View style={{ width: '70%', justifyContent: 'center',  alignContent: 'center', }}>
+                        <Text style={{ lineHeight: 40, }}>职位：{this.state.data.zhiwei!=null?this.state.data.zhiwei:'创始人、CEO'}</Text>
+                        <Text style={{ lineHeight: 40, }}>就职公司：{this.state.data.companyname!=null?this.state.data.companyname:'北京字节跳动科技有限公司'}</Text>
+                    </View>
 
+                </View>
+                <View style={{ width: '100%', height: 900, alignItems: 'center', backgroundColor: '#fc9' }}>
+                    <View style={{ width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignContent: 'center', }}>
 
-                    <View style={{width:'80%',justifyContent:'center',alignItems:'flex-start',alignContent:'center',}}>
-                        <Text style={{lineHeight:40,}}>{this.state.data.personintro}</Text>
-                        <Text style={{lineHeight:40,}}>职位：{this.state.data.zhiwei}</Text>
-                        <Text style={{lineHeight:40,}}>就职公司：{this.state.data.companyname}</Text>
+                        <Text style={{ lineHeight: 40, }}>人物简介：{this.state.data.personintro!=null?this.state.data.personintro:'张一鸣，男，1983年出生于福建省龙岩市永定区，客家人[1-2]，南开大学毕业，北京字节跳动科技有限公司创始人、CEO，今日头条创始人、原CEO。'}</Text>
                     </View>
                 </View>
-
 
             </View>
 

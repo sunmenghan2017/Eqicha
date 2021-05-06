@@ -61,19 +61,19 @@ export default class Fujinqiye extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.43.36:3000/fujinqiye')
-            .then(res => res.json())
-            .then(res => {
-                // for(var i=0;i<res.length;i++){
-                //     if(this.props.saleid==res[i].saleid){
-                //         this.setState({
-                //             data:res[i],
-                //         })
-                //     }
-                // }
-                console.log(res)
-                this.setState({ tits: res });
-            })
+        // fetch('http://192.168.43.36:3000/fujinqiye')
+        //     .then(res => res.json())
+        //     .then(res => {
+        //         // for(var i=0;i<res.length;i++){
+        //         //     if(this.props.saleid==res[i].saleid){
+        //         //         this.setState({
+        //         //             data:res[i],
+        //         //         })
+        //         //     }
+        //         // }
+        //         console.log(res)
+        //         this.setState({ tits: res });
+        //     })
         // fetch('http://192.168.0.102:3000/merchandise')
         //     .then(res => res.json())
         //     .then(res => {
@@ -107,6 +107,14 @@ export default class Fujinqiye extends Component {
 
                     
                         <View style={{ height: 60 * s, width: 500 * s, flexDirection: 'row', marginLeft: '11%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
+                            
+                            <TextInput
+                                placeholder="请输入搜索名称"
+                                style={{
+                                    width: '85%',
+                                    height: '100%'
+                                }}
+                            />
                             <TouchableOpacity style={{ width: '15%', height: '80%' }}>
                                 <Icon1
                                     name="search"
@@ -115,13 +123,6 @@ export default class Fujinqiye extends Component {
                                     }}
                                 />
                             </TouchableOpacity>
-                            <TextInput
-                                placeholder="请输入搜索名称"
-                                style={{
-                                    width: '85%',
-                                    height: '100%'
-                                }}
-                            />
                         </View>
 
                     </View>

@@ -61,9 +61,9 @@ export default class Customer extends Component {
     }
     componentDidMount() {
         console.log(this.props.userid)
-        fetch('http://192.168.43.36:3000/customer')
-            .then(res => res.json())
-            .then(res => {
+        // fetch('http://192.168.43.36:3000/customer')
+            // .then(res => res.json())
+            // .then(res => {
                 // for(var i=0;i<res.length;i++){
                 //     if(this.props.saleid==res[i].saleid){
                 //         this.setState({
@@ -71,9 +71,9 @@ export default class Customer extends Component {
                 //         })
                 //     }
                 // }
-                console.log(res)
-                this.setState({ tits: res });
-            })
+                // console.log(res)
+                // this.setState({ tits: res });
+            // })
         // fetch('http://192.168.0.102:3000/merchandise')
         //     .then(res => res.json())
         //     .then(res => {
@@ -156,7 +156,7 @@ export default class Customer extends Component {
 
                             <View style={{width: '90%', height: '30%',flexDirection: 'row',justifyContent: 'space-between', alignItems: 'center',marginBottom:'2%',backgroundColor: '#fff'}}>
                             <TouchableOpacity style={{ width: '30%',  }}>
-                                <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kktg.jpg' }}/>
+                                <Image style={{ width: '90%', height: '85%' }} resizeMode='contain' source={{ uri: 'https://liwenroul.github.io/Suixinchuan/Sxc-front/myAppN/assets/v2_q5kktg.jpg' }}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={{ width: '70%', }}>
                                 <Text style={{ marginTop: 5 * s, height: '40%', fontSize: 25 }}>影视行业</Text>
