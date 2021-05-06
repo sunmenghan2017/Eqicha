@@ -105,7 +105,7 @@ export default class Detailxinzeng extends Component {
 
                     <View style={{ width: 540 * s, height:200, alignItems: 'center', alignContent: 'center', marginLeft: '10%',marginTop:'5%' }}>
                         
-                        <Text style={{  width: '100%' ,lineHeight:40}}>{this.state.data.xinzengcontent}</Text>
+                        <Text style={{  width: '100%' ,lineHeight:40}}>{this.state.data.xinzengcontent!=null?this.state.data.xinzengcontent:'暂无新增'}</Text>
                     </View>
                 </ScrollView>
 

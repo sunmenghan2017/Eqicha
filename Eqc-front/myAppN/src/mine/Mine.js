@@ -65,6 +65,7 @@ export default class Mine extends Component {
         //     // console.log("1].dynContentdata:"+this.state.data);
         // })
     }
+    
     getData = ()=>{
         AsyncStorage.getItem('imgUrl')
         .then((res)=>{

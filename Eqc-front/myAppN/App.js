@@ -196,7 +196,7 @@ const App = () => {
 									<Scene key='mine' hideNavBar={true} component={Mine}/>
 									
 									<Scene key='tousu' hideNavBar={true} component={Tousu}/>
-									{/* <Scene key='shoucang' hideNavBar={true} component={Shoucang}/> */}
+									<Scene key='shoucang' hideNavBar={true} component={Shoucang}/>
 									<Scene key='qiye' hideNavBar={true} component={Qiye}/>
 									<Scene key='lianxi' hideNavBar={true} component={Lianxi}/>
 									
@@ -209,7 +209,7 @@ const App = () => {
 				</Lightbox>
 				{/* <Scene key='home' hideNavBar={true} component={Home}/>	 */}
 				{/* <Scene key="boss" hideNavBar={true} component={Boss}/>	 */}
-				{/* <Scene key="find" hideNavBar={true} component={Find}/>				 */}
+				<Scene key="find" hideNavBar={true} component={Find}/>				
 				<Scene initial={!isLogin} key="login" component={Login} />
 				<Scene key='register' hideNavBar component={Register} />
 				<Scene key='forget' hideNavBar component={Forget} />
