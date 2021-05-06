@@ -160,16 +160,26 @@ export default class Job extends Component {
                                     <Text style={{ marginTop: 5 * s, width: '30%' }}>360</Text>
                                     <Text style={{ color: 'red', width: '30%' }}>3000-5000</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>负责人：李四</Text>
                                 </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{ width: '90%', height: '35%' }}>
-                                <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>行政</Text>
+                        </TouchableOpacity>*/}
+                            {/* <View style={{
+                                    width: '100%',
+                                    height: 150 * s,
+                                    alignItems: 'center',
+                                    marginTop: 20 * s,
+                                    padding: 4,
+                                    backgroundColor: '#ff4500'
+                                }}>
+                                    <TouchableOpacity style={{ width: '90%', height: '90%' }} onPress={()=>Actions.detailjob()}>
+                                        <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25,color:'#fff' }}>职位</Text>
 
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
+                                        <View style={{ flexDirection: 'row', justifyContent:'space-evenly', alignItems: 'center', width: '100%', height: '40%' }}>
 
-                                    <Text style={{ marginTop: 5 * s, width: '30%' }}>和简欧集团</Text>
-                                    <Text style={{ color: 'red', width: '30%' }}>3000-4500</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>负责人：王五</Text>
-                                </View>
-                            </TouchableOpacity> */}
+                                            <Text style={{ marginTop: 5 * s, width: '80%',color:'#fff' }}>公司</Text>
+                                            <Text style={{ color: '#fff', width: '20%',textDecorationLine:'underline' }}>薪资</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                    
+                                </View> */}
                     </ScrollView>
 
                 

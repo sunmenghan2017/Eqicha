@@ -52,16 +52,16 @@ export default class Boss extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showValue:'',
-            color:false,
+            showValue: '',
+            color: false,
             // wish: false,
-            bossname:'',
-            search:'',
-            personid:'',
+            bossname: '',
+            search: '',
+            personid: '',
             tits: [],
             page: 1,
             tit: [], data: [],
-            userid:this.props.userid
+            userid: this.props.userid
         }
     }
     // onChangeText(inputData){
@@ -70,7 +70,7 @@ export default class Boss extends Component {
     // showData(){
     //     Alert(this.state.showValue);
     // }
-    
+
     componentDidMount() {
         console.log(this.props.userid)
         // fetch('http://192.168.10.5:3000/person')
@@ -85,7 +85,7 @@ export default class Boss extends Component {
                 //     }
                 // }
                 console.log(res)
-                this.setState({ tits: res ,data:res.personname});
+                this.setState({ tits: res, data: res.personname });
             })
         // fetch('http://192.168.0.102:3000/merchandise')
         //     .then(res => res.json())
@@ -96,15 +96,15 @@ export default class Boss extends Component {
     searchhandle = (text) => {
         this.setState({ search: text })
     }
-    
-     
+
+
     // searchCheck = () => {
     //     var bossname = this.state.bossname;
-        
+
     //     if (bossname !== null) {
     //       for (var i = 0; i < this.state.data.length; i++) {
     //         if (bossname === this.state.data[i].personname) {
-              
+
     //           registerValue = { "personid": this.state.data[i].personid  }
     //           this.setState({ personid: this.state.personid})
     //             // fetch('http://192.168.10.5:3000/user4', {
@@ -118,11 +118,11 @@ export default class Boss extends Component {
     //             .then(data => {
     //               console.log(data);
     //             });
-                
+
     //             Actions.detailboss();
-            
-              
-              
+
+
+
     //         } 
     //         if (bossname !== this.state.data[i].bossname) {
     //           alert("暂未查询到，请重新搜索");
@@ -170,7 +170,6 @@ export default class Boss extends Component {
             <View style={{
                 flex: 1,
                 flexDirection: 'column',
-                justifyContent: 'center',
                 backgroundColor: '#ff4500'
             }}>
 
@@ -183,7 +182,7 @@ export default class Boss extends Component {
 
 
                     <View style={{ height: 60 * s, width: 500 * s, flexDirection: 'row', marginLeft: '11%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff' }}>
-                    
+
                         <TextInput
                             placeholder="请输入Boss名"
                             onChangeText={this.searchhandle}
@@ -200,7 +199,7 @@ export default class Boss extends Component {
                                 }}
                             />
                         </TouchableOpacity>
-                        
+
                     </View>
 
                 </View>
@@ -216,58 +215,53 @@ export default class Boss extends Component {
                     <Text style={{ color: '#fc6', fontSize: 20, paddingLeft: '5%' }}>热门人物</Text>
 
                 </View>
-                
+
                 <View style={{
                     width: '100%',
-                    // height: 800 * s,
+                    height: 450 * s,
                     alignItems: 'center',
                     marginTop: 20 * s,
                     padding: 4,
-                    backgroundColor: '#ff4500'
+                    backgroundColor: '#ff4500',
+                    overflow:'hidden'
                 }}>
-                {
-                            // this.state.tits&&
-                            this.state.tits.map((item, key) => (
-                    <View style={{ width: '90%', height: 100 * s, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor:'#fff',marginBottom:'2%'}}>
-                        <TouchableOpacity style={{ width: '30%', }} onPress={() => Actions.detailboss({'personid':item.personid,'userid':this.state.userid})}>
-                            <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={ require('../../assets/icon/1.jpg')} />
+                    <View>
+                        {
+                        // this.state.tits&&
+                        this.state.tits.map((item, key) => (
+                            <View style={{ width: '90%', height: 100 * s, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', marginBottom: '2%' }}>
+                                <TouchableOpacity style={{ width: '30%', }} onPress={() => Actions.detailboss({ 'personid': item.personid, 'userid': this.state.userid })}>
+                                    <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={require('../../assets/icon/1.jpg')} />
+                                </TouchableOpacity>
+                                <TouchableOpacity style={{ width: '70%', }} onPress={() => Actions.detailboss({ 'personid': item.personid, 'userid': this.state.userid })}>
+                                    <Text style={{ marginTop: 15 * s, height: 45 * s, fontSize: 25 }}>{item.personname}</Text>
+
+                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>
+
+                                        <Text style={{ marginTop: 5 * s, width: '60%' }}>{item.personintro.lenght <= 10 ? item.personintro : item.personintro.slice(0, 10) + '···'}</Text>
+                                        <Text style={{ width: '35%' }}>{item.companyname.lenght <= 6 ? item.companyname : item.companyname.slice(0, 6)}</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
+                        ))
+                    }
+                    </View>
+                    <View style={{ width: '90%', height: 100 * s, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', marginBottom: '2%' }}>
+                        <TouchableOpacity style={{ width: '30%', }} onPress={() => Actions.detailboss()}>
+                            <Image style={{ width: '90%', height: '90%' }} resizeMode='contain' source={require('../../assets/icon/1.jpg')} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ width: '70%', }} onPress={() => Actions.detailboss({'personid':item.personid,'userid':this.state.userid})}>
-                            <Text style={{ marginTop: 15 * s, height: 45 * s, fontSize: 25 }}>{item.personname}</Text>
+                        <TouchableOpacity style={{ width: '70%', }} onPress={() => Actions.detailboss()}>
+                            <Text style={{ marginTop: 15 * s, height: 45 * s, fontSize: 25 }}>李彦宏</Text>
 
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>
 
-                                <Text style={{ marginTop: 5 * s, width: '60%' }}>{item.personintro.lenght<=10?item.personintro:item.personintro.slice(0,10)+'···'}</Text>
-                                <Text style={{ width: '35%' }}>{item.companyname.lenght<=6?item.companyname:item.companyname.slice(0,6)}</Text>
+                                <Text style={{ marginTop: 5 * s, width: '60%' }}>李彦宏（Robin···</Text>
+                                <Text style={{ width: '35%' }}>百度</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
-                ))
-            }
                 </View>
-                <ScrollView style={{
-                        backgroundColor: '#ff4500'}}>
 
-
-                    <View style={{
-                        width: '100%',
-                        height: 300 * s,
-                        alignItems: 'center',
-                        marginTop: 20 * s,
-                        padding: 4,
-                    }}>
-                        {/* <TouchableOpacity style={{ width: '90%', height: '25%' }} onPress={() => Actions.detailboss()}>
-                            <Text style={{ marginTop: 15 * s, height: '50%', fontSize: 25 }}>Boss</Text>
-
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '40%' }}>
-
-                                <Text style={{ marginTop: 5 * s, width: '30%' }}>简介</Text>
-                                <Text style={{ color: 'red', width: '30%' }}>公司</Text><Text style={{ marginTop: 5 * s, width: '30%' }}>时间</Text>
-                            </View>
-                        </TouchableOpacity> */}
-                        
-                    </View>
-                </ScrollView>
 
 
             </View>

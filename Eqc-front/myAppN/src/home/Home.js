@@ -240,7 +240,6 @@ export default class Home extends Component {
                                 style={{ height: 565 * s, width: 640 * s }}
                             >
                                 {
-                                // this.state.tits&&
                                 this.state.tits.map((item, key) => (
                                     <View style={{
                                         width: 640*s,
@@ -260,7 +259,28 @@ export default class Home extends Component {
                                         </TouchableOpacity>
                                     </View>
                                 ))
+                                
+                                
                             }
+                            
+                                <View style={{
+                                    width: 640*s,
+                                    height: 450 * s,
+                                    alignItems: 'center',
+                                    marginTop: 100 * s,
+                                }}>
+                                    <TouchableOpacity style={{ width: '90%', height: 450 * s }} onPress={() => Actions.detailnews()}>
+                                        <Image style={{width:'100%',height:'65%'}} resizeMode='stretch' source={require('../../assets/zixun.png')} />
+                                        <Text style={{ marginTop: 15 * s, height: 40 * s, fontSize: 20,color:'#ff4500' }}>百度</Text>
+
+                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 25 * s }}>
+
+                                            <Text style={{ marginTop: 5 * s, width: '60%',color:'#ff4500' }}>百度</Text>
+                                            <Text style={{ marginTop: 5 * s, width: '30%' ,color:'#ff4500'}}>时间</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                    
+                                </View>
                             </ScrollView>
                             
                     </View>

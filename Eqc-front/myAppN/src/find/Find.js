@@ -148,7 +148,6 @@ export default class Find extends Component {
             <View style = {{
                         flex: 1,
                         flexDirection: 'column',
-                        justifyContent: 'center',
                         backgroundColor: '#fff'
             }} >
 
@@ -248,19 +247,7 @@ export default class Find extends Component {
                                     <Text style={{ color:'#fc6',fontSize:20,paddingLeft:'5%'}}>金融小Tips</Text>
                                     
                                 </View>
-                                {/* {
-                    this.state.list.map((i) =>(
-                        <View>
-                            
-                            <TouchableOpacity onPress={()=>Actions.zixun({'tipsid':this.state.tipsId[i],'userid':this.state.userid})}>
                                 
-                                
-                                <Text>{this.state.tit[i].tipstitle}</Text>
-                           </TouchableOpacity>
-                        </View>
-                        
-                    ))
-                } */}
                                 {
                             // this.state.tits&&
                             this.state.tits.map((item, key) => (
@@ -282,6 +269,22 @@ export default class Find extends Component {
                                 </View>
                                 ))
                             }
+                            <View style={{
+                                    width: '100%',
+                                    height: 100 * s,
+                                    alignItems: 'center',
+                                    marginTop: 20 * s,
+                                    padding: 4,
+                                    backgroundColor: '#ff4500'
+                                }}>
+                                    <TouchableOpacity style={{ width: '90%', height: 90 * s }} onPress={()=>Actions.zixun()}>
+                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: 90 * s }}>
+                                            <Text style={{ lineHeight:40, height: 50 * s,fontSize:25,color:'#fff' }} >金融小Tips</Text>
+                                            <Text style={{width:'60%',color:'#fff' }}>——国国际收支差额既受汇率变化···</Text>
+                                            
+                                        </View>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
                     
                 </ScrollView>
