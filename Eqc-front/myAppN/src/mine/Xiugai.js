@@ -63,7 +63,7 @@ export default class Xiugai extends Component {
                             console.log(data);
                         });
 
-                    Actions.pop();
+                    Actions.mine();
                 }
             }
         }
@@ -77,7 +77,7 @@ export default class Xiugai extends Component {
         return (
             <View >
                 <View style={{ flexDirection: 'row', height:40, width: '100%',  marginBottom: '15%',backgroundColor:'#ff4500' ,paddingLeft:'5%'}}>
-                    <TouchableOpacity onPress={Actions.pop} style={{width:'10%',height:40,}}>
+                    <TouchableOpacity onPress={Actions.mine} style={{width:'10%',height:40,}}>
                         <Icon1
                             name="angle-left"
                             style={{ color: '#fff', fontSize: 20, lineHeight:40}}
@@ -160,5 +160,3 @@ export default class Xiugai extends Component {
         );
     }
 }
-
-

@@ -8,7 +8,7 @@ export default class Shezhi extends Component {
         return (
             <View>
                 <View style={{flexDirection: 'row',height:50,paddingTop:10,width:'100%',borderBottomWidth:1,borderBottomColor:'#bbb',backgroundColor:'#ff4500',marginBottom:'10%'}}>
-                    <Icon name='left' color='#eee' style={{paddingLeft:10}} onPress={Actions.pop}/>
+                    <Icon name='left' color='#eee' style={{paddingLeft:10}} onPress={Actions.mine}/>
                     <Text style={{fontSize:18,paddingLeft:'40%',color:'#fff'}}>设置</Text>
                 </View>
                 <View style={styles.view}>

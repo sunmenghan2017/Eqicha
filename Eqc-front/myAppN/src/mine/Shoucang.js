@@ -33,7 +33,7 @@ export default class Shoucang extends Component {
         .then(res=>{
             for(var i=0;i<res.length;i++){
                 if(res[i].userid==this.state.userid){
-                    console.log(res[i].tipsid)
+                    // console.log(res[i].tipsid)
                     this.setState({
                         data:res,
                         
@@ -42,18 +42,18 @@ export default class Shoucang extends Component {
                 }
                 
             }
-            console.log('this.state.tipsid:'+this.state.tipsid)
+            // console.log('this.state.tipsid:'+this.state.tipsid)
             // this.setState({data:res})
-            console.log(this.state.data);
+            // console.log(this.state.data);
         })
         fetch("http://192.168.43.36:3000/tips")
         .then(res=>res.json())
         .then(res=>{
             for(var i=0;i<res.length;i++){
-                console.log(res[i])
+                // console.log(res[i])
                 for(var j =0;j<this.state.tipsid.length;j++){
-                    console.log('this.state.tipsid[j]'+this.state.tipsid[j])
-                    console.log('res[i].tipsid'+res[i].tipsid)
+                    // console.log('this.state.tipsid[j]'+this.state.tipsid[j])
+                    // console.log('res[i].tipsid'+res[i].tipsid)
                     if(res[i].tipsid==this.state.tipsid[j]){
                         this.setState({
                             tit: [...this.state.tit,res[i]],
@@ -64,20 +64,17 @@ export default class Shoucang extends Component {
                 
                 
             
-            console.log("dfafd")
-            console.log(this.state.tit);
-            console.log('this.state.list'+this.state.list)
-            // this.setState({data:res})
-            console.log(this.state.data);
+            // console.log("dfafd")
+            // console.log('this.state.list'+this.state.list+'a')
+            // console.log('a'+this.state.tit[i].tipstitle)
         
-        
-        }
+        }console.log("dfafd")
+        console.log('this.state.list'+this.state.list+'a')
         for(var i =0;i<this.state.tit.length;i++){
             this.setState({
                 list:[...this.state.list,i]
             })
         }
-        console.log(this.state.list)
     })
         console.log("你进来了")
     }
@@ -85,16 +82,16 @@ export default class Shoucang extends Component {
         return (
             <View>
                 <View style={{flexDirection: 'row',height:40,paddingTop:10,width:'100%',marginBottom:'5%',backgroundColor:'#ff4500'}}>
-                    <Icon name='left' color='#fff' style={{paddingLeft:10,}} onPress={Actions.pop}/>
+                    <Icon name='left' color='#fff' style={{paddingLeft:10,}} onPress={Actions.mine}/>
                     <Text style={{color:'#fff',fontSize:18,paddingLeft:'35%'}}>我的收藏</Text>
                 </View>
-                <ScrollView>
+                <View>
                 {
                     this.state.list.map((i) =>(
-                    <View style={{width:'100%',paddingLeft:'10%',backgroundColor:'#ff4500',marginBottom:'2%'}} ><Text style={{color:'#fff',lineHeight:40}} onPress={()=>Actions.zixun({'tipsid':this.state.tipsid[i],'userid':this.state.userid})}>{this.state.tit[i].tipstitle}</Text></View>
+                    <View style={{width:'90%',paddingLeft:'10%',marginLeft:'5%',backgroundColor:'#ff4500',marginBottom:'2%'}} ><Text style={{color:'#fff',lineHeight:40}} onPress={()=>Actions.zixun({'tipsid':this.state.tipsid[i],'userid':this.state.userid})}>{this.state.tit[i].tipstitle}</Text></View>
                         ))
     }
-                </ScrollView>
+                </View>
             </View>
         )
     }

@@ -32,7 +32,7 @@ import Zixun from './src/home/Zixun';
 import Detailboss from './src/boss/Detailboss';
 import Lianxi from './src/mine/Lianxi';
 import Shoucang from './src/mine/Shoucang';
-import Qiye from './src/mine/Qiye';
+import Zhaopin from './src/mine/Zhaopin';
 import Biji from './src/mine/Biji';
 import Xiugai from './src/mine/Xiugai';
 
@@ -151,8 +151,13 @@ const App = () => {
 								>
 									<Scene key='home' hideNavBar={true} component={Home}/>
 									<Scene key='job' hideNavBar component={Job} />
+				<Scene key='fabu' hideNavBar={true} component={Fabu}/>
 									<Scene key='detailjob' hideNavBar={true} component={Detailjob}/>
+									
+				<Scene key='customer' hideNavBar component={Customer} />
+				<Scene key='fuqi' hideNavBar component={Fujinqiye} />
 									<Scene key='detailnews' hideNavBar={true} component={Detailnews}/>
+				<Scene key='detailcompany' hideNavBar={true} component={Detailcompany}/>
 									</Scene>
 								{/* 商品分类 */}
 								<Scene key='goodsPage'
@@ -179,6 +184,15 @@ const App = () => {
 									
 								>
 									<Scene key="find" hideNavBar={true} component={Find}/>
+				<Scene key='xinzeng' hideNavBar component={Xinzeng} />
+				<Scene key='bangdan' hideNavBar component={Bangdan} />
+				<Scene key='project' hideNavBar component={Project} />
+				<Scene key='touzi' hideNavBar component={Touzi} />
+				<Scene key='detailproject' hideNavBar={true} component={Detailproject}/>
+				<Scene key='detailxinzeng' hideNavBar={true} component={Detailxinzeng}/>
+				<Scene key='detailbangdan' hideNavBar={true} component={Detailbangdan}/>
+				<Scene key='detailcompany' hideNavBar={true} component={Detailcompany}/>
+				<Scene key='zixun' hideNavBar component={Zixun} />
 								</Scene>
 								{/* 用户中心 */}
 								<Scene 
@@ -194,12 +208,13 @@ const App = () => {
 									
 								>
 									<Scene key='mine' hideNavBar={true} component={Mine}/>
-									
+				<Scene key='xiugai' hideNavBar component={Xiugai} />
+									<Scene key='shoucang' hideNavBar={true} component={Shoucang}/>									
+									<Scene key='zhaopin' hideNavBar={true} component={Zhaopin}/>
 									<Scene key='tousu' hideNavBar={true} component={Tousu}/>
-									<Scene key='shoucang' hideNavBar={true} component={Shoucang}/>
-									<Scene key='qiye' hideNavBar={true} component={Qiye}/>
 									<Scene key='lianxi' hideNavBar={true} component={Lianxi}/>
-									
+				<Scene key='shezhi' hideNavBar component={Shezhi}/>			
+				<Scene key='zixun' hideNavBar component={Zixun} />						
 								</Scene>
 								
 							</Tabs>
@@ -207,43 +222,16 @@ const App = () => {
 					</Drawer>
 					{/* <Scene key='light' component={Mybox}/> */}
 				</Lightbox>
-				{/* <Scene key='home' hideNavBar={true} component={Home}/>	 */}
-				{/* <Scene key="boss" hideNavBar={true} component={Boss}/>	 */}
-				<Scene key="find" hideNavBar={true} component={Find}/>				
 				<Scene initial={!isLogin} key="login" component={Login} />
 				<Scene key='register' hideNavBar component={Register} />
 				<Scene key='forget' hideNavBar component={Forget} />
-				<Scene key='xiugai' hideNavBar component={Xiugai} />
-				<Scene key='fabu' hideNavBar={true} component={Fabu}/>
-				<Scene key='detailjob' hideNavBar={true} component={Detailjob}/>
-				<Scene key='detailcompany' hideNavBar={true} component={Detailcompany}/>
-				<Scene key='detailproject' hideNavBar={true} component={Detailproject}/>
-				<Scene key='detailxinzeng' hideNavBar={true} component={Detailxinzeng}/>
-				<Scene key='detailbangdan' hideNavBar={true} component={Detailbangdan}/>
-								
-				{/* <Scene key='mine' hideNavBar={true} component={Mine}/> */}
-				
-				
-				<Scene key='shoucang' hideNavBar={true} component={Shoucang}/>
-				<Scene key='shezhi' hideNavBar component={Shezhi}/>
-				<Scene key='job' hideNavBar component={Job} />
-				<Scene key='customer' hideNavBar component={Customer} />
-				<Scene key='fuqi' hideNavBar component={Fujinqiye} />
-				<Scene key='xinzeng' hideNavBar component={Xinzeng} />
-				<Scene key='bangdan' hideNavBar component={Bangdan} />
-				<Scene key='project' hideNavBar component={Project} />
-				<Scene key='touzi' hideNavBar component={Touzi} />
 
 				<Scene key='listcust' hideNavBar component={Listcust} />
-				<Scene key='zixun' hideNavBar component={Zixun} />
-				{/* <Scene key="login" component={ShowMyName}/> */}
-				{/* <Scene key="login1" component={Login}/> */}
 				<Scene key='detail' hideNavBar component={Detail} />
 				<Scene key='listdetail' hideNavBar component={ListDetail} />
 				
 				<Scene key='date' hideNavBar component={Date} />
 				
-				{/* <Scene key='city' hideNavBar component={City}/> */}
 			</Modal>
 			{/* <Scene component={Message}/> */}
 			</Overlay>

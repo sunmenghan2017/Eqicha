@@ -126,19 +126,19 @@ export default class Mine extends Component {
                 </View>
                 <View style={{width:'100%',height:'2%',backgroundColor:'#fff'}}></View>
                 <View style={styles.view2}>
-                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.shoucang}>我的收藏</Text>
+                    <Text style={{ color:'#ff4500',paddingLeft:20}} onPress={Actions.shoucang}>我的收藏</Text>
                 </View>
                 <View style={styles.view2}>
-                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.fabu}>我的招聘</Text>
+                    <Text style={{ color:'#ff4500',paddingLeft:20}} onPress={Actions.zhaopin}>我的招聘</Text>
                 </View>
                 <View style={styles.view2}>
-                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.tousu}>我的消息</Text>
+                    <Text style={{ color:'#ff4500',paddingLeft:20}} onPress={Actions.tousu}>我的消息</Text>
                 </View>
                 <View style={styles.view2}>
-                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.lianxi}>联系我们</Text>
+                    <Text style={{ color:'#ff4500',paddingLeft:20}} onPress={Actions.lianxi}>联系我们</Text>
                 </View>
                 <View style={styles.view2}>
-                    <Text style={{ color:'#fff',paddingLeft:20}} onPress={Actions.shezhi}>设置</Text>
+                    <Text style={{ color:'#ff4500',paddingLeft:20}} onPress={Actions.shezhi}>设置</Text>
                 </View>
             </View>
         )
@@ -156,6 +156,6 @@ const styles = StyleSheet.create({
         borderBottomColor:'#bbb',
         height:50,
         justifyContent:'center',
-        backgroundColor:'#ff4500'
+        backgroundColor:'#fff'
     }
 })

@@ -9,7 +9,7 @@ export default class Lianxi extends Component {
         return (
             <View>
                 <View style={{flexDirection: 'row',height:50,paddingTop:10,width:'100%',borderBottomWidth:1,borderBottomColor:'#bbb',backgroundColor:'#ff4500'}}>
-                    <Icon name='left' color='#fff' style={{paddingLeft:10}} onPress={Actions.pop}/>
+                    <Icon name='left' color='#fff' style={{paddingLeft:10}} onPress={Actions.mine}/>
                     <Text style={{color:'#fff',fontSize:18,paddingLeft:'32%'}}>联系我们</Text>
                 </View>
                 <View style={{height:250,width:'100%',justifyContent:'center',alignContent:'center',paddingLeft:'36%',borderBottomWidth:1,borderBottomColor:'#bbb'}}>
